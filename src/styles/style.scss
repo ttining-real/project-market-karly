@@ -4,10 +4,16 @@
 @import 'abstracts/variables', 'abstracts/mixins';
 
 // Foundations
-// @import 'foundations/color', 'foundations/typography';
+@import 'foundations/color', 'foundations/typography';
 
 // Base
 @import 'base/reset', 'base/common';
 
 // Components
 @import 'components/button';
+
+// layout
+@import 'layout/header', 'layout/footer';
+
+// Pages
+@import 'pages/login', 'pages/register', 'pages/main', 'pages/product', 'pages/details';
