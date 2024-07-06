@@ -1,0 +1,99 @@
+
+[class^="icon"], [class*=" icon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: $font-family-ico;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 2rem;
+  color: $content;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--answer:before {
+  content: "\e900";
+}
+.icon--arrow--bottom:before {
+  content: "\e901";
+}
+.icon--arrow--left:before {
+  content: "\e902";
+}
+.icon--arrow--right:before {
+  content: "\e903";
+}
+.icon--arrow--top:before {
+  content: "\e904";
+}
+.icon--bell:before {
+  content: "\e905";
+}
+.icon--cancel:before {
+  content: "\e906";
+}
+.icon--cart:before {
+  content: "\e907";
+}
+.icon--clock:before {
+  content: "\e908";
+}
+.icon--favorite:before {
+  content: "\e909";
+}
+.icon--food--frozen:before {
+  content: "\e90a";
+}
+.icon--food--normal:before {
+  content: "\e90b";
+}
+.icon--food--refrigerated:before {
+  content: "\e90c";
+}
+.icon--input--hint:before {
+  content: "\e90d";
+}
+.icon--location:before {
+  content: "\e90e";
+}
+.icon--lock:before {
+  content: "\e90f";
+}
+.icon--menu:before {
+  content: "\e910";
+}
+.icon--minus:before {
+  content: "\e911";
+}
+.icon--notice:before {
+  content: "\e912";
+}
+.icon--plus:before {
+  content: "\e913";
+}
+.icon--question:before {
+  content: "\e914";
+}
+.icon--search:before {
+  content: "\e915";
+}
