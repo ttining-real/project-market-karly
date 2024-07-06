@@ -2,7 +2,23 @@
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('src/assets/fonts/icomoon.eot?4c9vk');
+  src:  url('src/assets/fonts/icomoon.eot?4c9vk#iefix') format('embedded-opentype'),
+    url('src/assets/fonts/icomoon.ttf?4c9vk') format('truetype'),
+    url('src/assets/fonts/icomoon.woff?4c9vk') format('woff'),
+    url('src/assets/fonts/icomoon.svg?4c9vk#icomoon') format('svg');
+  font: {
+    family: 'icomoon';
+    weight: normal;
+    style: normal;
+    display: block;
+  }
+}
+
 $font-family: 'Pretendard Variable';
+$font-family-ico: 'icomoon';
 
 $transparent: rgba(255,255,255,0);
 $white: #ffffff;
