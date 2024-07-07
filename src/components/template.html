@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang='ko'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Template</title>
+    <script type='module' src='/main.js'></script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .template__wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+      }
+      .template {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgb(147, 147, 147);
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+      h3 {
+        margin: 0 0 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='template__wrapper'>
+      <div class='template'>
+        <h3>Input</h3>
+        <div style='display: flex; flex-flow: column nowrap; gap: 1rem;'>
+          <!-- input text -->
+          <div class="input__field">
+            <label for="named" class='a11y'>input label</label>
+            <div class="input__wrap">
+              <input type="text" class='input is--invalid' name='named' id="" placeholder='Text Input' />
+              <span class="hint">hint text</span>
+            </div>
+          </div>
+          <!-- label이 보일 경우 -->
+          <div class="input__field">
+            <label for="named" class='input__label'>input label</label>
+            <div class="input__wrap">
+              <input type="text" class='input is--invalid' name='named' id="" placeholder='Text Input' />
+              <span class="hint">hint text</span>
+            </div>
+          </div>
+          <!-- search -->
+          <form class='input__field search__field' role='search' aria-label='사이트 검색'>
+            <label for='inputSearch' class='a11y'>검색</label>
+            <input type='search' class='input input--search' id='inputSearch' placeholder='검색어를 입력하세요' aria-label='검색어를 입력하세요'>
+            <button type='submit' class='button__icon button--lg' aria-label='검색'>
+                <span class='icon icon--search'></span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class='template'>
+        <h3>Button</h3>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button button--sm'>Button</button>
+          <button type='button' class='button button--md'>Button</button>
+          <button type='button' class='button button--lg'>Button</button>
+        </div>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button button--sm button--outlined'>Button</button>
+          <button type='button' class='button button--md button--outlined'>Button</button>
+          <button type='button' class='button button--lg button--outlined'>Button</button>
+        </div>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button button--sm button--full'>Button</button>
+          <button type='button' class='button button--md button--full'>Button</button>
+          <button type='button' class='button button--lg button--full'>Button</button>
+        </div>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button button--sm button--outlined button--full'>Button</button>
+          <button type='button' class='button button--md button--outlined button--full'>Button</button>
+          <button type='button' class='button button--lg button--outlined button--full'>Button</button>
+        </div>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button__icon button--sm'>
+            <span class='icon icon--location'></span>
+          </button>
+          <button type='button' class='button__icon button--sm'>
+            <span class='icon icon--favorite'></span>
+          </button>
+          <button type='button' class='button__icon button--sm'>
+            <span class='icon icon--cart'></span>
+          </button>
+        </div>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button__icon button--md button--outlined'>
+            <span class='icon icon--location'></span>
+          </button>
+          <button type='button' class='button__icon button--md button--outlined'>
+            <span class='icon icon--favorite'></span>
+          </button>
+          <button type='button' class='button__icon button--md button--outlined'>
+            <span class='icon icon--cart'></span>
+          </button>
+        </div>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button__icon button--rounded button--opacity'>
+            <span class='icon icon--arrow--left'></span>
+          </button>
+          <button type='button' class='button__icon button--rounded button--opacity'>
+            <span class='icon icon--arrow--right'></span>
+          </button>
+        </div>
+        <div style='display: flex; flex-flow: row nowrap; align-items: center; gap: 1rem;'>
+          <button type='button' class='button__icon button--rounded button--shadow'>
+            <span class='icon icon--arrow--left'></span>
+          </button>
+          <button type='button' class='button__icon button--rounded button--shadow'>
+            <span class='icon icon--arrow--right'></span>
+          </button>
+        </div>
+      </div>
+      <div class='template'>
+        <h3>Checkbox</h3>
+        <div style='display: flex; flex-flow: row nowrap; gap: 1rem;'>
+          <div class='checkbox__wrap'>
+            <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+            <label for='checkbox01' class='checkbox__label'>
+              <span class='checkbox__label--icon'></span>Checkbox
+            </label>
+          </div>
+          <div class='checkbox__wrap'>
+            <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
+            <label for='checkbox02' class='checkbox__label'>
+              <span class='checkbox__label--icon'></span>Checkbox
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class='template'>
+        <h3>Radio Button</h3>
+        <div style='display: flex; flex-flow: row nowrap; gap: 1rem;'>
+          <div class='radio__wrap'>
+            <input type='radio' class='radio' id='radio01' name='name' value='value' checked />
+            <label for='radio01' class='radio__label'>
+              <span class='radio__label--icon'></span>Radio
+            </label>
+          </div>
+          <div class='radio__wrap'>
+            <input type='radio' class='radio' id='radio02' name='name' value='value' />
+            <label for='radio02' class='radio__label'>
+              <span class='radio__label--icon'></span>Radio
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class='template'>
+        <h3>Badge</h3>
+        <div>
+          <span class='badge badge--sm'>공지</span>
+          <span class='badge badge--sm badge--secondary'>일반</span>
+          <span class='badge badge--sm badge--outlined'>일반</span>
+          <span class='badge badge--sm badge--accent'>적립</span>
+        </div>
+        <div>
+          <span class='badge badge--md badge--accent'>적립</span>
+        </div>
+        <div>
+          <span class='badge badge--lg badge--only'>Karly Only</span>
+          <span class='badge badge--lg'>한정수량</span>
+        </div>
+      </div>
+      <div class='template'>
+        <h3>Icon</h3>
+        <div style='display: flex; flex-flow: row wrap; align-items: center; gap: 1rem;'>
+          <span class='icon icon--search'></span>
+          <span class='icon icon--location'></span>
+          <span class='icon icon--cart'></span>
+          <span class='icon icon--favorite'></span>
+          <span class='icon icon--bell'></span>
+          <span class='icon icon--card'></span>
+          <span class='icon icon--menu'></span>
+          <span class='icon icon--minus'></span>
+          <span class='icon icon--plus'></span>
+          <span class='icon icon--arrow--top'></span>
+          <span class='icon icon--arrow--right'></span>
+          <span class='icon icon--arrow--bottom'></span>
+          <span class='icon icon--arrow--left'></span>
+          <span class='icon icon--cancel'></span>
+          <span class='icon icon--lock'></span>
+          <span class='icon icon--notice'></span>
+          <span class='icon icon--question'></span>
+          <span class='icon icon--answer'></span>
+          <span class='icon icon--input--hint'></span>
+          <span class='icon icon--food--frozen'></span>
+          <span class='icon icon--food--refrigerated'></span>
+          <span class='icon icon--food--normal'></span>
+        </div>
+      </div>
+      <div class='template'>
+        <h3>Image</h3>
+        <div>
+          <img src='/src/assets/icons/icon-blog.png' alt='네이버 블로그 바로가기' />
+          <img src='/src/assets/icons/icon-facebook.png' alt='페이스북 바로가기' />
+          <img src='/src/assets/icons/icon-instagram.png' alt='인스타그램 바로가기' />
+          <img src='/src/assets/icons/icon-youtube.png' alt='유튜브 바로가기' />
+          <img src='/src/assets/icons/icon-naver-post.png' alt='네이버 포스트 바로가기' />
+          <img src='/src/assets/icons/icon-go-to-top.png' alt='상단으로 이동하기' />
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>
