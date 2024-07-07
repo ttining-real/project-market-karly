@@ -1,29 +1,91 @@
+// button
+$button: (
+  transparent: $transparent,
+  text-white: $white,
+  text-black: $content,
+  border-gray: $gray-100,
+  primary: $primary,
+  secondary: $secondary,
+);
+
 .button {
-  padding-inline: 1rem;
-  font-family: $font-family;
-  font-weight: 400;
-  font-size: 1rem;
-  color: $white;
-  white-space: nowrap;
-  border: 1px solid transparent;
+  @include label-md;
+  min-width: 5rem;
+  padding-inline: 1.5rem;
   border-radius: 0.25rem;
+  white-space: nowrap;
+  color: map-get($button, text-white);
+  border: 0.0625rem solid map-get($button, primary);
+  background-color: map-get($button, primary);
+
+  &:focus {
+    outline: 2px solid map-get($button, secondary);
+  }
+
   &--sm {
-    height: 2.75rem;
+    height: 2.5rem;
   }
   &--md {
-    height: 3.375rem;
+    height: 2.75rem;
   }
-  &--primary {
+  &--lg {
+    height: 3.375rem;
+    padding-inline: 2.25rem;
+  }
+  &--full {
+    width: 100%;
+  }
+
+  &--outlined {
+    color: map-get($button, primary);
+    border: 0.0625rem solid map-get($button, primary);
+    background-color: map-get($button, transparent);
+  }
+
+  // 아이콘 버튼
+  &__icon {
+    padding-inline: 0rem;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid map-get($button, transparent);
+    background-color: map-get($button, transparent);
+    &:focus {
+      outline: 2px solid map-get($button, secondary);
+    }
+
     &.button {
-      &--filled {
-        border-color: $primary;
-        background-color: $primary;
+      &--sm {
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+      &--md {
+        width: 3.5rem;
+        height: 3.5rem;
       }
       &--outlined {
-        color: $primary;
-        border-color: $gray-400;
-        background-color: $transparent;
+        border: 0.0625rem solid map-get($button, border-gray);
+      }
+      &--rounded {
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 2.25rem;
+        border: 0.0625rem solid map-get($button, transparent);
+        &.button--opacity {
+          background-color: rgba($color: #000000, $alpha: 0.2);
+          .icon {
+            color: map-get($button, text-white);
+          }
+        }
+        &.button--shadow {
+          box-shadow: 0 0 0.25rem rgba($color: #000000, $alpha: 0.1);
+          background-color: map-get($button, whitext-whitete);
+          .icon {
+            color: map-get($button, text-black);
+          }
+        }
       }
     }
+  }
+  .icon {
+    font-size: 2.25rem;
   }
 }

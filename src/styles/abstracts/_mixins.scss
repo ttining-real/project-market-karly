@@ -1,0 +1,117 @@
+// heading
+@mixin heading-md {
+  font: {
+    size: 1rem;
+    weight: 700;
+  }
+  line-height: 140%;
+  letter-spacing: 0;
+}
+@mixin heading-lg {
+  font: {
+    size: 1.375rem;
+    weight: 700;
+  }
+  line-height: 140%;
+  letter-spacing: 0;
+}
+@mixin heading-xl {
+  font: {
+    size: 1.75rem;
+    weight: 700;
+  }
+  line-height: 140%;
+  letter-spacing: 0;
+}
+@mixin heading-xxl {
+  font: {
+    size: 2.375rem;
+    weight: 700;
+  }
+  line-height: 140%;
+  letter-spacing: 0;
+}
+@mixin heading-xxxl {
+  font: {
+    size: 3.125rem;
+    weight: 700;
+  }
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+// label
+@mixin label-sm {
+  font: {
+    size: 0.75rem;
+    weight: 600;
+  }
+  line-height: 150%;
+  letter-spacing: 0;
+}
+@mixin label-md {
+  font: {
+    size: 1rem;
+    weight: 600;
+  }
+  line-height: 150%;
+  letter-spacing: 0;
+}
+@mixin label-lg {
+  font: {
+    size: 1.375rem;
+    weight: 600;
+  }
+  line-height: 150%;
+  letter-spacing: 0;
+}
+@mixin label-xl {
+  font: {
+    size: 1.75rem;
+    weight: 600;
+  }
+  line-height: 150%;
+  letter-spacing: 0;
+}
+@mixin label-xxl {
+  font: {
+    size: 2.375rem;
+    weight: 600;
+  }
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+// paragraph
+@mixin paragraph-sm {
+  font: {
+    size: 0.75rem;
+    weight: 400;
+  }
+  line-height: 160%;
+  letter-spacing: 0;
+}
+@mixin paragraph-md {
+  font: {
+    size: 1rem;
+    weight: 400;
+  }
+  line-height: 160%;
+  letter-spacing: 0;
+}
+@mixin paragraph-lg {
+  font: {
+    size: 1.375rem;
+    weight: 400;
+  }
+  line-height: 160%;
+  letter-spacing: 0;
+}
+@mixin paragraph-xl {
+  font: {
+    size: 1.75rem;
+    weight: 400;
+  }
+  line-height: 160%;
+  letter-spacing: 0;
+}

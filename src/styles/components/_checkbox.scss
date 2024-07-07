@@ -1,13 +1,13 @@
-$radio: (
+$checkbox: (
   focus: $secondary,
-  text-black: $content,
+  text-balck: $content,
 );
-// radio
-.radio__wrap {
+// checkbox
+.checkbox__wrap {
   position: relative;
 }
 
-.radio {
+.checkbox {
   position: absolute;
   top: 0rem;
   left: 0rem;
@@ -17,28 +17,28 @@ $radio: (
   border-radius: 1.5rem;
   cursor: pointer;
   &:focus {
-    outline: 2px solid map-get($radio, focus);
+    outline: 2px solid map-get($checkbox, focus);
   }
   &:checked {
-    & + .radio__label .radio__label--icon {
-      background: url(/src/assets/icons/icon-radio-checked.svg) no-repeat 0 0 /
+    & + .checkbox__label .checkbox__label--icon {
+      background: url(/src/assets/icons/icon-checkbox-checked.svg) no-repeat 0 0 /
         100%;
     }
   }
 }
 
-.radio__label {
+.checkbox__label {
   @include paragraph-md;
   display: flex;
   flex-flow: row nowrap;
-  color: map-get($radio, text-black);
+  color: map-get($checkbox, text-black);
   cursor: pointer;
   &--icon {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;
-    background: url(/src/assets/icons/icon-radio-default.svg) no-repeat 0 0 /
+    background: url(/src/assets/icons/icon-checkbox-default.svg) no-repeat 0 0 /
       100%;
   }
 }

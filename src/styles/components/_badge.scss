@@ -1,0 +1,64 @@
+// badge
+$badge: (
+  transparent: $transparent,
+  text-white: $white,
+  text-black: $content,
+  primary: $primary,
+  secondary: $secondary,
+  bg-orange: $accent,
+  border-gray: $gray-100,
+  bg-gray: $gray-100,
+);
+
+.badge {
+  @include label-sm;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  color: map-get($badge, text-black);
+  border-radius: 0.125rem;
+  border: 0.0625rem solid map-get($badge, border-gray);
+  background: map-get($badge, bg-gray);
+
+  &--sm {
+    height: 1.125rem;
+
+    &.badge--accent {
+      color: map-get($badge, text-white);
+      border: 0.0625rem solid map-get($badge, bg-orange);
+      background-color: map-get($badge, bg-orange);
+    }
+    &.badge--secondary {
+      color: map-get($badge, text-white);
+      border: 0.0625rem solid map-get($badge, secondary);
+      background-color: map-get($badge, secondary);
+    }
+    &.badge--outlined {
+      color: map-get($badge, primary);
+      border: 0.0625rem solid map-get($badge, primary);
+      background-color: map-get($badge, transparent);
+    }
+  }
+
+  &--md {
+    @include paragraph-sm;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+
+    &.badge--accent {
+      color: map-get($badge, text-white);
+      border: 0.0625rem solid map-get($badge, bg-orange);
+      background-color: map-get($badge, bg-orange);
+    }
+  }
+
+  &--lg {
+    height: 1.5rem;
+    padding: 0rem 0.25rem;
+    border-radius: 0.25rem;
+
+    &.badge--only {
+      color: map-get($badge, primary);
+    }
+  }
+}

@@ -1,4 +1,35 @@
 body {
   font-family: $font-family;
-  background-color: orange;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 숨김 콘텐츠 */
+.a11y,
+legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
 }
