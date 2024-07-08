@@ -1,5 +1,5 @@
-
-[class^="icon"], [class*=" icon"] {
+[class^='icon'],
+[class*=' icon'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: $font-family-ico;
   speak: never;
@@ -31,69 +31,78 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon--triangle--bottom:before {
+  content: '\e900';
+}
+.icon--triangle--top:before {
+  content: '\e901';
+}
 .icon--answer:before {
-  content: "\e900";
+  content: '\e902';
 }
 .icon--arrow--bottom:before {
-  content: "\e901";
+  content: '\e903';
 }
 .icon--arrow--left:before {
-  content: "\e902";
+  content: '\e904';
 }
 .icon--arrow--right:before {
-  content: "\e903";
+  content: '\e905';
 }
 .icon--arrow--top:before {
-  content: "\e904";
+  content: '\e906';
 }
 .icon--bell:before {
-  content: "\e905";
+  content: '\e907';
 }
 .icon--cancel:before {
-  content: "\e906";
+  content: '\e908';
 }
 .icon--cart:before {
-  content: "\e907";
-}
-.icon--clock:before {
-  content: "\e908";
+  content: '\e909';
 }
 .icon--favorite:before {
-  content: "\e909";
+  content: '\e90a';
 }
 .icon--food--frozen:before {
-  content: "\e90a";
+  content: '\e90b';
 }
 .icon--food--normal:before {
-  content: "\e90b";
+  content: '\e90c';
 }
 .icon--food--refrigerated:before {
-  content: "\e90c";
-}
-.icon--input--hint:before {
-  content: "\e90d";
+  content: '\e90d';
 }
 .icon--location:before {
-  content: "\e90e";
+  content: '\e90e';
 }
 .icon--lock:before {
-  content: "\e90f";
+  content: '\e90f';
 }
 .icon--menu:before {
-  content: "\e910";
+  content: '\e910';
 }
 .icon--minus:before {
-  content: "\e911";
+  content: '\e911';
 }
 .icon--notice:before {
-  content: "\e912";
+  content: '\e912';
 }
 .icon--plus:before {
-  content: "\e913";
+  content: '\e913';
 }
 .icon--question:before {
-  content: "\e914";
+  content: '\e914';
+}
+.icon--question--mark:before {
+  content: '\e915';
+}
+.icon--refresh:before {
+  content: '\e916';
 }
 .icon--search:before {
-  content: "\e915";
+  content: '\e917';
+}
+.icon--time:before {
+  content: '\e918';
 }

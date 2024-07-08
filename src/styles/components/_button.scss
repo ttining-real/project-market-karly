@@ -1,91 +1,215 @@
 // button
 $button: (
-  transparent: $transparent,
+  focus: $secondary,
+  text-default: $content,
   text-white: $white,
-  text-black: $content,
-  border-gray: $gray-100,
-  primary: $primary,
-  secondary: $secondary,
+  text-primary: $primary,
+  bg-default: $white,
+  bg-primary: $primary,
+  bd-primary: $primary,
+  bd-gray-100: $gray-100,
+  bd-gray-200: $gray-200,
+  bd-gray-300: $gray-300,
+);
+$button-size: (
+  // 32px
+  xs: 2rem,
+  // 40px
+  sm: 2.5rem,
+  // 44px
+  md: 2.75rem,
+  // 54px
+  lg: 3.375rem,
+  // 36px
+  ratio-sm: 2.25rem,
+  // 52px
+  ratio-md: 3.25rem,
+  // 56px
+  ratio-lg: 3.5rem
 );
 
 .button {
   @include label-md;
-  min-width: 5rem;
-  padding-inline: 1.5rem;
-  border-radius: 0.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding-inline: 1rem;
+  color: map-get($button, text-default);
   white-space: nowrap;
-  color: map-get($button, text-white);
-  border: 0.0625rem solid map-get($button, primary);
-  background-color: map-get($button, primary);
-
+  border-radius: 0.25rem;
+  border: 0.0625rem solid map-get($button, bd-gray-200);
+  background-color: map-get($button, bg-default);
+  .icon {
+    font-size: 2rem;
+  }
   &:focus {
-    outline: 2px solid map-get($button, secondary);
+    outline: 0.125rem solid map-get($button, focus);
   }
 
+  &--xs {
+    @include paragraph-md;
+    height: map-get($button-size, xs);
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
   &--sm {
-    height: 2.5rem;
+    @include paragraph-md;
+    height: map-get($button-size, sm);
+    .icon {
+      font-size: 1.5rem;
+    }
   }
   &--md {
-    height: 2.75rem;
+    @include label-md;
+    height: map-get($button-size, md);
   }
   &--lg {
-    height: 3.375rem;
-    padding-inline: 2.25rem;
+    @include label-md;
+    height: map-get($button-size, lg);
   }
   &--full {
     width: 100%;
   }
-
   &--outlined {
-    color: map-get($button, primary);
-    border: 0.0625rem solid map-get($button, primary);
-    background-color: map-get($button, transparent);
+    color: map-get($button, text-primary);
+    border-color: map-get($button, bd-primary);
+  }
+  &--filled {
+    color: map-get($button, text-white);
+    border-color: map-get($button, bd-primary);
+    background-color: map-get($button, bg-primary);
+    .icon {
+      color: map-get($button, text-white);
+    }
+  }
+  &--sharp {
+    border-radius: 0rem;
+  }
+  &--rounded {
+    border-radius: 50%;
+  }
+  &--shadow {
+    box-shadow: 0 0 0.25rem rgba($color: #000000, $alpha: 0.15);
+    background-color: map-get($button, bg-default);
+  }
+  &--opacity {
+    border: 0rem;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    .icon {
+      color: map-get($button, text-white);
+    }
   }
 
   // 아이콘 버튼
-  &__icon {
-    padding-inline: 0rem;
-    border-radius: 0.25rem;
-    border: 0.0625rem solid map-get($button, transparent);
-    background-color: map-get($button, transparent);
-    &:focus {
-      outline: 2px solid map-get($button, secondary);
+  &--ratio {
+    aspect-ratio: 1;
+    padding-inline: 0;
+    border: 0rem;
+    &--sm {
+      height: map-get($button-size, ratio-sm);
     }
-
+    &--md {
+      height: map-get($button-size, ratio-md);
+    }
+    &--lg {
+      height: map-get($button-size, ratio-lg);
+    }
     &.button {
-      &--sm {
-        width: 2.25rem;
-        height: 2.25rem;
-      }
-      &--md {
-        width: 3.5rem;
-        height: 3.5rem;
-      }
       &--outlined {
-        border: 0.0625rem solid map-get($button, border-gray);
-      }
-      &--rounded {
-        width: 3.125rem;
-        height: 3.125rem;
-        border-radius: 2.25rem;
-        border: 0.0625rem solid map-get($button, transparent);
-        &.button--opacity {
-          background-color: rgba($color: #000000, $alpha: 0.2);
-          .icon {
-            color: map-get($button, text-white);
-          }
-        }
-        &.button--shadow {
-          box-shadow: 0 0 0.25rem rgba($color: #000000, $alpha: 0.1);
-          background-color: map-get($button, whitext-whitete);
-          .icon {
-            color: map-get($button, text-black);
-          }
-        }
+        border: 1px solid map-get($button, bd-gray-100);
       }
     }
   }
-  .icon {
-    font-size: 2.25rem;
+}
+
+$list_link: (
+  text-default: $content,
+  focus: $secondary,
+  line: $gray-200
+);
+
+.list__link {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.25rem;
+  li {
+    display: flex;
+    align-items: center;
+    a {
+      @include paragraph-sm;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0 0.5rem;
+      color: map-get($list_link, text-default);
+      text-decoration: none;
+      border-radius: 0.125rem;
+      -webkit-text-stroke: 0.0625rem;
+      -webkit-text-stroke: 0.0625rem rgba(0, 0, 0, 0.1);
+      .icon {
+        font-size: 0.6875rem;
+      }
+      &:focus {
+        outline: 2px solid map-get($list_link, focus);
+      }
+    }
+    hr {
+      width: 0.0625rem;
+      height: 0.875rem;
+      margin: 0;
+      border: 0;
+      background: map-get($list_link, line);
+    }
+  }
+}
+
+$list_button: (
+  text-default: $gray-300,
+  text-hover: $gray-600,
+  text-active: $content,
+  focus: $secondary,
+  line: $gray-200
+);
+.list__button {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.25rem;
+  li {
+    button {
+      @include label-md;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding-inline: 0.375rem;
+      color: map-get($list_button, text-default);
+      border: 0;
+      border-radius: 0.125rem;
+      background-color: transparent;
+      &:focus {
+        outline: 2px solid map-get($list_button, focus);
+      }
+      &.is--active {
+        color: map-get($list_button, text-active);
+      }
+      &:hover {
+        color: map-get($list_button, text-hover);
+      }
+      .icon {
+        font-size: 1.5rem;
+        color: map-get($list_button, text-default);
+      }
+    }
+    hr {
+      width: 0.0625rem;
+      height: 0.625rem;
+      margin: 0;
+      border: 0;
+      background: map-get($list_button, line);
+    }
   }
 }
