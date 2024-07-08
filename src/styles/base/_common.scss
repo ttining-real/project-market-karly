@@ -18,18 +18,10 @@ legend {
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
 }
-
-fieldset {
-  margin: 0;
-  padding: 0;
-  border: none;
+input {
+  font-family: $font-family;
 }
-
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style: none;
+button {
+  font-family: $font-family;
+  cursor: pointer;
 }
