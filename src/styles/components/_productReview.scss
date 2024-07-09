@@ -1,0 +1,121 @@
+.product__review {
+  width: 100%;
+
+  .review__total {
+    @include label-sm;
+    align-items: center;
+    color: $content;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .review--sort {
+    @include label-md;
+    align-items: center;
+    color: $gray-300;
+    display: flex;
+
+    li.is--selected {
+      color: $content;
+    }
+
+    li::after {
+      position: relative;
+      top: 1px;
+      background-color: $gray-300;
+      content: '';
+      display: inline-block;
+      height: 0.8rem;
+      width: 0.0625rem;
+      margin: 0 0.5rem;
+    }
+    li:last-child::after {
+      display: none;
+    }
+  }
+}
+
+.table__review {
+  border-top: 1px solid $black;
+  width: 100%;
+
+  thead {
+    td {
+      @include label-md;
+      border-bottom: 1px solid $gray-100;
+      color: $content;
+      padding: 20px;
+
+      span {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  tbody {
+    td {
+      align-items: flex-start;
+      border-bottom: 1px solid $gray-100;
+      display: flex;
+      padding: 20px;
+      white-space: nowrap;
+    }
+
+    .user {
+      @include label-sm;
+      color: $black;
+      gap: 0.5rem;
+      margin-right: 5.125rem;
+    }
+
+    // 후기가 있을 경우
+    .content {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      justify-content: center;
+
+      h3,
+      span {
+        @include label-sm;
+        color: $gray-400;
+      }
+
+      p {
+        @include paragraph-sm;
+        color: $black;
+      }
+    }
+
+    // 후기가 없을 경우
+    .review_empty {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      .content {
+        align-items: center;
+        gap: 1.25rem;
+
+        span {
+          align-items: center;
+          color: $gray-100;
+          display: flex;
+          font-size: 3rem;
+          font-weight: 400;
+          height: 3rem;
+          justify-content: center;
+          width: 3rem;
+        }
+
+        p {
+          @include label-lg;
+          color: $gray-400;
+        }
+      }
+    }
+  }
+}

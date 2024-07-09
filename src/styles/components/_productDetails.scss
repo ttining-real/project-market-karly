@@ -1,0 +1,253 @@
+button {
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+dl,
+dt,
+dd {
+  margin: 0;
+}
+
+.product__info {
+  max-width: 35rem;
+  width: 100%;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+
+    .delivery {
+      @include heading-lg;
+      color: $gray-500;
+      display: inline-block;
+      order: -1;
+    }
+
+    .title {
+      @include label-lg;
+      color: $content;
+      margin-bottom: 0.25rem;
+    }
+
+    .desc {
+      @include paragraph-md;
+      color: $gray-400;
+    }
+
+    .discounted {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .price {
+      @include label-lg;
+      align-items: center;
+      color: $content;
+      display: flex;
+      justify-content: flex-start;
+
+      span {
+        @include heading-md;
+        margin-left: 4px;
+      }
+    }
+
+    .alert {
+      @include label-md;
+      color: $primary;
+    }
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__item {
+    @include label-sm;
+    border-bottom: 1px solid $gray-100;
+    display: flex;
+    padding: 1rem 0;
+
+    &:first-child {
+      border-top: 1px solid $gray-100;
+    }
+
+    dt,
+    dd {
+      color: $gray-500;
+    }
+
+    dt {
+      flex-shrink: 0;
+      width: 8rem;
+    }
+
+    dd {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      span {
+        margin-bottom: 0.25rem;
+
+        &.desc {
+          color: $gray-400;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__buy {
+    @include label-sm;
+    border-bottom: 1px solid $gray-100;
+    display: flex;
+    max-height: 320px; // 예시로 넣음
+    padding: 1rem 0;
+
+    dt {
+      color: $gray-500;
+      flex-shrink: 0;
+      width: 8rem;
+    }
+
+    &--selected {
+      overflow: scroll;
+      -ms-overflow-style: none; // IE and Edge
+      scrollbar-width: none; // Firefox
+      width: 100%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    dd {
+      align-items: flex-start;
+      border: 1px solid $gray-100;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.25rem;
+      padding: 0.75rem 1rem;
+      position: relative;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h2 {
+        @include label-sm;
+        color: $gray-500;
+        margin-bottom: 0.75rem;
+      }
+
+      .input__price {
+        align-items: center;
+        border: 1px solid $gray-200;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        max-width: 5.25rem;
+
+        input {
+          align-items: center;
+          border: 0;
+          display: flex;
+          justify-content: center;
+          outline: 0;
+          width: 100%;
+        }
+
+        button {
+          align-items: center;
+          display: flex;
+          flex-shrink: 0;
+          height: 30px;
+          justify-content: center;
+          width: 30px;
+        }
+      }
+
+      .price {
+        bottom: 0.75rem;
+        position: absolute;
+        right: 0.75rem;
+      }
+    }
+
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__result {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 0;
+
+    dl {
+      align-items: center;
+      display: flex;
+      margin-bottom: 0.5rem;
+    }
+
+    dt {
+      @include label-md;
+      margin-right: 1rem;
+    }
+
+    dd .price {
+      @include label-lg;
+      align-items: center;
+      color: $content;
+      display: flex;
+      justify-content: flex-start;
+
+      span {
+        @include heading-md;
+        margin-left: 0.25rem;
+      }
+    }
+
+    .etc {
+      .badge {
+        border-radius: 0.75rem;
+        margin-right: 0.375rem;
+      }
+
+      strong {
+        @include label-md;
+        color: $black;
+      }
+    }
+  }
+
+  .button__group {
+    display: flex;
+    gap: 0.75rem;
+
+    button {
+      border: 1px solid $gray-100;
+      border-radius: 4px;
+      flex-shrink: 0;
+      height: 50px;
+      width: 50px;
+    }
+
+    button.button--basket {
+      flex-grow: 1;
+    }
+  }
+}
