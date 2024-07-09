@@ -1,0 +1,40 @@
+$section-header: (
+  color-default: $black,
+  color-content: $content,
+  button-width: 9.6875rem,
+);
+
+.section__header {
+  position: relative;
+
+  &__title {
+    @include heading-xl;
+    color: map-get($section-header, color--default);
+    margin-bottom: 1.5rem;
+  }
+
+  &__content {
+    .notice {
+      @include label-md;
+      color: map-get($section-header, color--content);
+
+      &__list {
+        margin: 0;
+        padding-left: 1.125rem;
+        list-style-type: disc;
+      }
+
+      &__item {
+        @include label-sm;
+        color: $gray-500;
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: map-get($section-header, button-width);
+  }
+}

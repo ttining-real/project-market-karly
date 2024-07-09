@@ -1,0 +1,47 @@
+$product-tab: (
+  border-default: 1px solid $gray-300,
+  border-active: 1px solid $gray-100,
+  text-color-default: $content,
+  text-color-active: $primary,
+  bg-color-default: $gray-50,
+  bg-color-active: $white,
+);
+
+.product__tab {
+  &__list {
+    align-items: baseline;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    width: calc(100% / 4);
+
+    button {
+      @include label-md;
+      align-items: center;
+      background-color: map-get($product-tab, bg-color-default);
+      color: map-get($product-tab, text-color-default);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      outline: map-get($product-tab, border-default);
+      width: 100%;
+
+      strong {
+        @include paragraph-sm;
+        margin-left: 0.5rem;
+      }
+    }
+
+    &.is--active button {
+      background-color: map-get($product-tab, bg-color-active);
+      border: map-get($product-tab, border-active);
+      border-bottom: 0;
+      color: map-get($product-tab, text-color-active);
+      outline: 0;
+    }
+  }
+}

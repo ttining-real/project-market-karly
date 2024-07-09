@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset 'utf-8';
 
 // Configuration
 @import 'abstracts/variables', 'abstracts/mixins';
@@ -10,10 +10,14 @@
 @import 'base/reset', 'base/common', 'base/iconfonts';
 
 // Components
-@import 'components/button', 'components/badge', 'components/checkbox', 'components/radioButton', 'components/textInput';
+@import 'components/button', 'components/badge', 'components/checkbox',
+  'components/radioButton', 'components/textInput', 'components/productTab',
+  'components/sectionHeader', 'components/productDetails',
+  'components/productReview', 'components/productInquiry';
 
 // layout
 @import 'layout/header', 'layout/footer';
 
 // Pages
-@import 'pages/login', 'pages/register', 'pages/main', 'pages/product', 'pages/details';
+@import 'pages/login', 'pages/register', 'pages/main', 'pages/product',
+  'pages/details';
