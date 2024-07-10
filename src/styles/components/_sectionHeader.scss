@@ -2,26 +2,28 @@ $section-header: (
   color-default: $black,
   color-content: $content,
   button-width: 9.6875rem,
+  gap: 1.5rem,
 );
 
 .section__header {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($section-header, gap);
   position: relative;
 
   &__title {
     @include heading-xl;
-    color: map-get($section-header, color--default);
-    margin-bottom: 1.5rem;
+    color: map-get($section-header, color-default);
   }
 
   &__content {
     .notice {
       @include label-md;
-      color: map-get($section-header, color--content);
+      color: map-get($section-header, color-content);
 
       &__list {
-        margin: 0;
-        padding-left: 1.125rem;
         list-style-type: disc;
+        padding-left: 1.125rem;
       }
 
       &__item {

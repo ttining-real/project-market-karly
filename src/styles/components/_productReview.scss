@@ -1,10 +1,12 @@
-.product__review {
-  width: 100%;
+$product-review: (
+  total-color: $content,
+);
 
+.product__review {
   .review__total {
     @include label-sm;
     align-items: center;
-    color: $content;
+    color: map-get($product-review, total-color);
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
@@ -13,73 +15,120 @@
 
   .review--sort {
     @include label-md;
-    align-items: center;
-    color: $gray-300;
-    display: flex;
+  }
 
-    li.is--selected {
-      color: $content;
-    }
+  .button__group {
+    padding-top: 1rem;
+    justify-content: center;
 
-    li::after {
-      position: relative;
-      top: 1px;
-      background-color: $gray-300;
-      content: '';
-      display: inline-block;
-      height: 0.8rem;
-      width: 0.0625rem;
-      margin: 0 0.5rem;
-    }
-    li:last-child::after {
-      display: none;
+    button {
+      height: 56px;
+      width: 56px;
+
+      span {
+        color: $primary;
+      }
+
+      &:disabled {
+        span {
+          color: $gray-100;
+        }
+      }
+
+      &:focus {
+        border: 1px solid $primary;
+      }
     }
   }
 }
 
-.table__review {
+.review__table {
   border-top: 1px solid $black;
   width: 100%;
 
-  thead {
-    td {
-      @include label-md;
+  &__header {
+    .review--notice {
+      align-items: center;
       border-bottom: 1px solid $gray-100;
-      color: $content;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
       padding: 20px;
 
-      span {
-        margin-right: 20px;
+      button {
+        @include label-md;
+        color: $content;
+
+        &:focus {
+          outline: 1px solid $primary;
+        }
+      }
+    }
+
+    p {
+      @include paragraph-md;
+      background-color: $gray-50;
+      border-bottom: 1px solid $gray-100;
+      display: none;
+      padding: 20px;
+      white-space: pre-line;
+
+      &.is-open {
+        // review--notice를 클릭하면 다음에 있는 p에 is-open을 넣어주는 기능 추가
+        display: block;
       }
     }
   }
 
-  tbody {
-    td {
-      align-items: flex-start;
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &.review--null {
+      align-items: center;
       border-bottom: 1px solid $gray-100;
       display: flex;
-      padding: 20px;
-      white-space: nowrap;
-    }
-
-    .user {
-      @include label-sm;
-      color: $black;
-      gap: 0.5rem;
-      margin-right: 5.125rem;
-    }
-
-    // 후기가 있을 경우
-    .content {
-      align-items: flex-start;
-      display: flex;
       flex-direction: column;
-      gap: 1.25rem;
-      justify-content: center;
+      padding: 20px;
+      gap: 20px;
 
-      h3,
-      span {
+      span.icon {
+        font-size: 3rem;
+        color: #e2e2e2;
+      }
+
+      p {
+        @include label-lg;
+        color: $gray-400;
+      }
+    }
+  }
+
+  .review__card {
+    align-items: flex-start;
+    border-bottom: 1px solid $gray-100;
+    display: flex;
+    gap: 5.125rem;
+    justify-content: flex-start;
+    padding: 20px;
+
+    .user__info {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    &__content {
+      article {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start;
+      }
+
+      h2 {
         @include label-sm;
         color: $gray-400;
       }
@@ -87,33 +136,36 @@
       p {
         @include paragraph-sm;
         color: $black;
+        white-space: pre-line;
       }
-    }
 
-    // 후기가 없을 경우
-    .review_empty {
-      align-items: center;
-      display: flex;
-      justify-content: center;
+      time {
+        @include label-sm;
+        color: $gray-400;
+      }
 
-      .content {
-        align-items: center;
-        gap: 1.25rem;
+      .button--group {
+        display: flex;
+        gap: 4px;
 
-        span {
-          align-items: center;
-          color: $gray-100;
-          display: flex;
-          font-size: 3rem;
-          font-weight: 400;
-          height: 3rem;
-          justify-content: center;
-          width: 3rem;
-        }
+        button {
+          display: block;
+          height: 93px;
+          width: 93px;
+          border-radius: 6px;
+          overflow: hidden;
 
-        p {
-          @include label-lg;
-          color: $gray-400;
+          &:focus {
+            border: 1px solid $primary;
+            opacity: 0.7;
+          }
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }
