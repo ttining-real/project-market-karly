@@ -1,0 +1,114 @@
+$accordion: (
+  head-text: $content,
+  body-text: $content,
+  more-text: $gray-300,
+  count: $gray-300,
+  line-bottom: $gray-100,
+  arrow-icon: $gray-300,
+  focus: $secondary,
+);
+
+.accordion {
+  width: 13.75rem;
+
+  &__head {
+    border-bottom: 1px solid map-get($accordion, line-bottom);
+
+    &--item {
+      width: 100%;
+      height: 3.25rem;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      &:focus{
+        outline: 0.125rem solid map-get($button, focus);
+      }
+
+      .icon {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: map-get($accordion, arrow-icon);
+        transition: transform 250ms ease-in-out;
+      }
+      &.active {
+        .icon {
+          transition: transform 250ms ease-in-out;
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    &--content {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      &-title {
+        @include label-md;
+        color: map-get($accordion, head-text);
+      }
+      &-count {
+        color: map-get($accordion, count);
+        font-size: 0.625rem;
+        line-height: 160%;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &__body {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    // transition: all 250ms ease-in-out;
+    
+    &--item {
+      height: 3.25rem;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      .checkbox__wrap{
+        margin-left: 0.2rem;
+        
+        .checkbox__content {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          gap: 0.25rem;
+  
+          &-title {
+            @include paragraph-md;
+            color: map-get($accordion, body-text);
+          }
+          &-count {
+            @include paragraph-sm;
+            color: map-get($accordion, count);
+          }
+        }
+      }
+    }
+    &--more {
+      width: 100%;
+      height: 1.87rem;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+
+      &-title {
+        @include label-sm;
+        color: map-get($accordion, more-text);
+      }
+      .icon {
+        font-size: 1.125rem;
+        color: map-get($accordion, arrow-icon);
+      }
+      &:focus{
+        border: 0.125rem solid map-get($accordion, focus);
+        outline: 0;
+      }
+    }
+  }
+}
