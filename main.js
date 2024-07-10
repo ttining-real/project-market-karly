@@ -1,3 +1,6 @@
 
+import pb from '@/api/pocketbase';
+import '/src/styles/style.scss';
+import '/src/layout/footer';
 
-import './src/styles/style.scss'
+console.log(pb.collection('products'));

@@ -1,8 +1,6 @@
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
-// import path from 'path';
-
-
+import path from 'path';
 
 
 export default defineConfig({
@@ -15,9 +13,9 @@ export default defineConfig({
       },
     },
   },
-  // resolve: {
-  //   alias: {
-  //     '@': path.resolve(__dirname, 'src')
-  //   }
-  // }
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  }
 })

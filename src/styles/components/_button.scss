@@ -47,6 +47,9 @@ $button-size: (
   &:focus {
     outline: 0.125rem solid map-get($button, focus);
   }
+  &:disabled {
+    opacity: .5;
+  }
 
   &--xs {
     @include paragraph-md;
@@ -76,6 +79,12 @@ $button-size: (
   &--outlined {
     color: map-get($button, text-primary);
     border-color: map-get($button, bd-primary);
+    &:disabled {
+      opacity: .5;
+    }
+    .icon {
+      color: map-get($button, text-primary);
+    }
   }
   &--filled {
     color: map-get($button, text-white);
@@ -83,6 +92,9 @@ $button-size: (
     background-color: map-get($button, bg-primary);
     .icon {
       color: map-get($button, text-white);
+    }
+    &:disabled {
+      opacity: .5;
     }
   }
   &--sharp {
@@ -108,6 +120,11 @@ $button-size: (
     aspect-ratio: 1;
     padding-inline: 0;
     border: 0rem;
+    &:disabled {
+      .icon {
+        opacity: .5;
+      }
+    }
     &--sm {
       height: map-get($button-size, ratio-sm);
     }
