@@ -1,0 +1,192 @@
+$footer: (
+  focus: $secondary,
+);
+
+.footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid $gray-100;
+  section {
+    width: 65.625rem;
+  }
+  .footer__infos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 28px 0 30px;
+  }
+  // 고객행복정보
+  .footer__customer {
+    .customer__header {
+      .header__title {
+        @include heading-lg;
+        padding-bottom: 1rem;
+        color: $content;
+      }
+      .header__desc {
+        @include paragraph-md;
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        padding-bottom: 1rem;
+
+        a {
+          @include heading-xxl;
+          text-decoration: none;
+          color: $content;
+          border-radius: 2px;
+          &:focus {
+            outline: 0.125rem solid map-get($button, focus);
+          }
+        }
+
+        span {
+          @include label-md;
+          color: $content;
+        }
+      }
+    }
+    .customer__menu {
+      display: flex;
+      flex-flow: column nowrap;
+      padding-bottom: 1rem;
+      li {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 1rem;
+        button {
+          width: 140px;
+        }
+        div {
+          @include paragraph-md;
+          flex: 1;
+          p {
+            @include paragraph-md;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            color: $content;
+          }
+          .divide {
+            width: 1px;
+            height: 12px;
+            margin: 0 4px;
+            background-color: $content;
+          }
+        }
+      }
+    }
+    .customer__non_member {
+      li {
+        @include paragraph-sm;
+        color: $content;
+        a {
+          color: $primary;
+          text-decoration: none;
+          border-radius: 2px;
+          &:focus {
+            outline: 0.125rem solid map-get($button, focus);
+          }
+        }
+      }
+    }
+  }
+  // 마켓칼리 정보
+  .footer__about {
+    .about__body {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 28px;
+      &-karly {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 12px;
+        li {
+          a {
+            @include paragraph-md;
+            color: $content;
+            text-decoration: none;
+            border-radius: 2px;
+            &:focus {
+              outline: 0.125rem solid map-get($button, focus);
+            }
+          }
+        }
+      }
+      &-details {
+        p {
+          @include paragraph-sm;
+          color: $content;
+        }
+      }
+      &-sns {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 20px;
+        li {
+          a {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            &:focus {
+              outline: 0.125rem solid map-get($button, focus);
+            }
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 인증 및 보안 정보
+  .footer__certification {
+    .certification__body {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      li {
+        flex: 1;
+        button {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          gap: 8px;
+          height: 100%;
+          padding: 4px;
+          border-radius: 2px;
+          &:focus {
+            outline: 0.125rem solid map-get($button, focus);
+          }
+          p {
+            @include paragraph-sm;
+            font-size: 10px;
+            color: $content;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  // 면책 조항
+  .footer__disclaimer {
+    width: 100%;
+    padding: 20px 0 32px;
+    background-color: $gray-50;
+    .disclaimer__body {
+      @include paragraph-sm;
+      color: $gray-400;
+      text-align: center;
+      .copyright {
+        padding-top: 8px;
+      }
+    }
+  }
+}
