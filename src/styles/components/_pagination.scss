@@ -8,9 +8,11 @@ $pagination: (
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+ 
   li:last-child{
     border-right: 0.0625rem solid map-get($pagination, border-gray);
   }
+
   a{
     width: 2.125rem;
     height: 2.125rem;
@@ -23,10 +25,13 @@ $pagination: (
     font-weight: 400;
     border: 0.0625rem solid map-get($pagination, border-gray);
     border-right: 0;
-    
-    span{
-      font-size: 0.75rem;
-      font-weight: 800;
+
+    .icon{
+      @include label-sm;
+    }
+
+    &:hover{
+      background-color: map-get($pagination, bg-gray);
     }
   }
 }

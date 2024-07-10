@@ -38,12 +38,7 @@
                 </li>
                 <li class="accordion__body--item">
                   <div class="checkbox__wrap">
-                    <input
-                      type="checkbox"
-                      class="checkbox"
-                      id="checkbox01"
-                      name="checkbox-name01"
-                    />
+                    <input type="checkbox" class="checkbox" id="checkbox02" name="checkbox-name02"/>
                     <label for="checkbox02" class="checkbox__label">
                       <span class="checkbox__label--icon"></span>
                       <div class="checkbox__content">
@@ -55,8 +50,8 @@
                 </li>
                 <li class="accordion__body--item">
                   <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox01" name="checkbox-name01" />
-                    <label for="checkbox02" class="checkbox__label">
+                    <input type="checkbox" class="checkbox" id="checkbox03" name="checkbox-name03" />
+                    <label for="checkbox03" class="checkbox__label">
                       <span class="checkbox__label--icon"></span>
                       <div class="checkbox__content">
                         <span class="checkbox__content-title">국 · 반찬 · 메인요리</span>
@@ -96,7 +91,7 @@
                 </li>
                 <li class="accordion__body--item">
                   <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox01" name="checkbox-name01" />
+                    <input type="checkbox" class="checkbox" id="checkbox02" name="checkbox-name02" />
                     <label for="checkbox02" class="checkbox__label">
                       <span class="checkbox__label--icon"></span>
                       <div class="checkbox__content">
@@ -108,8 +103,8 @@
                 </li>
                 <li class="accordion__body--item">
                   <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox01" name="checkbox-name01" />
-                    <label for="checkbox02" class="checkbox__label">
+                    <input type="checkbox" class="checkbox" id="checkbox03" name="checkbox-name03" />
+                    <label for="checkbox03" class="checkbox__label">
                       <span class="checkbox__label--icon"></span>
                       <div class="checkbox__content">
                         <span class="checkbox__content-title">국 · 반찬 · 메인요리</span>
@@ -330,73 +325,20 @@
               <span class="icon icon--cart"></span>담기
             </button>
           </div>
+          
+        </nav>
+        <nav class="pagination__container">
+          <ul class="pagination">
+            <li><a href="#"><span class='icon icon--arrow--prev'></span></a></li>
+            <li><a href="#"><span class='icon icon--arrow--left'></span></a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><span class='icon icon--arrow--right'></span></a></li>
+            <li><a href="#"><span class='icon icon--arrow--next'></span></a></li>
+          </ul>
         </nav>
       </section>
     </main>
-
-
-
-
-    
-
-    <!-- align -->
-    <!-- <ul class="list__button">
-      <li>
-        <button type="button" class="is--active">추천순
-          <span class="icon icon--question--mark">
-            <span class="popup">소비자 인기도(판매량, 판매금액, 조회수 등), 상품 출시일, 수요 적합성, 상품 운영상 필요 등을 종합적으로 고려한 순서입니다.</span>
-          </span>
-        </button>
-      </li>
-      <li aria-hidden="true">
-        <hr />
-      </li>
-      <li><button type="button" class="">신상품순</button></li>
-      <li aria-hidden="true">
-        <hr />
-      </li>
-      <li><button type="button" class="">판매량순</button></li>
-      <li aria-hidden="true">
-        <hr />
-      </li>
-      <li><button type="button" class="">혜택순</button></li>
-      <li aria-hidden="true">
-        <hr />
-      </li>
-      <li><button type="button" class="">낮은 가격순</button></li>
-      <li aria-hidden="true">
-        <hr />
-      </li>
-      <li><button type="button" class="">높은 가격순</button></li>
-    </ul> -->
-
-    <!-- js 아코디언 버튼 클릭이벤트 -->
-    <!-- <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const accordionItems = document.querySelectorAll(
-          '.accordion__head--item'
-        );
-
-        accordionItems.forEach((button) => {
-          const accordionBody = button.nextElementSibling;
-          const iconArrow = button.querySelector('.icon--arrow--bottom');
-
-          accordionBody.style.maxHeight = 0; // 페이지 로드 시 아코디언 내용을 닫힌 상태로 설정
-          iconArrow.style.transform = 'rotate(0deg)'; // 아이콘을 초기 회전 각도로 설정
-
-          button.addEventListener('click', () => {
-            const isOpen = button.classList.toggle('active');
-
-            if (isOpen) {
-              accordionBody.style.maxHeight = accordionBody.scrollHeight + 'px';
-              iconArrow.style.transform = 'rotate(-180deg)'; // 버튼을 클릭하면 아이콘을 360도 회전
-            } else {
-              accordionBody.style.maxHeight = 0;
-              iconArrow.style.transform = 'rotate(0deg)'; // 닫힌 상태로 돌아가면 아이콘을 원래 회전 각도로 복원
-            }
-          });
-        });
-      }); -->
-    </script>
   </body>
 </html>
