@@ -1,9 +1,6 @@
 
 import styles from '/src/styles/style.scss?inline' ;
 
-console.log(styles);
-
-
 class Footer extends HTMLElement {
   constructor() {
     super();
