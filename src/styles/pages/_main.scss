@@ -1,0 +1,52 @@
+.main {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  background: lightgoldenrodyellow;
+
+  &__visual {
+    height: 23.125rem;
+    background: lightcyan;
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      .swiper-slide {
+        img {
+          // width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &__products {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1.75rem;
+    max-width: 65.625rem;
+    margin: 2.5rem auto;
+    .products__title {
+      @include heading-xl;
+      color: $content;
+    }
+    .products__list {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 1rem;
+      width: 65.625rem;
+    }
+  }
+  &__banner {
+    max-width: 65.625rem;
+    overflow: hidden;
+    height: 8.6875rem;
+    margin: 2.5rem auto;
+    border-radius: 0.25rem;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
