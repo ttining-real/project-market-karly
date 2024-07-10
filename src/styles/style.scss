@@ -13,8 +13,10 @@
 @import 'components/button', 'components/badge', 'components/checkbox',
   'components/radioButton', 'components/textInput', 'components/productTab',
   'components/sectionHeader', 'components/productDetails',
-  'components/productReview', 'components/productInquiry', 'components/cartList',
-  'components/cartResult';
+  'components/productReview', 'components/productInquiry', 
+  'components/accordion', 'components/card', 'components/count', 
+  'components/productInfo', 'components/pagination',
+ 'components/cartList', 'components/cartResult';
 
 // layout
 @import 'layout/header', 'layout/footer';

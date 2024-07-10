@@ -219,6 +219,29 @@ $list_button: (
       .icon {
         font-size: 1.5rem;
         color: map-get($list_button, text-default);
+        position: relative;
+          
+        .popup {
+          display: none;
+          position: absolute;
+          transform: translate(-20%, 10%);
+          
+          @include paragraph-sm; 
+          color: map-get($button, text-default);
+          background-color: map-get($button, text-white);
+          border: 0.0625rem solid map-get($button, bd-gray-200);
+          border-radius: 0.25rem;
+          width: 13rem;
+          padding: 10px;
+          word-break: keep-all;
+          white-space: inherit;
+          text-align: left;
+          z-index: 1000;
+        }
+      
+        &:hover .popup {
+          display: block;
+        }    
       }
     }
     hr {
