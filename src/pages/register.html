@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>마켓칼리 회원가입</title>
+  <script type='module' src='/main.js'></script>
+</head>
+<body>
+  <section class='register__container'>
+    <header class='register__header'>
+      <h2 class='header__title'>회원가입</h2>
+      <p class='header__desc' aria-hidden='true'><span class='required'>*</span>필수입력사항</p>
+    </header>
+    <form action='/' class='register__form'>
+      <fieldset>
+        <legend class='a11y'>회원가입 작성 양식</legend>
+        <div class='form--layout'>
+          <label for='userID' class='input__label' aria-label='필수입력사항'>아이디<span class='required' aria-hidden='true'>*</span></label>
+          <div class='input__wrap'>
+            <input type='text' class='input is--invalid' name='userID' id='' placeholder='아이디를 입력해주세요' />
+            <span class='hint'>필수 입력 사항입니다.</span>
+          </div>
+          <button type='button' class='button button--md button--outlined'>중복 확인</button>
+        </div>
+        <div class='form--layout'>
+          <label for='userPassword' class='input__label' aria-label='필수입력사항'>비밀번호<span class='required' aria-hidden='true'>*</span></label>
+          <div class='input__wrap'>
+            <input type='password' class='input is--invalid' name='userPassword' id='' placeholder='비밀번호를 입력해주세요' />
+            <span class='hint'>필수 입력 사항입니다.</span>
+          </div>
+        </div>
+        <div class='form--layout'>
+          <label for='userPasswordCkeck' class='input__label' aria-label='필수입력사항'>비밀번호 확인<span class='required' aria-hidden='true'>*</span></label>
+          <div class='input__wrap'>
+            <input type='password' class='input is--invalid' name='userPasswordCkeck' id='' placeholder='비밀번호를 한번 더 입력해주세요' />
+            <span class='hint'>필수 입력 사항입니다.</span>
+          </div>
+        </div>
+        <div class='form--layout'>
+          <label for='userName' class='input__label' aria-label='필수입력사항'>이름<span class='required' aria-hidden='true'>*</span></label>
+          <div class='input__wrap'>
+            <input type='password' class='input is--invalid' name='userName' id='' placeholder='이름을 입력해주세요' />
+            <span class='hint'>필수 입력 사항입니다.</span>
+          </div>
+        </div>
+        <div class='form--layout'>
+          <label for='userEmail' class='input__label' aria-label='필수입력사항'>이메일<span class='required' aria-hidden='true'>*</span></label>
+          <div class='input__wrap'>
+            <input type='email' class='input is--invalid' name='userEmail' id='' placeholder='예&#41; marketkarly@karly.com' />
+            <span class='hint'>필수 입력 사항입니다.</span>
+          </div>
+          <button type='button' class='button button--md button--outlined'>중복 확인</button>
+        </div>
+        <div class='form--layout'>
+          <label for='userPhone' class='input__label' aria-label='필수입력사항'>휴대폰<span class='required' aria-hidden='true'>*</span></label>
+          <div class='input__wrap'>
+            <input type='tel' class='input is--invalid' name='userPhone' id='' placeholder='숫자만 입력해주세요' />
+            <span class='hint'>필수 입력 사항입니다.</span>
+          </div>
+          <button type='button' class='button button--md button--outlined'>인증번호 받기</button>
+        </div>
+        <div class='form--layout'>
+          <p class='label' aria-label='필수입력사항'>주소<span class='required' aria-hidden='true'>*</span></p>
+          <div class='layout'>
+            <button type='button' class='button button--md button--outlined button--full'>주소 검색</button>
+            <span class='desc'>배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
+          </div>
+        </div>
+        <div class='form--layout'>
+          <p class='label'>성별</p>
+          <div class='layout layout--row'>
+            <div class='radio__wrap'>
+              <input type='radio' class='radio' id='male' name='gender' value='male' />
+              <label for='male' class='radio__label'>
+                <span class='radio__label--icon'></span>남성
+              </label>
+            </div>
+            <div class='radio__wrap'>
+              <input type='radio' class='radio' id='female' name='gender' value='female' />
+              <label for='female' class='radio__label'>
+                <span class='radio__label--icon'></span>여성
+              </label>
+            </div>
+            <div class='radio__wrap'>
+              <input type='radio' class='radio' id='notSelect' name='gender' value='notSelect' />
+              <label for='notSelect' class='radio__label'>
+                <span class='radio__label--icon'></span>선택 안함
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class='form--layout'>
+          <label for='named' class='input__label'>생년월일</label>
+          <div class='input__wrap'>
+            <input type='text' class='input' name='named' id='' placeholder='YYYY / MM / DD' />
+            <span class='hint'>hint text</span>
+          </div>
+        </div>
+        <div class='form--layout'>
+          <p class='label'>추가입력 사항</p>
+          <div class='layout layout--row'>
+            <div class='radio__wrap'>
+              <input type='radio' class='radio' id='recommendedID' name='addInput' value='recommendedID' />
+              <label for='recommendedID' class='radio__label'>
+                <span class='radio__label--icon'></span>친구초대 추천인 아이디
+              </label>
+            </div>
+            <div class='radio__wrap'>
+              <input type='radio' class='radio' id='eventName' name='addInput' value='eventName' />
+              <label for='eventName' class='radio__label'>
+                <span class='radio__label--icon'></span>참여 이벤트명
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class='conditions__agree'>
+        <legend class='a11y'>이용약관 동의</legend>
+        <strong aria-label='필수 및 선택 사항 포함'>이용약관 동의<span class='required' aria-label='true'>*</span></strong>
+        <div class='agree_list'>
+          <div class='checkbox__desc__set'>
+            <div class='checkbox__wrap'>
+              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+              <label for='checkbox01' class='checkbox__label'>
+                <span class='checkbox__label--icon'></span>전체 동의합니다.
+              </label>
+            </div>
+            <p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
+          </div>
+          <div class='checkbox__button__set'>
+            <div class='checkbox__wrap'>
+              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+              <label for='checkbox01' class='checkbox__label'>
+                <span class='checkbox__label--icon'></span>이용약관 동의(필수)
+              </label>
+            </div>
+            <button type='button'>약관 보기<span class='icon icon--arrow--right'></span></button>
+          </div>
+          <div class='checkbox__button__set'>
+            <div class='checkbox__wrap'>
+              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+              <label for='checkbox01' class='checkbox__label'>
+                <span class='checkbox__label--icon'></span>개인정보 수집·이용 동의 (필수)
+              </label>
+            </div>
+            <button type='button'>약관 보기<span class='icon icon--arrow--right'></span></button>
+          </div>
+          <div class='checkbox__button__set'>
+            <div class='checkbox__wrap'>
+              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+              <label for='checkbox01' class='checkbox__label'>
+                <span class='checkbox__label--icon'></span>무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)
+              </label>
+            </div>
+            <button type='button'>약관 보기<span class='icon icon--arrow--right'></span></button>
+          </div>
+          <div class='checkbox__button__set'>
+            <div class='checkbox__wrap'>
+              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+              <label for='checkbox01' class='checkbox__label'>
+                <span class='checkbox__label--icon'></span>본인은 만 14세 이상입니다. (필수)
+              </label>
+            </div>
+            <button type='button'>약관 보기<span class='icon icon--arrow--right'></span></button>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type='submit' class='button button--lg button--filled button--full'>가입하기</button>
+    </form>
+  </section>
+</body>
+</html>

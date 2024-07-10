@@ -1,0 +1,33 @@
+$login: (
+  title-color: $content,
+  hr-color: $content,
+  helper: $content,
+);
+
+.login__container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 5rem 0rem;
+}
+
+.login__title {
+  @include label-lg;
+  margin-bottom: 2.75rem;
+  color: map-get($login, title-color);
+}
+
+.login__form__wrap {
+  width: 21.25rem;
+
+  .login__form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.75rem;
+  }
+
+  .login__helper {
+    justify-content: flex-end;
+    margin: 0 0 1.75rem;
+  }
+}

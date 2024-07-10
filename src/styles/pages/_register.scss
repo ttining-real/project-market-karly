@@ -1,0 +1,177 @@
+$register: (
+  title-color: $content,
+  required: $error,
+  hint: $error,
+  border-black: $content,
+  border-gray: $gray-200,
+  text-black: $content,
+);
+
+.register__container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 5rem auto;
+
+  .required {
+    @include label-md;
+    color: map-get($register, required);
+  }
+}
+
+.register__header {
+  width: 40rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .header__title {
+    @include label-lg;
+    color: map-get($register, title-color);
+  }
+  .header__desc {
+    @include label-sm;
+    width: 100%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.25rem;
+  }
+}
+
+.register__form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 40rem;
+  & > button {
+    max-width: 21.25rem;
+  }
+  fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.5rem;
+    width: 100%;
+    padding: 1.25rem 0;
+    border-top: 0.125rem solid map-get($register, border-black);
+    &:nth-child(2) {
+      border-top: 0.0625rem solid map-get($register, border-black);
+      border-top: 0.0625rem solid map-get($register, border-gray);
+    }
+  }
+
+  .input__field {
+    .input__label {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 0.25rem;
+      width: 7.5rem;
+    }
+
+    .hint {
+      @include paragraph-sm;
+      color: map-get($register, hint);
+    }
+  }
+
+  .form--layout {
+    display: grid;
+    grid-template-columns: 8.75rem 1fr 8.75rem;
+    gap: 0.5rem;
+
+    .input__label {
+      padding: 0.75rem 0;
+    }
+
+    .label {
+      @include label-md;
+      color: map-get($register, text-black);
+    }
+
+    .layout {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 0.25rem;
+      &--row {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        .radio__label {
+          @include label-md;
+        }
+      }
+      .desc {
+        @include paragraph-sm;
+        color: map-get($register, text-black);
+      }
+    }
+  }
+  // 이용약관 동의
+  .conditions__agree {
+    $agree: (
+      text-default: $content,
+      text-gray: $gray-400,
+      text-primary: $primary,
+      focus: $secondary,
+      border-color: $gray-200
+    );
+    display: grid;
+    grid-template-columns: 8.75rem 1fr;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid map-get($agree, border-color);
+
+    & > strong {
+      @include label-md;
+      padding-top: 0.25rem;
+      color: map-get($agree, text-default);
+      .required {
+        padding-left: 0.25rem;
+      }
+    }
+
+    .agree_list {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 1.5rem;
+      padding-right: 4rem;
+      .checkbox__desc__set {
+        .checkbox {
+          margin-top: 0.25rem;
+        }
+        .checkbox__label {
+          @include label-lg;
+          .checkbox__label--icon {
+            margin-top: 0.25rem;
+          }
+        }
+        p {
+          @include paragraph-sm;
+          color: map-get($agree, text-gray);
+        }
+      }
+
+      .checkbox__button__set {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        button {
+          @include paragraph-sm;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          color: map-get($agree, text-primary);
+          padding-left: 0.25rem;
+          border-radius: 0.125rem;
+          .icon {
+            color: map-get($agree, text-primary);
+            font-size: 1.25rem;
+          }
+          &:focus {
+            outline: 0.125rem solid map-get($agree, focus);
+          }
+        }
+      }
+    }
+  }
+}
