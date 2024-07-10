@@ -28,11 +28,11 @@ class Header extends HTMLElement {
         </div>
         <div class='header__utils'>
           <ul class='list__link'>
-            <li><a href='/' class='primary--text'>회원가입</a></li>
+            <li><a href='/src/pages/register.html' class='primary--text'>회원가입</a></li>
             <li aria-hidden='true'>
               <hr />
             </li>
-            <li><a href='/'>로그인</a></li>
+            <li><a href='/src/pages/login.html'>로그인</a></li>
             <li aria-hidden='true'>
               <hr />
             </li>
@@ -43,18 +43,18 @@ class Header extends HTMLElement {
           <div class="nav__category">
             <button type="button" aria-haspopup="true" aria-expanded="false"><span class='icon icon--menu'></span>카테고리</button>
             <ul class='category__menu' aria-label="카테고리 메뉴" aria-hidden='true'>
-              <li><a href="/">식품</a></li>
-              <li><a href="/">생필품</a></li>
-              <li><a href="/">케어용품</a></li>
-              <li><a href="/">반려동물</a></li>
+              <li><a href="/src/pages/product.html">식품</a></li>
+              <li><a href="/src/pages/product.html">생필품</a></li>
+              <li><a href="/src/pages/product.html">케어용품</a></li>
+              <li><a href="/src/pages/product.html">반려동물</a></li>
             </ul>
           </div>
           <nav class='nav__menu'>
             <ul>
-              <li><a href="/">신상품</a></li>
-              <li><a href="/">베스트</a></li>
-              <li><a href="/">알뜰쇼핑</a></li>
-              <li><a href="/">특가/혜택</a></li>
+              <li><a href="/src/pages/product.html">신상품</a></li>
+              <li><a href="/src/pages/product.html">베스트</a></li>
+              <li><a href="/src/pages/product.html">알뜰쇼핑</a></li>
+              <li><a href="/src/pages/product.html">특가/혜택</a></li>
             </ul>
           </nav>
           <button type='button' class='nav__info'><b>샛별·낮</b>배송안내</button>
