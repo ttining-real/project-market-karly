@@ -31,6 +31,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon--arrow--next:before {
+  content: "\e919";
+}
+.icon--arrow--prev:before {
+  content: "\e91a";
+}
 .icon--triangle--bottom:before {
   content: '\e900';
 }
