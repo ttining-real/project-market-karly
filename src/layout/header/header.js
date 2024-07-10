@@ -10,9 +10,12 @@ class Header extends HTMLElement {
       <style rel='stylesheet'>${styles}</style>
       <header class='header'>
         <div class='header__main'>
-          <a href="/">
-            <h1 class='logo'><img src='/logo.svg'></h1>
-          </a>
+          <h1 class='logo'>
+            <a href="index.html"><img src='/logo.svg' alt='마켓컬리 로고(클릭 시 메인 화면으로 이동)'></a>
+            <button type="button" class='is-active'>마켓컬리</button>
+            <span class='divide'></span>
+            <button type="button">뷰티컬리</button>
+          </h1>
           <form class='input__field search__field' role='search' aria-label='사이트 검색'>
             <label for='inputSearch' class='a11y'>검색</label>
             <input type='search' class='input input--search' id='inputSearch' placeholder='검색어를 입력하세요'
@@ -22,9 +25,9 @@ class Header extends HTMLElement {
             </button>
           </form>
           <div class='button__set'>
-            <button type='button' class='button button--ratio button--sm'><span class='icon icon--location'></span></button>
-            <button type='button' class='button button--ratio button--sm'><span class='icon icon--favorite'></span></button>
-            <button type='button' class='button button--ratio button--sm'><span class='icon icon--cart'></span></button>
+            <a href="/src/pages/login/login.html" class='button button--ratio button--md'><span class='icon icon--location'></span></a>
+            <a href="/src/pages/login/login.html" class='button button--ratio button--md'><span class='icon icon--favorite'></span></a>
+            <a href="/src/pages/cart/cart.html" class='button button--ratio button--md'><span class='icon icon--cart'></span></a>
           </div>
         </div>
         <div class='header__utils'>
@@ -37,12 +40,12 @@ class Header extends HTMLElement {
             <li aria-hidden='true'>
               <hr />
             </li>
-            <li><a href='/'>고객센터<span class='icon icon--triangle--bottom' aria-hidden='true'></span></a></li>
+            <li><a href='/src/pages/login/login.html'>고객센터<span class='icon icon--triangle--bottom' aria-hidden='true'></span></a></li>
           </ul>
         </div>
         <div class='header__nav'>
           <div class="nav__category">
-            <button type="button" aria-haspopup="true" aria-expanded="false"><span class='icon icon--menu'></span>카테고리</button>
+            <button type="button" class='category__button' aria-haspopup="true" aria-expanded="false"><span class='icon icon--menu'></span>카테고리</button>
             <ul class='category__menu' aria-label="카테고리 메뉴" aria-hidden='true'>
               <li><a href="/src/pages/product/product.html">식품</a></li>
               <li><a href="/src/pages/product/product.html">생필품</a></li>
