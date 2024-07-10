@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang='ko-KR'>
 <head>
   <meta charset='UTF-8' />
+  <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>마켓칼리 로그인</title>
   <script type='module' src='/main.js'></script>
+  <script type='module' src='/src/layout/header/header.js'></script>
+  <script type='module' src='/src/layout/footer/footer.js'></script>
 </head>
 <body>
+  <c-header></c-header>
   <section class='login__container'>
     <h2 class='login__title'>로그인</h2>
     <form action='/' class='login__form__wrap'>
@@ -38,5 +42,6 @@
       </fieldset>
     </form>
   </section>
+  <c-footer></c-footer>
 </body>
 </html>

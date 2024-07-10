@@ -1,344 +1,349 @@
 <!doctype html>
-<html lang="ko">
+<html lang='ko-KR'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product</title>
-    <script type="module" src="/main.js"></script>
+    <meta charset='UTF-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>마켓칼리-제품 목록</title>
+    <script type='module' src='/main.js'></script>
+    <script type='module' src='/src/layout/header/header.js'></script>
+    <script type='module' src='/src/layout/footer/footer.js'></script>
   </head>
   <body>
+    <c-header></c-header>
     <!-- product_list page layout -->
     <main>
       <h1>베스트</h1>
       <section>
-        <nav class="sidebar">
-          <ul class="accordion">
+        <nav class='sidebar'>
+          <ul class='accordion'>
             <!-- head -->
-            <li class="accordion__head">
-              <button type="button" class="accordion__head--item">
-                <div class="accordion__head--content">
-                  <span class="accordion__head--content-title">카테고리</span>
-                  <span class="accordion__head--content-count">1</span>
+            <li class='accordion__head'>
+              <button type='button' class='accordion__head--item'>
+                <div class='accordion__head--content'>
+                  <span class='accordion__head--content-title'>카테고리</span>
+                  <span class='accordion__head--content-count'>1</span>
                 </div>
-                <span class="icon icon--arrow--bottom"></span>
+                <span class='icon icon--arrow--bottom'></span>
               </button>
               <!-- body -->
-              <ul class="accordion__body">
-                <li class="accordion__body--item">
-                  <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox01" name="checkbox-name01" />
-                    <label for="checkbox01" class="checkbox__label">
-                      <span class="checkbox__label--icon"></span>
-                      <div class="checkbox__content">
-                        <span class="checkbox__content-title">샐러드 · 간편식</span>
-                        <span class="checkbox__content-count">65</span>
+              <ul class='accordion__body'>
+                <li class='accordion__body--item'>
+                  <div class='checkbox__wrap'>
+                    <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+                    <label for='checkbox01' class='checkbox__label'>
+                      <span class='checkbox__label--icon'></span>
+                      <div class='checkbox__content'>
+                        <span class='checkbox__content-title'>샐러드 · 간편식</span>
+                        <span class='checkbox__content-count'>65</span>
                       </div>
                     </label>
                   </div>
                 </li>
-                <li class="accordion__body--item">
-                  <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox02" name="checkbox-name02"/>
-                    <label for="checkbox02" class="checkbox__label">
-                      <span class="checkbox__label--icon"></span>
-                      <div class="checkbox__content">
-                        <span class="checkbox__content-title">국 · 반찬 · 메인요리</span>
-                        <span class="checkbox__content-count">65</span>
+                <li class='accordion__body--item'>
+                  <div class='checkbox__wrap'>
+                    <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02'/>
+                    <label for='checkbox02' class='checkbox__label'>
+                      <span class='checkbox__label--icon'></span>
+                      <div class='checkbox__content'>
+                        <span class='checkbox__content-title'>국 · 반찬 · 메인요리</span>
+                        <span class='checkbox__content-count'>65</span>
                       </div>
                     </label>
                   </div>
                 </li>
-                <li class="accordion__body--item">
-                  <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox03" name="checkbox-name03" />
-                    <label for="checkbox03" class="checkbox__label">
-                      <span class="checkbox__label--icon"></span>
-                      <div class="checkbox__content">
-                        <span class="checkbox__content-title">국 · 반찬 · 메인요리</span>
-                        <span class="checkbox__content-count">65</span>
+                <li class='accordion__body--item'>
+                  <div class='checkbox__wrap'>
+                    <input type='checkbox' class='checkbox' id='checkbox03' name='checkbox-name03' />
+                    <label for='checkbox03' class='checkbox__label'>
+                      <span class='checkbox__label--icon'></span>
+                      <div class='checkbox__content'>
+                        <span class='checkbox__content-title'>국 · 반찬 · 메인요리</span>
+                        <span class='checkbox__content-count'>65</span>
                       </div>
                     </label>
                   </div>
                 </li>
-                <button class="accordion__body--more">
-                  <span class="accordion__body--more-title">카테고리 더보기</span>
-                  <span class="icon icon--arrow--right"></span>
+                <button class='accordion__body--more'>
+                  <span class='accordion__body--more-title'>카테고리 더보기</span>
+                  <span class='icon icon--arrow--right'></span>
                 </button>
               </ul>
             </li>
             <!-- head -->
-            <li class="accordion__head">
-              <button type="button" class="accordion__head--item">
-                <div class="accordion__head--content">
-                  <span class="accordion__head--content-title">카테고리</span>
-                  <span class="accordion__head--content-count">1</span>
+            <li class='accordion__head'>
+              <button type='button' class='accordion__head--item'>
+                <div class='accordion__head--content'>
+                  <span class='accordion__head--content-title'>카테고리</span>
+                  <span class='accordion__head--content-count'>1</span>
                 </div>
-                <span class="icon icon--arrow--bottom"></span>
+                <span class='icon icon--arrow--bottom'></span>
               </button>
               <!-- body -->
-              <ul class="accordion__body">
-                <li class="accordion__body--item">
-                  <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox01" name="checkbox-name01" />
-                    <label for="checkbox01" class="checkbox__label">
-                      <span class="checkbox__label--icon"></span>
-                      <div class="checkbox__content">
-                        <span class="checkbox__content-title">샐러드 · 간편식</span>
-                        <span class="checkbox__content-count">65</span>
+              <ul class='accordion__body'>
+                <li class='accordion__body--item'>
+                  <div class='checkbox__wrap'>
+                    <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
+                    <label for='checkbox01' class='checkbox__label'>
+                      <span class='checkbox__label--icon'></span>
+                      <div class='checkbox__content'>
+                        <span class='checkbox__content-title'>샐러드 · 간편식</span>
+                        <span class='checkbox__content-count'>65</span>
                       </div>
                     </label>
                   </div>
                 </li>
-                <li class="accordion__body--item">
-                  <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox02" name="checkbox-name02" />
-                    <label for="checkbox02" class="checkbox__label">
-                      <span class="checkbox__label--icon"></span>
-                      <div class="checkbox__content">
-                        <span class="checkbox__content-title">국 · 반찬 · 메인요리</span>
-                        <span class="checkbox__content-count">65</span>
+                <li class='accordion__body--item'>
+                  <div class='checkbox__wrap'>
+                    <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' />
+                    <label for='checkbox02' class='checkbox__label'>
+                      <span class='checkbox__label--icon'></span>
+                      <div class='checkbox__content'>
+                        <span class='checkbox__content-title'>국 · 반찬 · 메인요리</span>
+                        <span class='checkbox__content-count'>65</span>
                       </div>
                     </label>
                   </div>
                 </li>
-                <li class="accordion__body--item">
-                  <div class="checkbox__wrap">
-                    <input type="checkbox" class="checkbox" id="checkbox03" name="checkbox-name03" />
-                    <label for="checkbox03" class="checkbox__label">
-                      <span class="checkbox__label--icon"></span>
-                      <div class="checkbox__content">
-                        <span class="checkbox__content-title">국 · 반찬 · 메인요리</span>
-                        <span class="checkbox__content-count">65</span>
+                <li class='accordion__body--item'>
+                  <div class='checkbox__wrap'>
+                    <input type='checkbox' class='checkbox' id='checkbox03' name='checkbox-name03' />
+                    <label for='checkbox03' class='checkbox__label'>
+                      <span class='checkbox__label--icon'></span>
+                      <div class='checkbox__content'>
+                        <span class='checkbox__content-title'>국 · 반찬 · 메인요리</span>
+                        <span class='checkbox__content-count'>65</span>
                       </div>
                     </label>
                   </div>
                 </li>
-                <button class="accordion__body--more">
-                  <span class="accordion__body--more-title">카테고리 더보기</span>
-                  <span class="icon icon--arrow--right"></span>
+                <button class='accordion__body--more'>
+                  <span class='accordion__body--more-title'>카테고리 더보기</span>
+                  <span class='icon icon--arrow--right'></span>
                 </button>
               </ul>
             </li>
           </ul>
         </nav>
-        <div class="align">
+        <div class='align'>
           <!-- count -->
-          <div class="count">총 <span id="count__card">0</span>건</div>
+          <div class='count'>총 <span id='count__card'>0</span>건</div>
           <!-- align -->
-          <ul class="list__button">
+          <ul class='list__button'>
             <li>
-              <button type="button" class="is--active">추천순
-                <span class="icon icon--question--mark">
-                  <span class="popup">소비자 인기도(판매량, 판매금액, 조회수 등), 상품 출시일, 수요 적합성, 상품 운영상 필요 등을 종합적으로 고려한 순서입니다.</span>
+              <button type='button' class='is--active'>추천순
+                <span class='icon icon--question--mark'>
+                  <span class='popup'>소비자 인기도(판매량, 판매금액, 조회수 등), 상품 출시일, 수요 적합성, 상품 운영상 필요 등을 종합적으로 고려한 순서입니다.</span>
                 </span>
               </button>
             </li>
-            <li aria-hidden="true">
+            <li aria-hidden='true'>
               <hr />
             </li>
-            <li><button type="button" class="">신상품순</button></li>
-            <li aria-hidden="true">
+            <li><button type='button' class=''>신상품순</button></li>
+            <li aria-hidden='true'>
               <hr />
             </li>
-            <li><button type="button" class="">판매량순</button></li>
-            <li aria-hidden="true">
+            <li><button type='button' class=''>판매량순</button></li>
+            <li aria-hidden='true'>
               <hr />
             </li>
-            <li><button type="button" class="">혜택순</button></li>
-            <li aria-hidden="true">
+            <li><button type='button' class=''>혜택순</button></li>
+            <li aria-hidden='true'>
               <hr />
             </li>
-            <li><button type="button" class="">낮은 가격순</button></li>
-            <li aria-hidden="true">
+            <li><button type='button' class=''>낮은 가격순</button></li>
+            <li aria-hidden='true'>
               <hr />
             </li>
-            <li><button type="button" class="">높은 가격순</button></li>
+            <li><button type='button' class=''>높은 가격순</button></li>
           </ul>
         </div>
         <!-- card -->
-        <nav class="card__list">
-          <div class="card">
-            <a href="/" class="card__link">
+        <nav class='card__list'>
+          <div class='card'>
+            <a href='/' class='card__link'>
               <!-- 상품 이미지 -->
-              <img class="card__img" src="/src/assets/products/product01.png" alt="상품 이미지" />
+              <img class='card__img' src='/src/assets/products/product01.png' alt='상품 이미지' />
               <!-- 상품 정보 -->
-              <div class="card__data">
-                <div class="product__info discount product__info--sm">
-                  <span class="product__info--sm-delivery">샛별배송</span>
-                  <span class="product__info--sm-title">[풀무원] 탱탱쫄면 (4개입)</span>
-                  <span class="product__info--sm-desc">튀기지 않아 부담 없는 매콤함</span>
-                  <span class="product__info--sm-price discount">5,000&nbsp;원</span>
-                  <div class="product__info--sm-discount discount">
-                    <span class="product__info--sm-discount-rate">10%<span class="a11y">할인</span></span>
-                    <span class="product__info--sm-discount-price">4,500&nbsp;원</span>
+              <div class='card__data'>
+                <div class='product__info discount product__info--sm'>
+                  <span class='product__info--sm-delivery'>샛별배송</span>
+                  <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
+                  <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
+                  <div class='product__info--sm-discount discount'>
+                    <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
+                    <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
                   </div>
                 </div>
                 <!-- badge -->
-                <div class="badge-container">
-                  <span class="badge badge--lg badge--only">Karly Only</span>
-                  <span class="badge badge--lg">한정수량</span>
+                <div class='badge-container'>
+                  <span class='badge badge--lg badge--only'>Karly Only</span>
+                  <span class='badge badge--lg'>한정수량</span>
                 </div>
               </div>
             </a>
             <!-- 장바구니 담기 버튼 -->
-            <button type="button" class="button--cart button button--xs">
-              <span class="icon icon--cart"></span>담기
+            <button type='button' class='button--cart button button--xs'>
+              <span class='icon icon--cart'></span>담기
             </button>
           </div>
-          <div class="card">
-            <a href="/" class="card__link">
+          <div class='card'>
+            <a href='/' class='card__link'>
               <!-- 상품 이미지 -->
-              <img class="card__img" src="/src/assets/products/product01.png" alt="상품 이미지" />
+              <img class='card__img' src='/src/assets/products/product01.png' alt='상품 이미지' />
               <!-- 상품 정보 -->
-              <div class="card__data">
-                <div class="product__info discount product__info--sm">
-                  <span class="product__info--sm-delivery">샛별배송</span>
-                  <span class="product__info--sm-title">[풀무원] 탱탱쫄면 (4개입)</span>
-                  <span class="product__info--sm-desc">튀기지 않아 부담 없는 매콤함</span>
-                  <span class="product__info--sm-price discount">5,000&nbsp;원</span>
-                  <div class="product__info--sm-discount discount">
-                    <span class="product__info--sm-discount-rate">10%<span class="a11y">할인</span></span>
-                    <span class="product__info--sm-discount-price">4,500&nbsp;원</span>
+              <div class='card__data'>
+                <div class='product__info discount product__info--sm'>
+                  <span class='product__info--sm-delivery'>샛별배송</span>
+                  <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
+                  <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
+                  <div class='product__info--sm-discount discount'>
+                    <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
+                    <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
                   </div>
                 </div>
                 <!-- badge -->
-                <div class="badge-container">
-                  <span class="badge badge--lg badge--only">Karly Only</span>
-                  <span class="badge badge--lg">한정수량</span>
+                <div class='badge-container'>
+                  <span class='badge badge--lg badge--only'>Karly Only</span>
+                  <span class='badge badge--lg'>한정수량</span>
                 </div>
               </div>
             </a>
             <!-- 장바구니 담기 버튼 -->
-            <button type="button" class="button--cart button button--xs">
-              <span class="icon icon--cart"></span>담기
+            <button type='button' class='button--cart button button--xs'>
+              <span class='icon icon--cart'></span>담기
             </button>
           </div>
-          <div class="card">
-            <a href="/" class="card__link">
+          <div class='card'>
+            <a href='/' class='card__link'>
               <!-- 상품 이미지 -->
-              <img class="card__img" src="/src/assets/products/product01.png" alt="상품 이미지" />
+              <img class='card__img' src='/src/assets/products/product01.png' alt='상품 이미지' />
               <!-- 상품 정보 -->
-              <div class="card__data">
-                <div class="product__info discount product__info--sm">
-                  <span class="product__info--sm-delivery">샛별배송</span>
-                  <span class="product__info--sm-title">[풀무원] 탱탱쫄면 (4개입)</span>
-                  <span class="product__info--sm-desc">튀기지 않아 부담 없는 매콤함</span>
-                  <span class="product__info--sm-price discount">5,000&nbsp;원</span>
-                  <div class="product__info--sm-discount discount">
-                    <span class="product__info--sm-discount-rate">10%<span class="a11y">할인</span></span>
-                    <span class="product__info--sm-discount-price">4,500&nbsp;원</span>
+              <div class='card__data'>
+                <div class='product__info discount product__info--sm'>
+                  <span class='product__info--sm-delivery'>샛별배송</span>
+                  <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
+                  <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
+                  <div class='product__info--sm-discount discount'>
+                    <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
+                    <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
                   </div>
                 </div>
                 <!-- badge -->
-                <div class="badge-container">
-                  <span class="badge badge--lg badge--only">Karly Only</span>
-                  <span class="badge badge--lg">한정수량</span>
+                <div class='badge-container'>
+                  <span class='badge badge--lg badge--only'>Karly Only</span>
+                  <span class='badge badge--lg'>한정수량</span>
                 </div>
               </div>
             </a>
             <!-- 장바구니 담기 버튼 -->
-            <button type="button" class="button--cart button button--xs">
-              <span class="icon icon--cart"></span>담기
+            <button type='button' class='button--cart button button--xs'>
+              <span class='icon icon--cart'></span>담기
             </button>
           </div>
-          <div class="card">
-            <a href="/" class="card__link">
+          <div class='card'>
+            <a href='/' class='card__link'>
               <!-- 상품 이미지 -->
-              <img class="card__img" src="/src/assets/products/product01.png" alt="상품 이미지" />
+              <img class='card__img' src='/src/assets/products/product01.png' alt='상품 이미지' />
               <!-- 상품 정보 -->
-              <div class="card__data">
-                <div class="product__info discount product__info--sm">
-                  <span class="product__info--sm-delivery">샛별배송</span>
-                  <span class="product__info--sm-title">[풀무원] 탱탱쫄면 (4개입)</span>
-                  <span class="product__info--sm-desc">튀기지 않아 부담 없는 매콤함</span>
-                  <span class="product__info--sm-price discount">5,000&nbsp;원</span>
-                  <div class="product__info--sm-discount discount">
-                    <span class="product__info--sm-discount-rate">10%<span class="a11y">할인</span></span>
-                    <span class="product__info--sm-discount-price">4,500&nbsp;원</span>
+              <div class='card__data'>
+                <div class='product__info discount product__info--sm'>
+                  <span class='product__info--sm-delivery'>샛별배송</span>
+                  <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
+                  <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
+                  <div class='product__info--sm-discount discount'>
+                    <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
+                    <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
                   </div>
                 </div>
                 <!-- badge -->
-                <div class="badge-container">
-                  <span class="badge badge--lg badge--only">Karly Only</span>
-                  <span class="badge badge--lg">한정수량</span>
+                <div class='badge-container'>
+                  <span class='badge badge--lg badge--only'>Karly Only</span>
+                  <span class='badge badge--lg'>한정수량</span>
                 </div>
               </div>
             </a>
             <!-- 장바구니 담기 버튼 -->
-            <button type="button" class="button--cart button button--xs">
-              <span class="icon icon--cart"></span>담기
+            <button type='button' class='button--cart button button--xs'>
+              <span class='icon icon--cart'></span>담기
             </button>
           </div>
-          <div class="card">
-            <a href="/" class="card__link">
+          <div class='card'>
+            <a href='/' class='card__link'>
               <!-- 상품 이미지 -->
-              <img class="card__img" src="/src/assets/products/product01.png" alt="상품 이미지" />
+              <img class='card__img' src='/src/assets/products/product01.png' alt='상품 이미지' />
               <!-- 상품 정보 -->
-              <div class="card__data">
-                <div class="product__info discount product__info--sm">
-                  <span class="product__info--sm-delivery">샛별배송</span>
-                  <span class="product__info--sm-title">[풀무원] 탱탱쫄면 (4개입)</span>
-                  <span class="product__info--sm-desc">튀기지 않아 부담 없는 매콤함</span>
-                  <span class="product__info--sm-price discount">5,000&nbsp;원</span>
-                  <div class="product__info--sm-discount discount">
-                    <span class="product__info--sm-discount-rate">10%<span class="a11y">할인</span></span>
-                    <span class="product__info--sm-discount-price">4,500&nbsp;원</span>
+              <div class='card__data'>
+                <div class='product__info discount product__info--sm'>
+                  <span class='product__info--sm-delivery'>샛별배송</span>
+                  <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
+                  <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
+                  <div class='product__info--sm-discount discount'>
+                    <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
+                    <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
                   </div>
                 </div>
                 <!-- badge -->
-                <div class="badge-container">
-                  <span class="badge badge--lg badge--only">Karly Only</span>
-                  <span class="badge badge--lg">한정수량</span>
+                <div class='badge-container'>
+                  <span class='badge badge--lg badge--only'>Karly Only</span>
+                  <span class='badge badge--lg'>한정수량</span>
                 </div>
               </div>
             </a>
             <!-- 장바구니 담기 버튼 -->
-            <button type="button" class="button--cart button button--xs">
-              <span class="icon icon--cart"></span>담기
+            <button type='button' class='button--cart button button--xs'>
+              <span class='icon icon--cart'></span>담기
             </button>
           </div>
-          <div class="card">
-            <a href="/" class="card__link">
+          <div class='card'>
+            <a href='/' class='card__link'>
               <!-- 상품 이미지 -->
-              <img class="card__img" src="/src/assets/products/product01.png" alt="상품 이미지" />
+              <img class='card__img' src='/src/assets/products/product01.png' alt='상품 이미지' />
               <!-- 상품 정보 -->
-              <div class="card__data">
-                <div class="product__info discount product__info--sm">
-                  <span class="product__info--sm-delivery">샛별배송</span>
-                  <span class="product__info--sm-title">[풀무원] 탱탱쫄면 (4개입)</span>
-                  <span class="product__info--sm-desc">튀기지 않아 부담 없는 매콤함</span>
-                  <span class="product__info--sm-price discount">5,000&nbsp;원</span>
-                  <div class="product__info--sm-discount discount">
-                    <span class="product__info--sm-discount-rate">10%<span class="a11y">할인</span></span>
-                    <span class="product__info--sm-discount-price">4,500&nbsp;원</span>
+              <div class='card__data'>
+                <div class='product__info discount product__info--sm'>
+                  <span class='product__info--sm-delivery'>샛별배송</span>
+                  <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
+                  <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
+                  <div class='product__info--sm-discount discount'>
+                    <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
+                    <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
                   </div>
                 </div>
                 <!-- badge -->
-                <div class="badge-container">
-                  <span class="badge badge--lg badge--only">Karly Only</span>
-                  <span class="badge badge--lg">한정수량</span>
+                <div class='badge-container'>
+                  <span class='badge badge--lg badge--only'>Karly Only</span>
+                  <span class='badge badge--lg'>한정수량</span>
                 </div>
               </div>
             </a>
             <!-- 장바구니 담기 버튼 -->
-            <button type="button" class="button--cart button button--xs">
-              <span class="icon icon--cart"></span>담기
+            <button type='button' class='button--cart button button--xs'>
+              <span class='icon icon--cart'></span>담기
             </button>
           </div>
           
         </nav>
-        <nav class="pagination__container">
-          <ul class="pagination">
-            <li><a href="#"><span class='icon icon--arrow--prev'></span></a></li>
-            <li><a href="#"><span class='icon icon--arrow--left'></span></a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#"><span class='icon icon--arrow--right'></span></a></li>
-            <li><a href="#"><span class='icon icon--arrow--next'></span></a></li>
+        <nav class='pagination__container'>
+          <ul class='pagination'>
+            <li><a href='#'><span class='icon icon--arrow--prev'></span></a></li>
+            <li><a href='#'><span class='icon icon--arrow--left'></span></a></li>
+            <li><a href='#'>1</a></li>
+            <li><a href='#'>2</a></li>
+            <li><a href='#'>3</a></li>
+            <li><a href='#'><span class='icon icon--arrow--right'></span></a></li>
+            <li><a href='#'><span class='icon icon--arrow--next'></span></a></li>
           </ul>
         </nav>
       </section>
     </main>
+    <c-footer></c-footer>
   </body>
 </html>
