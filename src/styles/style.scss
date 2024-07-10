@@ -13,11 +13,12 @@
 @import 'components/button', 'components/badge', 'components/checkbox',
   'components/radioButton', 'components/textInput', 'components/productTab',
   'components/sectionHeader', 'components/productDetails',
-  'components/productReview', 'components/productInquiry';
+  'components/productReview', 'components/productInquiry', 'components/cartList',
+  'components/cartResult';
 
 // layout
 @import 'layout/header', 'layout/footer';
 
 // Pages
 @import 'pages/login', 'pages/register', 'pages/main', 'pages/product',
-  'pages/details';
+  'pages/details', 'pages/cart';

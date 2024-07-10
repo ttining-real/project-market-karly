@@ -1,0 +1,54 @@
+.cart {
+  &__checkbox {
+    border-bottom: 1px solid $black;
+
+    ul {
+      padding: 1rem 0;
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    border-bottom: 1px solid $black;
+
+    button {
+      @include label-md;
+      align-items: center;
+      color: $black;
+      display: flex;
+      justify-content: flex-start;
+      padding: 1rem 0;
+      position: relative;
+      width: 100%;
+
+      &:focus {
+        outline: 2px solid $primary;
+      }
+    }
+
+    span {
+      &:first-child {
+        margin-right: 12px;
+      }
+
+      &.icon--food--refrigerated {
+        color: #5ec49e;
+      }
+
+      &.icon--food--frozen {
+        color: #6faff3;
+      }
+
+      &.icon--food--normal {
+        color: #ff9b5c;
+      }
+
+      &.icon--arrow--bottom {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
