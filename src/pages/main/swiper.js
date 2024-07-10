@@ -1,12 +1,12 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const swiper = new Swiper('.swiper', {
   // Optional parameters
-  modules: [Navigation, Pagination],
+  modules: [Navigation, Pagination, Autoplay],
   direction: 'horizontal',
   loop: true,
   autoplay: {
@@ -16,6 +16,7 @@ const swiper = new Swiper('.swiper', {
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable: true, // 버튼 클릭 여부
   },
 
   // Navigation arrows
