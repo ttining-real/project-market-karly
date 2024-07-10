@@ -11,64 +11,21 @@ dd {
   margin: 0;
 }
 
-.product__info {
+.product__Details {
   max-width: 35rem;
   width: 100%;
 
-  &__head {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .product__info {
     margin-bottom: 1.25rem;
 
-    .delivery {
-      @include heading-lg;
-      color: $gray-500;
-      display: inline-block;
-      order: -1;
-    }
-
-    .title {
-      @include label-lg;
-      color: $content;
-      margin-bottom: 0.25rem;
-    }
-
-    .desc {
-      @include paragraph-md;
-      color: $gray-400;
-    }
-
-    .discounted {
-      align-items: center;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    .price {
-      @include label-lg;
-      align-items: center;
-      color: $content;
-      display: flex;
-      justify-content: flex-start;
-
-      span {
-        @include heading-md;
-        margin-left: 4px;
-      }
-    }
-
-    .alert {
+    span.alert {
       @include label-md;
       color: $primary;
+      margin-top: 1rem;
     }
   }
 
-  &__list {
-    margin: 0;
-  }
-
-  &__item {
+  .product__info__item {
     @include label-sm;
     border-bottom: 1px solid $gray-100;
     display: flex;
@@ -107,7 +64,7 @@ dd {
     }
   }
 
-  &__buy {
+  .product__info__buy {
     @include label-sm;
     border-bottom: 1px solid $gray-100;
     display: flex;
@@ -165,6 +122,10 @@ dd {
           justify-content: center;
           outline: 0;
           width: 100%;
+
+          &:focus {
+            border: 1px solid $primary;
+          }
         }
 
         button {
@@ -174,6 +135,10 @@ dd {
           height: 30px;
           justify-content: center;
           width: 30px;
+
+          &:focus {
+            border: 1px solid $primary;
+          }
         }
       }
 
@@ -191,7 +156,7 @@ dd {
     }
   }
 
-  &__result {
+  .product__info__result {
     align-items: flex-end;
     display: flex;
     flex-direction: column;
