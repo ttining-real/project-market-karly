@@ -3,7 +3,8 @@ $header: (
   nav-text: $content,
   info-border: $gray-300,
   info-text: $gray-500,
-  primary: $primary
+  primary: $primary,
+  focus: $secondary
 );
 
 .header {
@@ -19,6 +20,35 @@ $header: (
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    .logo {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      a {
+        margin-right: 16px;
+        border-radius: 0.125rem;
+        &:focus {
+          outline: 0.125rem solid map-get($header, focus);
+        }
+      }
+      button {
+        @include label-lg;
+        color: $gray-400;
+        border-radius: 0.125rem;
+        &:focus {
+          outline: 0.125rem solid map-get($header, focus);
+        }
+        &:hover, &.is-active {
+          color: map-get($header, primary);
+        }
+      }
+      .divide {
+        width: 1px;
+        height: 14px;
+        margin: 8px;
+        background-color: $gray-200;
+      }
+    }
     .search__field {
       max-width: 25rem;
     }
@@ -42,7 +72,13 @@ $header: (
     gap: 1rem;
     height: 4.5rem;
     .nav__category {
-      button {
+      position: relative;
+      &:hover {
+        .category__menu {
+          display: flex;
+        }
+      }
+      .category__button {
         @include label-md;
         display: flex;
         flex-flow: row nowrap;
@@ -50,17 +86,29 @@ $header: (
         gap: 0.75rem;
         height: 3rem;
         padding-right: 0.5rem;
+        border-radius: 0.125rem;
         transition: all 0.3 ease-in-out;
         .icon {
           font-size: 2.25rem;
         }
+        &:focus-within {
+          outline: 0.125rem solid map-get($header, focus);
+        }
+        &.is-active {
+          color: $primary;
+          .icon {
+            color: $primary;
+          }
+        }
       }
       .category__menu {
+        z-index: 10;
+        position: absolute;
         display: none;
-        // display: flex;
         flex-flow: column nowrap;
-        width: 100%;
+        width: 200px;
         overflow: hidden;
+        background-color: map-get($header, bg-color);
         li {
           a {
             @include label-md;
@@ -68,6 +116,9 @@ $header: (
             padding: 0.5rem 0rem 0.5rem 0.75rem;
             color: map-get($header, nav-text);
             text-decoration: none;
+            &:hover {
+              color: map-get($header, primary);
+            }
           }
         }
       }
@@ -92,6 +143,10 @@ $header: (
             color: map-get($header, nav-text);
             text-align: center;
             text-decoration: none;
+            border-radius: 0.125rem;
+            &:focus {
+              outline: 0.125rem solid map-get($header, focus);
+            }
           }
         }
       }
@@ -104,6 +159,9 @@ $header: (
       border: 0.0625rem solid map-get($header, info-border);
       b {
         color: map-get($header, primary);
+      }
+      &:focus {
+        outline: 0.125rem solid map-get($header, focus);
       }
     }
   }
