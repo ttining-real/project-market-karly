@@ -1,41 +1,184 @@
-$product__list: (
-  title: $content,
+/* color */
+$product__info: (
+  delivery-lg: $gray-500,
+  delivery-sm: $gray-400,
+  title-lg: $content,
+  title-sm: $content,
+  desc-lg: $gray-400,
+  desc-sm: $gray-400,
+  price-lg: $content,
+  price-sm: $content,
+  discount-original-price-sm: $gray-400,
+  discount-original-price-lg: $gray-400,
+  discount-rate-sm: $accent,
+  discount-rate-lg: $accent,
+  discount-price-sm: $content,
+  discount-price-lg: $content,
+);
+$card: (
+  text-white: $white,
+  text-black: $content,
+  text-gray: $gray-400,
+  text-orange: $accent,
+  cart-text-gray: $gray-500,
+  cart-border-gray: $gray-200,
+);
+$count: (
+  text-black: $content,
+);
+$accordion: (
+  head-text: $content,
+  body-text: $content,
+  more-text: $gray-300,
+  count: $gray-300,
+  line-bottom: $gray-100,
+  arrow-icon: $gray-300,
 );
 
-main{
-  background-color: rgb(235, 255, 248);
-  
-  padding-top: 3rem;
-  padding-bottom: 5rem;
-  margin: 0 auto;
+/* reset */
+button {
+  background-color: inherit;
+  border: 0;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
 
-  h1{
-    background-color: rgb(255, 203, 185);
-    @include label-lg;
-    color: map-get($product__list, title);
-    display: grid;
-    justify-content: center;
-    padding-bottom: 3rem;
+
+/* product__info */
+.product__info {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  &--sm {
+    &-delivery {
+      @include label-sm;
+      color: map-get($product__info, delivery-sm);
+      margin-bottom: 0.5rem;
+    }
+    &-title {
+      @include paragraph-md;
+      color: map-get($product__info, title-sm);
+      margin-bottom: 0.25rem;
+    }
+    &-desc {
+      @include paragraph-sm;
+      color: map-get($product__info, desc-sm);
+      margin-bottom: 0.5rem;
+    }
+    &-price {
+      @include label-lg;
+      color: map-get($product__info, price-sm);
+
+      &.discount {
+        @include paragraph-sm;
+        color: map-get($product__info, discount-original-price-sm);
+        text-decoration: line-through;
+        order: 1;
+      }
+    }
+    &-discount {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      &-rate {
+        @include label-lg;
+        color: map-get($product__info, discount-rate-sm);
+      }
+      &-price {
+        @include label-lg;
+        color: map-get($product__info, discount-price-sm);
+      }
+    }
   }
 
-  section{
-    height: 188rem;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: 16.7rem 48.9rem;
-    grid-template-rows: 1.5rem 174.12rem 4.38rem;
+  &--lg {
+    &-delivery {
+      @include heading-lg;
+      color: map-get($product__info, delivery-lg);
+      margin-bottom: 1rem;
+    }
+    &-title {
+      @include label-xl;
+      color: map-get($product__info, title-lg);
+      margin-bottom: 0.5rem;
+    }
+    &-desc {
+      @include paragraph-md;
+      color: map-get($product__info, desc-lg);
+      margin-bottom: 1rem;
+    }
+    &-price {
+      @include label-xl;
+      color: map-get($product__info, price-lg);
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
 
+      span {
+        @include heading-md;
+      }
+
+      &.discount {
+        @include paragraph-md;
+        color: map-get($product__info, discount-original-price-lg);
+        text-decoration: line-through;
+        order: 1;
+      }
+    }
+    &-discount {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      &-rate {
+        @include label-xl;
+        color: map-get($product__info, discount-rate-lg);
+      }
+      &-price {
+        @include label-xl;
+        color: map-get($product__info, discount-price-lg);
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        span {
+          @include heading-md;
+        }
+      }
+    }
   }
-  .sidebar{
-    background-color: rgb(255, 255, 167);
-    grid-row: 1/4;
-    grid-column: 1/2;
-    position: sticky;
+}
+
+/* card */
+.card {
+  width: 15.56rem;
+  height: 34.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: center;
+  position: relative;
+
+  &__link{
+    width: 100%;
+    height: 100%;
   }
-  .align{
-    background-color: rgb(177, 250, 180);
-    grid-row: 1/2;
-    grid-column: 2/3;
+  // 상품 이미지
+  &__img {
+    height: 20rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  // 상품 데이터
+  &__data {
     display: flex;
     flex-flow: row;
     justify-content: space-between;

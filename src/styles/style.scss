@@ -15,11 +15,13 @@
   'components/sectionHeader', 'components/productDetails',
   'components/productReview', 'components/productInquiry', 
   'components/accordion', 'components/card', 'components/count', 
-  'components/productInfo', 'components/pagination';
+  'components/productInfo', 'components/pagination',
+  'components/productReview', 'components/productInquiry', 'components/cartList',
+  'components/cartResult';
 
 // layout
 @import 'layout/header', 'layout/footer';
 
 // Pages
 @import 'pages/login', 'pages/register', 'pages/main', 'pages/product',
-  'pages/details';
+  'pages/details', 'pages/cart';

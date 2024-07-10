@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>컬리 - 마켓컬리/뷰티컬리</title>
+  <script type='module' src='/main.js'></script>
+</head>
+
+<body>
+  <main id="cart">
+    <h1>장바구니</h1>
+    <section class="cart">
+      <div class="cart--left">
+        <div class="cart__checkbox">
+          <ul class='list__button'>
+            <li class='checkbox__wrap'>
+              <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
+              <label for='checkbox02' class='checkbox__label'>
+                <span class='checkbox__label--icon'></span>
+                전체선택(3/3)
+              </label>
+            </li>
+            <li aria-hidden='true'>
+              <hr />
+            </li>
+            <li><button type='button' class=''>선택삭제</button></li>
+          </ul>
+        </div>
+
+        <div class="cart__list">
+          <div class="cart__item">
+            <button type="button">
+              <span class='icon icon--food--refrigerated'></span>
+              냉장 식품
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div class="cart__item">
+            <button type="button">
+              <span class='icon icon--food--frozen'></span>
+              냉동 식품
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div class="cart__item">
+            <button type="button">
+              <span class='icon icon--food--normal'></span>
+              상온 식품
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart__result">
+        <div class="result__location">
+          <span class='icon icon--location'></span>
+          <h3>배송지</h3>
+          <address>서울 중랑구 면목로 42길 11 (행운빌딩) 603호</address>
+          <span>샛별배송</span>
+          <button type='button' class='button button--md button--outlined'>배송지 변경</button>
+        </div>
+        <div class="result__receipt">
+          <dl class="receipt__price">
+            <div>
+              <dt>상품금액</dt>
+              <dd>40,680원</dd>
+            </div>
+            <div>
+              <dt>상품할인금액</dt>
+              <dd>-4,651원</dd>
+            </div>
+            <div>
+              <dt>배송비</dt>
+              <dd>+3,000원</dd>
+            </div>
+          </dl>
+          <dl class="receipt__total">
+            <div class="total__price">
+              <dt>결제예정금액</dt>
+              <dd>40,680원</dd>
+            </div>
+          </dl>
+          <div class="alert">
+            <span class='badge badge--md badge--accent'>적립</span>
+            최대 36원 적립 일반 0.1%
+          </div>
+        </div>
+        <button type='button' class='button button--md button--filled button--order'>
+          <span class='icon icon--cart'></span>후기작성하기
+        </button>
+        <ul class="result__notice">
+          <li>쿠폰/적립금은 주문서에서 사용 가능합니다.</li>
+          <li>[주문완료] 상태일 경우에만 주문 취소 가능합니다.</li>
+          <li>[마이컬리 > 주문내역 상세페이지] 에서 직접 취소하실 수 있습니다.</li>
+          <li>쿠폰, 적립금 사용 금액을 제외한 실 결제 금액 기준으로 최종 산정됩니다.</li>
+          <li>상품별로 적립금 지급 기준이 다를 수 있습니다. (상품 상세 페이지에서 확인 가능합니다)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
