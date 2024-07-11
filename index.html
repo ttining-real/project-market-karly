@@ -271,6 +271,177 @@
           </div>
         </div>
       </section>
+  <!-- ----------------------------- 팝업 광고 컴포넌트 ------------------------------ -->
+    
+    <div
+      class="popup popup__ad"
+      role="dialog"
+      aria-label="popup__ad"
+      aria-modal="true"
+    >
+      <div class="popup__ad__content">
+        <div class="popup__ad__img">
+          <a href=""
+            ><img
+              src="/src/assets/images/PopupBanner.png"
+              alt="광고 배너 내용 설명"
+              class="ad__image"
+          /></a>
+        </div>
+
+        <div class="popup__actions">
+          <button
+            type="button"
+            class="popup__button popup__button--hide-today"
+            aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다"
+          >
+            오늘 하루 안 보기
+          </button>
+          <button
+            type="button"
+            class="popup__button popup__button--close"
+            aria-label="팝업 닫기"
+          >
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ------------------------------- 최근 본 상품 사이드 바 ------------------------------- -->
+    <aside class="sidebar sidebar--sticky">
+      <div class="sidebar__container">
+        <div id="recent-product" class="product-list" aria-live="polite">
+
+        <h2 class="sidebar__title product-list__title" aria-labelledby="recent-product">
+          최근 본 상품
+        </h2>
+          <button
+            class="product-list__nav product-list__nav--up"
+            aria-label="이전 상품 보기"
+          >
+            <span class="icon icon--arrow--top"></span>
+            <span class="a11y">위로</span>
+          </button>
+
+          <ul class="product-list__items" role="list">
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <!-- alt 택스트 바꾸기 -->
+                <img
+                  src="/src/assets/images/product01.png"
+                  alt="상품1 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <img
+                  src="/src/assets/images/product02.png"
+                  alt="상품2 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <img
+                  src="/src/assets/images/product03.png"
+                  alt="상품3 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <img
+                  src="/src/assets/images/product04.png"
+                  alt="상품4 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <button
+            class="product-list__nav product-list__nav--down"
+            aria-label="다음 상품 보기"
+          >
+            <span class="a11y">아래로</span>
+            <span class="icon icon--arrow--bottom"></span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+
+      <div
+        class="modal__add-cart"
+        role="dialog"
+        aria-label="장바구니에 상품 추가 모달창"
+        aria-modal="true"
+      >
+        <div class="add-cart__content">
+          <div class="add-cart__product-info">
+            <h2 class="product-info__name">[풀무원] 탱탱쫄면 (4개입)</h2>
+            <div>
+              <p class="product-info__price">
+                4,980<span class="price">원</span>
+              </p>
+              <form class="add-cart__quantity-form">
+                <label for="quantity" class="quantity-form__label a11y"
+                  >수량</label
+                >
+                <div class="quantity-form__controls">
+                  <button
+                    type="button"
+                    class="quantity-form__button quantity-form__button--decrease"
+                    aria-label="수량 감소"
+                  >
+                    -
+                  </button>
+                  <!-- <input type="number" id="quantity" class="quantity-form__input" value="1" min="1" max="99" aria-label="상품 수량"> -->
+                  <span>1</span>
+                  <button
+                    type="button"
+                    class="quantity-form__button quantity-form__button--increase"
+                    aria-label="수량 증가"
+                  >
+                    +
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="add-cart__total-info">
+            <p class="total-info__price">
+              <span>합계</span><span class="price">4,980원</span>
+            </p>
+            <p class="total-info__benefit" aria-label="적립 혜택">
+              <span class="badge badge--sm badge--accent">적립</span
+              ><span class="benefit">구매 시 5원 적립</span>
+            </p>
+          </div>
+        </div>
+        <section class="add-cart__button">
+          <button
+            type="button"
+            class="modal__button modal__button--cancel button button--lg button--full"
+          >
+            취소
+          </button>
+          <button
+            type="button"
+            class="modal__button modal__button--confirm button button--lg button--outlined"
+          >
+            장바구니 담기
+          </button>
+        </section>
+      </div>
+
+
     </div>
     <c-footer></c-footer>
   </body>
