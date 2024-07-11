@@ -2,12 +2,12 @@ $product__list: (
   title: $content,
 );
 
-main{
+.product{
   padding-top: 3rem;
   padding-bottom: 5rem;
   margin: 0 auto;
 
-  h1{
+  &__title{
     @include label-lg;
     color: map-get($product__list, title);
     display: grid;
@@ -15,7 +15,7 @@ main{
     padding-bottom: 3rem;
   }
 
-  section{
+  &__container{
     height: auto;
     justify-content: center;
     display: grid;
@@ -53,31 +53,3 @@ main{
     align-items: end;
   }
 }
-
-
-/* align */
-// .icon--question--mark {
-//   position: relative;
-  
-//   .popup {
-//     display: none;
-//     position: absolute;
-//     transform: translate(-20%, 10%);
-    
-//     @include paragraph-sm; 
-//     color: $content;
-//     background-color: $white;
-//     border: 0.0625rem solid $gray-200;
-//     border-radius: 0.25rem;
-//     width: 13rem;
-//     padding: 10px;
-//     word-break: keep-all;
-//     white-space: inherit;
-//     text-align: left;
-//     z-index: 1000;
-//   }
-
-//   &:hover .popup {
-//     display: block;
-//   }
-// }
