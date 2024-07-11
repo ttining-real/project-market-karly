@@ -1,25 +1,30 @@
+$cart: (
+  cart-width: 1050px,
+  title-color: $black,
+);
+
 #cart {
   margin: 0 auto;
-  max-width: 1050px;
-  padding: 80px 0;
+  max-width: map-get($cart, cart-width);
+  padding: 5rem 0;
 
-  h1 {
+  .title {
     @include label-lg;
     align-items: center;
-    color: $black;
+    color: map-get($cart, title--color);
     display: flex;
     justify-content: center;
-    margin-bottom: 44px;
+    margin-bottom: 2.75rem;
   }
 }
 
 .cart {
   display: flex;
-  gap: 55px;
+  gap: 3.4375rem;
 
-  &--left {
-    width: 100%;
+  &--selected {
     min-width: 250px;
+    width: 100%;
   }
 
   &__result {
