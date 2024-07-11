@@ -271,6 +271,112 @@
           </div>
         </div>
       </section>
+  <!-- ----------------------------- 팝업 광고 컴포넌트 ------------------------------ -->
+    
+    <div
+      class="popup popup__ad"
+      role="dialog"
+      aria-label="popup__ad"
+      aria-modal="true"
+    >
+      <div class="popup__ad__content">
+        <div class="popup__ad__img">
+          <a href=""
+            ><img
+              src="/src/assets/images/PopupBanner.png"
+              alt="광고 배너 내용 설명"
+              class="ad__image"
+          /></a>
+        </div>
+
+        <div class="popup__actions">
+          <button
+            type="button"
+            class="popup__button popup__button--hide-today"
+            aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다"
+          >
+            오늘 하루 안 보기
+          </button>
+          <button
+            type="button"
+            class="popup__button popup__button--close"
+            aria-label="팝업 닫기"
+          >
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ------------------------------- 최근 본 상품 사이드 바 ------------------------------- -->
+    <aside class="sidebar sidebar--sticky">
+      <div class="sidebar__container">
+        <div id="recent-product" class="product-list" aria-live="polite">
+
+        <h2 class="sidebar__title product-list__title" aria-labelledby="recent-product">
+          최근 본 상품
+        </h2>
+          <button
+            class="product-list__nav product-list__nav--up"
+            aria-label="이전 상품 보기"
+          >
+            <span class="icon icon--arrow--top"></span>
+            <span class="a11y">위로</span>
+          </button>
+
+          <ul class="product-list__items" role="list">
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <!-- alt 택스트 바꾸기 -->
+                <img
+                  src="/src/assets/images/product01.png"
+                  alt="상품1 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <img
+                  src="/src/assets/images/product02.png"
+                  alt="상품2 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <img
+                  src="/src/assets/images/product03.png"
+                  alt="상품3 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+            <li class="product-list__item" role="listitem">
+              <a href="/" class="product-item">
+                <img
+                  src="/src/assets/images/product04.png"
+                  alt="상품4 이미지"
+                  class="product-item__image"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <button
+            class="product-list__nav product-list__nav--down"
+            aria-label="다음 상품 보기"
+          >
+            <span class="a11y">아래로</span>
+            <span class="icon icon--arrow--bottom"></span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+
     </div>
     <c-footer></c-footer>
   </body>
