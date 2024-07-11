@@ -13,6 +13,10 @@ const swiper = new Swiper('.swiper', {
     delay: 2500,
     disableOnInteraction: false,
   },
+  keyboard: {
+    enabled: true,
+  },
+  mousewheel: true,
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',

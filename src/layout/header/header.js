@@ -11,10 +11,10 @@ class Header extends HTMLElement {
       <header class='header'>
         <div class='header__main'>
           <h1 class='logo'>
-            <a href="index.html"><img src='/logo.svg' alt='마켓컬리 로고(클릭 시 메인 화면으로 이동)'></a>
-            <button type="button" class='is-active'>마켓컬리</button>
+            <a href='index.html'><img src='/logo.svg' alt='마켓컬리 로고(클릭 시 메인 화면으로 이동)'></a>
+            <button type='button' class='is-active'>마켓컬리</button>
             <span class='divide'></span>
-            <button type="button">뷰티컬리</button>
+            <button type='button'>뷰티컬리</button>
           </h1>
           <form class='input__field search__field' role='search' aria-label='사이트 검색'>
             <label for='inputSearch' class='a11y'>검색</label>
@@ -25,9 +25,9 @@ class Header extends HTMLElement {
             </button>
           </form>
           <div class='button__set'>
-            <a href="/src/pages/login/login.html" class='button button--ratio button--md'><span class='icon icon--location'></span></a>
-            <a href="/src/pages/login/login.html" class='button button--ratio button--md'><span class='icon icon--favorite'></span></a>
-            <a href="/src/pages/cart/cart.html" class='button button--ratio button--md'><span class='icon icon--cart'></span></a>
+            <a href='/src/pages/login/login.html' class='button button--ratio button--md'><span class='icon icon--location'></span></a>
+            <a href='/src/pages/login/login.html' class='button button--ratio button--md'><span class='icon icon--favorite'></span></a>
+            <a href='/src/pages/cart/cart.html' class='button button--ratio button--md'><span class='icon icon--cart'></span></a>
           </div>
         </div>
         <div class='header__utils'>
@@ -44,21 +44,21 @@ class Header extends HTMLElement {
           </ul>
         </div>
         <div class='header__nav'>
-          <div class="nav__category">
-            <button type="button" class='category__button' aria-haspopup="true" aria-expanded="false"><span class='icon icon--menu'></span>카테고리</button>
-            <ul class='category__menu' aria-label="카테고리 메뉴" aria-hidden='true'>
-              <li><a href="/src/pages/product/product.html">식품</a></li>
-              <li><a href="/src/pages/product/product.html">생필품</a></li>
-              <li><a href="/src/pages/product/product.html">케어용품</a></li>
-              <li><a href="/src/pages/product/product.html">반려동물</a></li>
+          <div class='nav__category'>
+            <button type='button' class='category__button' aria-haspopup='true' aria-expanded='false'><span class='icon icon--menu'></span>카테고리</button>
+            <ul class='category__menu' aria-label='카테고리 메뉴' aria-hidden='true'>
+              <li><a href='/src/pages/product/product.html'>식품</a></li>
+              <li><a href='/src/pages/product/product.html'>생필품</a></li>
+              <li><a href='/src/pages/product/product.html'>케어용품</a></li>
+              <li><a href='/src/pages/product/product.html'>반려동물</a></li>
             </ul>
           </div>
           <nav class='nav__menu'>
             <ul>
-              <li><a href="/src/pages/product/product.html">신상품</a></li>
-              <li><a href="/src/pages/product/product.html">베스트</a></li>
-              <li><a href="/src/pages/product/product.html">알뜰쇼핑</a></li>
-              <li><a href="/src/pages/product/product.html">특가/혜택</a></li>
+              <li><a href='/src/pages/product/product.html'>신상품</a></li>
+              <li><a href='/src/pages/product/product.html'>베스트</a></li>
+              <li><a href='/src/pages/product/product.html'>알뜰쇼핑</a></li>
+              <li><a href='/src/pages/product/product.html'>특가/혜택</a></li>
             </ul>
           </nav>
           <button type='button' class='nav__info'><b>샛별·낮</b>배송안내</button>
