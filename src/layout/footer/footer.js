@@ -1,5 +1,4 @@
-
-import styles from '/src/styles/style.scss?inline' ;
+import styles from '/src/styles/style.scss?inline';
 
 class Footer extends HTMLElement {
   constructor() {
@@ -7,7 +6,7 @@ class Footer extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
 
-    this.shadowRoot.innerHTML = `
+    this.shadowRoot.innerHTML = /*html*/ `
       <style rel='stylesheet'>${styles}</style>
       <footer class='footer'>
         <section class='footer__infos'>
@@ -70,11 +69,11 @@ class Footer extends HTMLElement {
                 <p>팩스 : 070 - 7500 - 6098</p>
               </div>
               <ul class='about__body-sns'>
-                <li><a href='/'><img src='/src/assets/icons/icon-blog.png' alt='블로그 바로가기' /></a></li>
-                <li><a href='/'><img src='/src/assets/icons/icon-facebook.png' alt='페이스북 바로가기' /></a></li>
-                <li><a href='/'><img src='/src/assets/icons/icon-instagram.png' alt='인스타그램 바로가기' /></a></li>
-                <li><a href='/'><img src='/src/assets/icons/icon-naver-post.png' alt='네이버 포스트 바로가기' /></a></li>
-                <li><a href='/'><img src='/src/assets/icons/icon-youtube.png' alt='유튜브 바로가기' /></a></li>
+                <li><a href='/'><img src='/icons/icon-blog.png' alt='블로그 바로가기' /></a></li>
+                <li><a href='/'><img src='/icons/icon-facebook.png' alt='페이스북 바로가기' /></a></li>
+                <li><a href='/'><img src='/icons/icon-instagram.png' alt='인스타그램 바로가기' /></a></li>
+                <li><a href='/'><img src='/icons/icon-naver-post.png' alt='네이버 포스트 바로가기' /></a></li>
+                <li><a href='/'><img src='/icons/icon-youtube.png' alt='유튜브 바로가기' /></a></li>
               </ul>
             </div>
           </article>
