@@ -28,29 +28,56 @@ $header: (
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      a {
-        margin-right: 16px;
-        border-radius: 0.125rem;
-        &:focus {
-          outline: 0.125rem solid map-get($header, focus);
-        }
+      ul{
+        
+        display: flex;
+        align-items: center;
+
+
+        li {
+
+
+          &:first-child a{
+
+            color: $primary;
+          }
+
+          .divide {
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            margin: 8px;
+            background-color: $gray-200;
+
+
+          }
       }
-      button {
-        @include label-lg;
-        color: $gray-400;
-        border-radius: 0.125rem;
-        &:focus {
-          outline: 0.125rem solid map-get($header, focus);
+        a {
+
+          // background-color: orange;
+          display: flex;
+          align-items: center;
+          @include label-lg;
+          color: $gray-400;
+          border-radius: 0.125rem;
+          text-decoration: none;
+
+
+          &:focus {
+            outline: 0.125rem solid map-get($header, focus);
+          }
+  
+          &:hover, &.is-active {
+            color: map-get($header, primary);
+          }
+
+          img{
+
+          margin-right: 16px;
+          }
+
         }
-        &:hover, &.is-active {
-          color: map-get($header, primary);
-        }
-      }
-      .divide {
-        width: 1px;
-        height: 14px;
-        margin: 8px;
-        background-color: $gray-200;
+        
       }
     }
     .search__field {
@@ -64,6 +91,23 @@ $header: (
         text-decoration: none;
       }
     }
+  }
+  .button__set{
+
+    a{
+
+
+    &:hover{
+
+      .icon{
+
+        color: $primary;
+      }
+    }
+
+    }
+
+
   }
   .header__utils {
     order: -1;
@@ -125,12 +169,25 @@ $header: (
         li {
           a {
             @include label-md;
+            display: flex;
+            align-items: center;
             display: block;
             padding: 1rem 0rem 1rem 1.5rem;
             color: map-get($header, nav-text);
             text-decoration: none;
             &:hover {
               color: map-get($header, primary);
+              background-color: $gray-50;
+            }
+
+            
+
+            img{
+                      
+                      height: 1.5rem;
+                      width: 1.5rem;
+                      margin-right: 8px;
+                      margin-bottom: -4px;
             }
           }
         }
@@ -160,6 +217,23 @@ $header: (
             &:focus {
               outline: 0.125rem solid map-get($header, focus);
             }
+
+
+
+            span{
+
+            &:hover{
+
+
+              padding-bottom: 0.0625rem;
+              margin-bottom: -0.125rem;
+              border-bottom: 1px solid $primary;
+              color: $primary;
+            }
+
+
+            }
+
           }
         }
       }
