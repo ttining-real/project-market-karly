@@ -5,7 +5,7 @@ $header: (
   info-border: $gray-300,
   info-text: $gray-500,
   primary: $primary,
-  focus: $secondary
+  focus: $secondary,
 );
 
 .header {
@@ -15,7 +15,7 @@ $header: (
   margin: auto;
   border-bottom: 0.0625rem solid map-get($header, border);
   background-color: map-get($header, bg-color);
-  
+
   .header__main {
     display: flex;
     flex-flow: row nowrap;
@@ -28,56 +28,32 @@ $header: (
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      ul{
-        
+      a {
+        @include label-lg;
         display: flex;
         align-items: center;
-
-
-        li {
-
-
-          &:first-child a{
-
-            color: $primary;
-          }
-
-          .divide {
-            display: inline-block;
-            width: 1px;
-            height: 14px;
-            margin: 8px;
-            background-color: $gray-200;
-
-
-          }
-      }
-        a {
-
-          // background-color: orange;
-          display: flex;
-          align-items: center;
-          @include label-lg;
-          color: $gray-400;
-          border-radius: 0.125rem;
-          text-decoration: none;
-
-
-          &:focus {
-            outline: 0.125rem solid map-get($header, focus);
-          }
-  
-          &:hover, &.is-active {
-            color: map-get($header, primary);
-          }
-
-          img{
-
-          margin-right: 16px;
-          }
-
+        height: 42px;
+        color: $gray-400;
+        border-radius: 0.125rem;
+        text-decoration: none;
+        &:focus {
+          outline: 0.125rem solid map-get($header, focus);
         }
-        
+        &:hover,
+        &.is-active {
+          color: map-get($header, primary);
+        }
+        &.karly-market {
+          padding-left: 5.875rem;
+          background-position: 0rem 0rem;
+          background-image: url('/icons/img_sprite.png');
+        }
+      }
+      .divide {
+        width: 1px;
+        height: 14px;
+        margin: 8px;
+        background-color: $gray-200;
       }
     }
     .search__field {
@@ -92,22 +68,14 @@ $header: (
       }
     }
   }
-  .button__set{
-
-    a{
-
-
-    &:hover{
-
-      .icon{
-
-        color: $primary;
+  .button__set {
+    a {
+      &:hover {
+        .icon {
+          color: $primary;
+        }
       }
     }
-
-    }
-
-
   }
   .header__utils {
     order: -1;
@@ -127,9 +95,18 @@ $header: (
     margin: auto;
     .nav__category {
       position: relative;
-      &:hover {
+      display: flex;
+      align-items: center;
+      height: inherit;
+      &:hover, &:focus {
         .category__menu {
           display: flex;
+        }
+        .category__button {
+          color: $primary;
+          .icon {
+            color: $primary;
+          }
         }
       }
       .category__button {
@@ -138,7 +115,7 @@ $header: (
         flex-flow: row nowrap;
         align-items: center;
         gap: 0.75rem;
-        height: 3rem;
+        height: 50px;
         padding-right: 0.5rem;
         border-radius: 0.125rem;
         transition: all 0.3 ease-in-out;
@@ -147,8 +124,6 @@ $header: (
         }
         &:focus-within {
           outline: 0.125rem solid map-get($header, focus);
-        }
-        &.is-active {
           color: $primary;
           .icon {
             color: $primary;
@@ -158,6 +133,7 @@ $header: (
       .category__menu {
         z-index: 10;
         position: absolute;
+        top: 4.5rem;
         display: none;
         flex-flow: column nowrap;
         width: 200px;
@@ -170,8 +146,9 @@ $header: (
           a {
             @include label-md;
             display: flex;
+            flex-flow: row nowrap;
             align-items: center;
-            display: block;
+            gap: 0.5rem;
             padding: 1rem 0rem 1rem 1.5rem;
             color: map-get($header, nav-text);
             text-decoration: none;
@@ -179,15 +156,23 @@ $header: (
               color: map-get($header, primary);
               background-color: $gray-50;
             }
-
-            
-
-            img{
-                      
-                      height: 1.5rem;
-                      width: 1.5rem;
-                      margin-right: 8px;
-                      margin-bottom: -4px;
+            span {
+              display: flex;
+              width: 1.5rem;
+              height: 1.5rem;
+              background-image: url('/icons/img_sprite.png');
+              &.menu-food {
+                background-position: 0rem -3.125rem;
+              }
+              &.menu-necessity {
+                background-position: -1.625rem -3.125rem;
+              }
+              &.menu-personalcare {
+                background-position: -3.1875rem -3.125rem;
+              }
+              &.menu-animal {
+                background-position: -4.75rem -3.125rem;
+              }
             }
           }
         }
@@ -217,23 +202,13 @@ $header: (
             &:focus {
               outline: 0.125rem solid map-get($header, focus);
             }
-
-
-
-            span{
-
-            &:hover{
-
-
-              padding-bottom: 0.0625rem;
-              margin-bottom: -0.125rem;
-              border-bottom: 1px solid $primary;
-              color: $primary;
+            &:hover {
+              span {
+                padding-bottom: 0.1875rem;
+                border-bottom: 0.0625rem solid map-get($header, primary);
+                color: map-get($header, primary);
+              }
             }
-
-
-            }
-
           }
         }
       }
