@@ -3,31 +3,30 @@ $cart: (
   title-color: $black,
 );
 
-#cart {
-  margin: 0 auto;
+.cart {
   max-width: map-get($cart, cart-width);
-  padding: 5rem 0;
-
-  .title {
+  
+  &__title {
     @include label-lg;
     align-items: center;
     color: map-get($cart, title--color);
     display: flex;
     justify-content: center;
-    margin-bottom: 2.75rem;
+    padding-bottom: 3rem;
   }
-}
 
-.cart {
-  display: flex;
-  gap: 3.4375rem;
+  &__container {
+    display: flex;
+    gap: 3.4375rem;
+  }
 
   &--selected {
     min-width: 250px;
     width: 100%;
   }
-
+  
   &__result {
     flex-shrink: 0;
   }
 }
+
