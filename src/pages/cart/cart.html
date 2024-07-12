@@ -13,9 +13,9 @@
 
 <body>
   <c-header></c-header>
-  <main id='cart'>
-    <h1 class="title">장바구니</h1>
-    <section class='cart'>
+  <main class='page cart'>
+    <h1 class='cart__title'>장바구니</h1>
+    <section class='cart__container'>
       <div class='cart--selected'>
         <div class='cart__checkbox'>
           <ul class='list__button'>
@@ -40,21 +40,21 @@
               냉장 식품
               <span class='icon icon--arrow--bottom'></span>
             </button>
-            <ul class="selected">
-              <li class="selected__item">
+            <ul class='selected'>
+              <li class='selected__item'>
                 <div class='checkbox__wrap'>
                   <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
                   <label for='checkbox02' class='checkbox__label'>
                     <span class='checkbox__label--icon'></span>
                   </label>
                 </div>
-                <div class="product--link">
-                  <a href="#">
-                    <img src="/src/assets/images/product01.png" alt="product01제품명" />
+                <div class='product--link'>
+                  <a href='#'>
+                    <img src='/src/assets/images/product01.png' alt='product01제품명' />
                   </a>
                 </div>
                 <strong>
-                  <a href="#">
+                  <a href='#'>
                     [풀무원] 통통쫄면 (4개입)
                   </a>
                 </strong>
@@ -67,11 +67,11 @@
                     <span class='icon icon--plus'></span>
                   </button>
                 </div>
-                <div class="price">
+                <div class='price'>
                   <span class='product__info--sm-discount-price'>5,000&nbsp;원</span>
                   <span class='product__info--sm-price discount'>4,500&nbsp;원</span>
                 </div>
-                <button type="button" class="delete">
+                <button type='button' class='delete'>
                   <span class='icon icon--cancel'></span>
                 </button>
               </li>
@@ -107,20 +107,20 @@
             <h3>배송지</h3>
           </div>
           <address>서울 중랑구 면목로 42길 11 (행운빌딩) 603호</address>
-          <span class="delivery">샛별배송</span>
+          <span class='delivery'>샛별배송</span>
           <button type='button' class='button button--md button--outlined'>배송지 변경</button>
         </div>
         <div class='result__receipt'>
           <dl class='receipt__price'>
-            <div class="product__price">
+            <div class='product__price'>
               <dt>상품금액</dt>
               <dd><strong class='price'>40,680<span>원</span></strong></dd>
             </div>
-            <div class="product__sale">
+            <div class='product__sale'>
               <dt>상품할인금액</dt>
               <dd>-<strong class='price'>4,651<span>원</span></strong></dd>
             </div>
-            <div class="product__delivery">
+            <div class='product__delivery'>
               <dt>배송비</dt>
               <dd>+<strong class='price'>3,000<span>원</span></strong></dd>
             </div>

@@ -1,12 +1,14 @@
 $product__list: (
-  title: $content,
+  title: $black,
 );
 
-.product{
+.page{
   padding-top: 3rem;
   padding-bottom: 5rem;
   margin: 0 auto;
+}
 
+.product{
   &__title{
     @include label-lg;
     color: map-get($product__list, title);
