@@ -6,6 +6,7 @@
     <title>마켓칼리</title>
     <script type="module" src="/main.js"></script>
     <script type="module" src="/src/pages/main/swiper.js"></script>
+    <script type="module" src="/src/pages/main/close.js"></script>
   </head>
   <body>
     <div class="main">
@@ -1426,39 +1427,40 @@
         </aside>
       </div>
       <!-- 팝업 광고 -->
-      <!-- <div
-          class="popup popup__ad"
-          role="dialog"
-          aria-label="popup__ad"
-          aria-modal="true"
-        >
-          <div class="popup__ad__content">
-            <div class="popup__ad__img">
-              <a href=""
-                ><img
-                  src="/src/assets/images/PopupBanner.png"
-                  alt="광고 배너 내용 설명"
-                  class="ad__image"
-              /></a>
-            </div>
-            <div class="popup__actions">
-              <button
-                type="button"
-                class="popup__button popup__button--hide-today"
-                aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다"
-              >
-                오늘 하루 안 보기
-              </button>
-              <button
-                type="button"
-                class="popup__button popup__button--close"
-                aria-label="팝업 닫기"
-              >
-                닫기
-              </button>
-            </div>
+      <div
+        class="popup popup__ad"
+        role="dialog"
+        aria-label="popup__ad"
+        aria-modal="true"
+        id="popup__ad"
+      >
+        <div class="popup__ad__content">
+          <div class="popup__ad__img">
+            <a href=""
+              ><img
+                src="/src/assets/images/PopupBanner.png"
+                alt="광고 배너 내용 설명"
+                class="ad__image"
+            /></a>
           </div>
-        </div> -->
+          <div class="popup__actions">
+            <button
+              type="button"
+              class="popup__button popup__button--close"
+              aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다"
+            >
+              오늘 하루 안 보기
+            </button>
+            <button
+              type="button"
+              class="popup__button popup__button--close"
+              aria-label="팝업 닫기"
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+      </div>
       <!-- 장바구니 모달 -->
       <div
         class="modal__add-cart"
