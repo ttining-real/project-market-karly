@@ -55,32 +55,6 @@
       object-fit: cover;
     }
   }
-  .products__list {
-    position: relative;
-    .product-list__swiper {
-      overflow: hidden;
-      .swiper-wrapper {
-        width: 65.625rem;
-      }
-    }
-
-    .swiper-button {
-      &-prev,
-      &-next {
-        position: absolute;
-        top: 33%;
-        &::after {
-          display: none;
-        }
-      }
-      &-prev {
-        left: -0.8125rem;
-      }
-      &-next {
-        right: 0px;
-      }
-    }
-  }
 
   // # popup ad
 
