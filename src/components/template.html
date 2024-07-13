@@ -190,6 +190,14 @@
         <button type='button' class='button button--ratio button--lg button--rounded button--shadow'><span
             class='icon icon--bell'></span></button>
       </div>
+      <p>상품수량 컨트롤 button</p>
+      <div style='display: flex; gap: 8px;'>
+        <div class="counter__container">
+          <button type="button" disabled><span class='icon icon--minus'></span></button>
+          <span class=count>1</span>
+          <button type="button"><span class='icon icon--plus'></span></button>
+        </div>
+      </div>
     </div>
     <div id='input' class='template'>
       <h3>Input</h3>
@@ -405,7 +413,7 @@
         <button type='button' class='button button--md button--primary button--filled'>문의 하기</button>
       </header>
     </div>
-    <div id='product__Details' class='template'>
+    <div id='product__details' class='template'>
       <h3>Product Info</h3>
       <section class='product__details'>
         <div class='product__info--wrapper'>
@@ -463,53 +471,10 @@
             <div class='product__info__buy--selected'>
               <dd>
                 <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                <div class='input__price'>
-                  <button type='button' disabled>
-                    <span class='icon icon--minus'></span>
-                  </button>
-                  <input type='number' min='1' value='1' />
-                  <button type='button'>
-                    <span class='icon icon--plus'></span>
-                  </button>
-                </div>
-                <strong class='price'>4,980<span>원</span></strong>
-              </dd>
-              <dd>
-                <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                <div class='input__price'>
-                  <button type='button' disabled>
-                    <span class='icon icon--minus'></span>
-                  </button>
-                  <input type='number' min='1' value='1' />
-                  <button type='button'>
-                    <span class='icon icon--plus'></span>
-                  </button>
-                </div>
-                <strong class='price'>4,980<span>원</span></strong>
-              </dd>
-              <dd>
-                <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                <div class='input__price'>
-                  <button type='button' disabled>
-                    <span class='icon icon--minus'></span>
-                  </button>
-                  <input type='number' min='1' value='1' />
-                  <button type='button'>
-                    <span class='icon icon--plus'></span>
-                  </button>
-                </div>
-                <strong class='price'>4,980<span>원</span></strong>
-              </dd>
-              <dd>
-                <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                <div class='input__price'>
-                  <button type='button' disabled>
-                    <span class='icon icon--minus'></span>
-                  </button>
-                  <input type='number' min='1' value='1' />
-                  <button type='button'>
-                    <span class='icon icon--plus'></span>
-                  </button>
+                <div class="counter__container">
+                  <button type="button" disabled><span class='icon icon--minus'></span></button>
+                  <span class=count>1</span>
+                  <button type="button"><span class='icon icon--plus'></span></button>
                 </div>
                 <strong class='price'>4,980<span>원</span></strong>
               </dd>
@@ -879,7 +844,7 @@
                 <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
               </div>
             </div>
-  
+
             <!-- badge -->
             <div class='badge-container'>
               <span class='badge badge--lg badge--only'>Karly Only</span>

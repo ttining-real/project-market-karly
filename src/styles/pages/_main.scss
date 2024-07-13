@@ -1,7 +1,16 @@
+
+
 .main {
+.main__content--wrap{
   display: flex;
-  flex-flow: column;
-  width: 100%;
+  justify-content: center;
+}
+  &__content{
+    max-width: 1050px;
+  margin: 0 auto;
+  transform: translateX(4.625rem);
+
+  }
 
   &__visual {
     height: 23.125rem;
@@ -132,19 +141,24 @@
 // # 최근 본 상품
 .sidebar {
   // aside 태그
+  
   z-index: 11;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   width: 4.625rem;
+  height: 100%;
   padding: 8px 0;
   border: 1px solid $gray-200;
   background-color: white;
 
-  position: fixed;
-  top: 50%;
+
+  position: sticky;
+  top: 193px;
+  align-self: flex-start;
+  max-height: calc(100vh - 300px);
   right: 1.875rem;
-  transform: translateY(-50%);
+  margin: 193px 0;
   
 
   &__title {
@@ -195,6 +209,11 @@
 
 }
 
+  @media screen and (max-width: 1200px ) {
+    .sidebar--sticky{
+      display: none;
+    }
+  }
 }
 
 

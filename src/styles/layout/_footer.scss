@@ -15,7 +15,7 @@ $footer: (
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    padding: 28px 0 30px;
+    padding: 2rem 0rem 2.5rem;
   }
   // 고객행복정보
   .footer__customer {
@@ -38,7 +38,7 @@ $footer: (
           @include heading-xxl;
           text-decoration: none;
           color: $content;
-          border-radius: 2px;
+          border-radius: 0.125rem;
           &:focus {
             outline: 0.125rem solid map-get($button, focus);
           }
@@ -60,7 +60,7 @@ $footer: (
         align-items: center;
         gap: 1rem;
         button {
-          width: 140px;
+          width: 8.75rem;
         }
         div {
           @include paragraph-md;
@@ -73,9 +73,9 @@ $footer: (
             color: $content;
           }
           .divide {
-            width: 1px;
-            height: 12px;
-            margin: 0 4px;
+            width: 0.0625rem;
+            height: 0.75rem;
+            margin: 0rem 0.25rem;
             background-color: $content;
           }
         }
@@ -88,7 +88,7 @@ $footer: (
         a {
           color: $primary;
           text-decoration: none;
-          border-radius: 2px;
+          border-radius: 0.125rem;
           &:focus {
             outline: 0.125rem solid map-get($button, focus);
           }
@@ -101,17 +101,17 @@ $footer: (
     .about__body {
       display: flex;
       flex-flow: column nowrap;
-      gap: 28px;
+      gap: 1.75rem;
       &-karly {
         display: flex;
         flex-flow: row nowrap;
-        gap: 12px;
+        gap: 0.75rem;
         li {
           a {
             @include paragraph-md;
             color: $content;
             text-decoration: none;
-            border-radius: 2px;
+            border-radius: 0.125rem;
             &:focus {
               outline: 0.125rem solid map-get($button, focus);
             }
@@ -127,18 +127,33 @@ $footer: (
       &-sns {
         display: flex;
         flex-flow: row nowrap;
-        gap: 20px;
+        gap: 1.25rem;
         li {
           a {
             display: block;
-            width: 30px;
-            height: 30px;
+            width: 1.875rem;
+            height: 1.875rem;
+            overflow: hidden;
             border-radius: 50%;
+            text-indent: -9999px;
+            background-image: url('/icons/img_sprite.png');
             &:focus {
               outline: 0.125rem solid map-get($button, focus);
             }
-            img {
-              width: 100%;
+            &.sns-blog {
+              background-position: 0rem -5rem;
+            }
+            &.sns-facebook {
+              background-position: -1.9375rem -5rem;
+            }
+            &.sns-instagram {
+              background-position: -3.875rem -5rem;
+            }
+            &.sns-post {
+              background-position: -5.8125rem -5rem;
+            }
+            &.sns-youtube {
+              background-position: -7.75rem -5rem;
             }
           }
         }
@@ -150,26 +165,54 @@ $footer: (
     .certification__body {
       display: flex;
       flex-flow: row nowrap;
-      gap: 1rem;
+      justify-content: space-between;
       margin-bottom: 2rem;
       li {
-        flex: 1;
+        flex: 1 0 0;
         button {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
-          gap: 8px;
+          gap: 0.5rem;
           height: 100%;
-          padding: 4px;
-          border-radius: 2px;
+          padding: 0.25rem;
+          border-radius: 0.125rem;
           &:focus {
             outline: 0.125rem solid map-get($button, focus);
           }
           p {
-            @include paragraph-sm;
-            font-size: 10px;
-            color: $content;
+            font-size: 0.625rem;
+            line-height: 140%;
+            font-family: $font-family;
             text-align: left;
+            color: $content;
+          }
+          span {
+            min-width: 2.125rem;
+            height: 2.125rem;
+            background-image: url('/icons/img_sprite.png');
+          }
+          &.button-isms {
+            span {
+              background-position: 0rem -7.5rem;
+            }
+          }
+          &.button-privacy {
+            span {
+              background-position: -2.25rem -7.5rem;
+            }
+          }
+          &.button-toss {
+            span {
+              min-width: 6.8125rem;
+              height: 2rem;
+              background-position: -4.375rem -7.5rem;
+            }
+          }
+          &.button-woori {
+            span {
+              background-position: -11.25rem -7.5rem;
+            }
           }
         }
       }
@@ -178,14 +221,14 @@ $footer: (
   // 면책 조항
   .footer__disclaimer {
     width: 100%;
-    padding: 20px 0 32px;
+    padding: 1.25rem 0rem 2rem;
     background-color: $gray-50;
     .disclaimer__body {
       @include paragraph-sm;
       color: $gray-400;
       text-align: center;
       .copyright {
-        padding-top: 8px;
+        padding-top: 0.5rem;
       }
     }
   }
