@@ -1,0 +1,32 @@
+$cart: (
+  cart-width: 1050px,
+  title-color: $black,
+);
+
+.cart {
+  max-width: map-get($cart, cart-width);
+  
+  &__title {
+    @include label-lg;
+    align-items: center;
+    color: map-get($cart, title--color);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+  }
+
+  &__container {
+    display: flex;
+    gap: 3.4375rem;
+  }
+
+  &--selected {
+    min-width: 250px;
+    width: 100%;
+  }
+  
+  &__result {
+    flex-shrink: 0;
+  }
+}
+

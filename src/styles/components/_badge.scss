@@ -15,6 +15,7 @@ $badge: (
   display: inline-flex;
   align-items: center;
   padding: 0 0.5rem;
+  white-space: nowrap;
   color: map-get($badge, text-black);
   border-radius: 0.125rem;
   border: 0.0625rem solid map-get($badge, border-gray);
