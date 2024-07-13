@@ -9,6 +9,7 @@
   <script type='module' src='/main.js'></script>
   <script type='module' src='/src/layout/header/header.js'></script>
   <script type='module' src='/src/layout/footer/footer.js'></script>
+  <script type="module" src="/src/pages/cart/cart.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
             <li aria-hidden='true'>
               <hr />
             </li>
-            <li><button type='button' class=''>선택삭제</button></li>
+            <li><button type='button' class='select--delete'>선택삭제</button></li>
           </ul>
         </div>
 
@@ -79,8 +80,8 @@
               냉동 식품
               <span class='icon icon--arrow--bottom'></span>
             </button>
-            <ul>
-              <li></li>
+            <ul class='selected'>
+              <!-- <li></li> -->
             </ul>
           </div>
           <div class='cart__item'>
@@ -89,8 +90,8 @@
               상온 식품
               <span class='icon icon--arrow--bottom'></span>
             </button>
-            <ul>
-              <li></li>
+            <ul class='selected'>
+              <!-- <li></li> -->
             </ul>
           </div>
         </div>

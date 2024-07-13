@@ -44,11 +44,21 @@
       &.icon--arrow--bottom {
         position: absolute;
         right: 0;
+        transition: transform 300ms ease-in-out;
+
+        &.is--open {
+          transform: rotate(-180deg);
+        }
       }
     }
   }
 
   .selected {
+    display: none;
+
+    &.is--open {
+      display: block;
+    }
   }
 
   .selected__item {
