@@ -8,6 +8,7 @@
   <script type='module' src='/main.js'></script>
   <script type='module' src='/src/layout/header/header.js'></script>
   <script type='module' src='/src/layout/footer/footer.js'></script>
+  <script type='module' src='/src/pages/login/login.js'></script>
 </head>
 <body>
   <c-header></c-header>
@@ -20,24 +21,26 @@
           <div class='input__field'>
             <label for='loginID' class='a11y'>아이디</label>
             <div class='input__wrap'>
-              <input type='text' class='input is--invalid' name='loginID' id='' placeholder='아이디를 입력해주세요' />
-              <span class='hint'>hint text</span>
+              <input type='text' class='input' name='loginID' id='loginId' placeholder='아이디를 입력해주세요' />
+              <span class='hint'>아이디는 이메일 형식이어야 합니다.</span>
             </div>
           </div>
           <div class='input__field'>
             <label for='loginPW' class='a11y'>비밀번호</label>
             <div class='input__wrap'>
-              <input type='password' class='input is--invalid' name='loginPW' id='' placeholder='비밀번호를 입력해주세요' />
-              <span class='hint'>hint text</span>
+              <input type='password' class='input' name='loginPW' id='loginPw' placeholder='비밀번호를 입력해주세요' />
+              <span class='hint'>비밀번호는 최소 6자리 이상, 특수문자가 포함되어야 합니다.</span>
             </div>
+          </div>
+          <div class="button__set">
+            <button type='button' class='button button--lg button--filled login_button' disabled>로그인</button>
+            <a href='/src/pages/register/register.html' class='button button--lg button--outlined'>회원가입</a>
           </div>
           <ul class='list__link login__helper'>
             <li><a href='/'>아이디 찾기</a></li>
             <li aria-hidden='true'><hr /></li>
             <li><a href='/'>비밀번호 찾기</a></li>
           </ul>
-          <button type='button' class='button button--lg button--filled' disabled>로그인</button>
-          <button type='button' class='button button--lg button--outlined'>회원가입</button>
         </div>
       </fieldset>
     </form>
