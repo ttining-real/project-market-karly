@@ -1,7 +1,9 @@
 import pb from '@/api/pocketbase';
+import { tiger } from 'kind-tiger';
+
 import '/src/styles/style.scss';
 import '/src/layout/footer';
-import { tiger } from 'kind-tiger';
+import '/src/pages/main/swiper.js';
 
 // console.log(pb.collection('products'));
 
@@ -50,3 +52,4 @@ async function getData() {
 }
 
 getData();
+
