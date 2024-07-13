@@ -1,8 +1,0 @@
-$count: (
-  text-black: $content,
-);
-
-.count {
-  @include label-md;
-  color: map-get($count, text-black);
-}

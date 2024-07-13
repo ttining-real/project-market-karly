@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang='ko-KR'>
+<html lang='ko'>
 
 <head>
   <meta charset='UTF-8' />
@@ -80,11 +80,6 @@
       <li><a href='#listList'>List Link / Button</a></li>
       <li><a href='#icon'>Icon</a></li>
       <li><a href='#image'>Image</a></li>
-      <li><a href='#productInfo'>Product info</a></li>
-      <li><a href='#card'>Card</a></li>
-      <li><a href='#accordion'>Accordion</a></li>
-      <li><a href='#count'>Count</a></li>
-      <li><a href='#pagination'>Pagination</a></li>
     </ul>
   </aside>
   <div class='template__wrapper'>
@@ -190,14 +185,6 @@
         <button type='button' class='button button--ratio button--lg button--rounded button--shadow'><span
             class='icon icon--bell'></span></button>
       </div>
-      <p>상품수량 컨트롤 button</p>
-      <div style='display: flex; gap: 8px;'>
-        <div class="counter__container">
-          <button type="button" disabled><span class='icon icon--minus'></span></button>
-          <span class=count>1</span>
-          <button type="button"><span class='icon icon--plus'></span></button>
-        </div>
-      </div>
     </div>
     <div id='input' class='template'>
       <h3>Input</h3>
@@ -294,12 +281,7 @@
           <li><a href='/'>고객센터<span class='icon icon--triangle--bottom' aria-hidden='true'></span></a></li>
         </ul>
         <ul class='list__button'>
-          <li><button type='button' class='is--active'>추천순
-              <span class='icon icon--question--mark'>
-                <span class='popup'>소비자 인기도(판매량, 판매금액, 조회수 등), 상품 출시일, 수요 적합성, 상품 운영상 필요 등을 종합적으로 고려한 순서입니다.</span>
-              </span>
-            </button>
-          </li>
+          <li><button type='button' class='is--active'>추천순<span class='icon icon--question--mark'></span></button></li>
           <li aria-hidden='true'>
             <hr />
           </li>
@@ -352,8 +334,6 @@
         <span class='icon icon--time'></span>
         <span class='icon icon--notice'></span>
         <span class='icon icon--input--hint'></span>
-        <span class='icon icon--arrow--prev'></span>
-        <span class='icon icon--arrow--next'></span>
       </div>
     </div>
     <div id='image' class='template'>
@@ -370,7 +350,7 @@
     <div id='tabButton' class='template'>
       <h3>Tab Button</h3>
       <nav class='product__tab'>
-        <h1 class='a11y'>상품 디테일 페이지 탭 메뉴</h1>
+        <h1 class="a11y">상품 디테일 페이지 탭 메뉴</h1>
         <ul class='product__tab__list' role='tablist'>
           <li class='product__tab__item is--active' role='tabpanel' aria-labelledby='product__spec'>
             <button type='button' class='button--md'>상품설명</button>
@@ -413,15 +393,15 @@
         <button type='button' class='button button--md button--primary button--filled'>문의 하기</button>
       </header>
     </div>
-    <div id='product__details' class='template'>
+    <div id='product__Details' class='template'>
       <h3>Product Info</h3>
       <section class='product__details'>
-        <div class='product__info--wrapper'>
-          <div class='product__info product__info--lg'>
-            <span class='product__info--lg-delivery'>샛별배송</span>
-            <span class='product__info--lg-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-            <span class='product__info--lg-desc'>튀기지 않아 부담 없는 매콤함</span>
-            <span class='product__info--lg-price'>4,980<span>&nbsp;원</span></span>
+        <div class="product__info--wrapper">
+          <div class="product__info product__info--lg">
+            <span class="product__info--lg-delivery">샛별배송</span>
+            <span class="product__info--lg-title">[풀무원] 탱탱쫄면 (4개입)</span>
+            <span class="product__info--lg-desc">튀기지 않아 부담 없는 매콤함</span>
+            <span class="product__info--lg-price">4,980<span>&nbsp;원</span></span>
             <span class='alert'>로그인 후, 적립 혜택이 제공됩니다.</span>
           </div>
 
@@ -471,10 +451,53 @@
             <div class='product__info__buy--selected'>
               <dd>
                 <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                <div class="counter__container">
-                  <button type="button" disabled><span class='icon icon--minus'></span></button>
-                  <span class=count>1</span>
-                  <button type="button"><span class='icon icon--plus'></span></button>
+                <div class='input__price'>
+                  <button type='button' disabled>
+                    <span class='icon icon--minus'></span>
+                  </button>
+                  <input type='number' min='1' value='1' />
+                  <button type='button'>
+                    <span class='icon icon--plus'></span>
+                  </button>
+                </div>
+                <strong class='price'>4,980<span>원</span></strong>
+              </dd>
+              <dd>
+                <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
+                <div class='input__price'>
+                  <button type='button' disabled>
+                    <span class='icon icon--minus'></span>
+                  </button>
+                  <input type='number' min='1' value='1' />
+                  <button type='button'>
+                    <span class='icon icon--plus'></span>
+                  </button>
+                </div>
+                <strong class='price'>4,980<span>원</span></strong>
+              </dd>
+              <dd>
+                <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
+                <div class='input__price'>
+                  <button type='button' disabled>
+                    <span class='icon icon--minus'></span>
+                  </button>
+                  <input type='number' min='1' value='1' />
+                  <button type='button'>
+                    <span class='icon icon--plus'></span>
+                  </button>
+                </div>
+                <strong class='price'>4,980<span>원</span></strong>
+              </dd>
+              <dd>
+                <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
+                <div class='input__price'>
+                  <button type='button' disabled>
+                    <span class='icon icon--minus'></span>
+                  </button>
+                  <input type='number' min='1' value='1' />
+                  <button type='button'>
+                    <span class='icon icon--plus'></span>
+                  </button>
                 </div>
                 <strong class='price'>4,980<span>원</span></strong>
               </dd>
@@ -523,13 +546,13 @@
         </div>
 
         <div class='product__section__content'>
-          <div class='review__table'>
-            <header class='review__table__header'>
-              <div class='review--notice'>
+          <div class="review__table">
+            <header class="review__table__header">
+              <div class="review--notice">
                 <span class='badge  badge--sm'>공지</span>
-                <button type='button'>금주의 베스트 후기 안내</button>
+                <button type="button">금주의 베스트 후기 안내</button>
               </div>
-              <p class=''>
+              <p class="">
                 안녕하세요.
 
                 컬리는 상품에 대한 고객 여러분의 생생한 의견을 듣고 더 나은 상품을 준비하기 위해 상품 후기 게시판을 운영하고 있습니다.
@@ -564,11 +587,11 @@
                 → 베스트후기 선정된 고객님들께는 컬리 적립금 5,000원이 지급됩니다.
                 =====================================================================================
               </p>
-              <div class='review--notice'>
+              <div class="review--notice">
                 <span class='badge badge--sm'>공지</span>
-                <button type='button'>상품 후기 적립금 정책 안내</button>
+                <button type="button">상품 후기 적립금 정책 안내</button>
               </div>
-              <p class=''>
+              <p class="">
                 안녕하세요. 컬리 입니다.
                 2024년 상품후기 적립금 지급 정책 안내해 드리니 후기 작성에 참고 부탁드립니다.
 
@@ -591,7 +614,7 @@
                 └ 선정 건수 : 일주일 최대 100건
                 └ 혜택 : 선정 시 적립금 5,000원
                 └ 지급 일시 : 매주 수요일 (지급일이 공휴일의 경우 전 영업일)
-                *Best 후기 당첨 상품은 후기 게시판 '금주의 베스트 후기 안내'에서 확인하실 수 있습니다.
+                *Best 후기 당첨 상품은 후기 게시판 "금주의 베스트 후기 안내"에서 확인하실 수 있습니다.
 
                 ※ 유의 사항 ※
 
@@ -607,58 +630,58 @@
               </p>
             </header>
             <!-- 1. 후기가 있을 경우 -->
-            <div class='review__table__content'>
+            <div class="review__table__content">
               <dl>
                 <!-- 1) 리뷰 이미지가 없는 경우 -->
-                <div class='review__card'>
-                  <dt class='user__info'>
+                <div class="review__card">
+                  <dt class="user__info">
                     <span class='badge badge--sm badge--secondary'>베스트</span>
                     <span class='badge badge--sm badge--outlined'>퍼플</span>
-                    <strong class='name'>김*진</strong>
+                    <strong class="name">김*진</strong>
                   </dt>
-                  <dd class='review__card__content'>
+                  <dd class="review__card__content">
                     <article>
                       <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
                       <p>
                         너무 맛있어여~
                         면이 쫄깃하고 양념도 짱맛나요!!
                       </p>
-                      <time datetime='2022-11-10'>2022.11.10</time>
+                      <time datetime="2022-11-10">2022.11.10</time>
                     </article>
                   </dd>
                 </div>
                 <!-- 2) 리뷰 이미지가 있는 경우 -->
-                <div class='review__card'>
-                  <dt class='user__info'>
+                <div class="review__card">
+                  <dt class="user__info">
                     <span class='badge badge--sm badge--secondary'>베스트</span>
                     <span class='badge badge--sm badge--outlined'>퍼플</span>
-                    <strong class='name'>김*주</strong>
+                    <strong class="name">김*주</strong>
                   </dt>
-                  <dd class='review__card__content'>
+                  <dd class="review__card__content">
                     <article>
                       <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
                       <p>
                         또 주문할것 같습니다.
                         너무 맛있어요 내스타일이야~!
                       </p>
-                      <div class='button--group'>
-                        <button type='button'>
+                      <div class="button--group">
+                        <button type="button">
                           <img
-                            src='https://img-cf.kurly.com/hdims/resize/%5E%3E240x%3E240/cropcenter/240x240/quality/85/src/shop/data/review/20240709/227ce1db-044d-4467-8cf2-7deb526bf07a.jpeg'
-                            alt='김*진 님의 리뷰 이미지' />
+                            src="https://img-cf.kurly.com/hdims/resize/%5E%3E240x%3E240/cropcenter/240x240/quality/85/src/shop/data/review/20240709/227ce1db-044d-4467-8cf2-7deb526bf07a.jpeg"
+                            alt="김*진 님의 리뷰 이미지" />
                         </button>
-                        <button type='button'>
+                        <button type="button">
                           <img
-                            src='https://img-cf.kurly.com/hdims/resize/%5E%3E240x%3E240/cropcenter/240x240/quality/85/src/shop/data/review/20240709/227ce1db-044d-4467-8cf2-7deb526bf07a.jpeg'
-                            alt='김*진 님의 리뷰 이미지' />
+                            src="https://img-cf.kurly.com/hdims/resize/%5E%3E240x%3E240/cropcenter/240x240/quality/85/src/shop/data/review/20240709/227ce1db-044d-4467-8cf2-7deb526bf07a.jpeg"
+                            alt="김*진 님의 리뷰 이미지" />
                         </button>
-                        <button type='button'>
+                        <button type="button">
                           <img
-                            src='https://img-cf.kurly.com/hdims/resize/%5E%3E240x%3E240/cropcenter/240x240/quality/85/src/shop/data/review/20240709/227ce1db-044d-4467-8cf2-7deb526bf07a.jpeg'
-                            alt='김*진 님의 리뷰 이미지' />
+                            src="https://img-cf.kurly.com/hdims/resize/%5E%3E240x%3E240/cropcenter/240x240/quality/85/src/shop/data/review/20240709/227ce1db-044d-4467-8cf2-7deb526bf07a.jpeg"
+                            alt="김*진 님의 리뷰 이미지" />
                         </button>
                       </div>
-                      <time datetime='2022-12-10'>2022.12.10</time>
+                      <time datetime="2022-12-10">2022.12.10</time>
                     </article>
                   </dd>
                 </div>
@@ -666,7 +689,7 @@
             </div>
 
             <!-- 2. 후기가 없을 경우-->
-            <div class='review__table__content review--null'>
+            <div class="review__table__content review--null">
               <div>
                 <span class='icon icon--notice'></span>
               </div>
@@ -699,14 +722,14 @@
           </thead>
           <tbody>
             <tr scope='row'>
-              <td tabindex='0'><span class='badge badge--sm'>공지</span>판매(일시)중단 제품 안내 (22.11.10 업데이트)</td>
+              <td tabindex="0"><span class='badge badge--sm'>공지</span>판매(일시)중단 제품 안내 (22.11.10 업데이트)</td>
               <td>칼리</td>
               <td>2017.02.01</td>
               <td>-</td>
             </tr>
             <!-- 1. 공개 / 답변완료 -->
             <tr scope='row'>
-              <td tabindex='0'>팩이 터져서 왔어요</td>
+              <td tabindex="0">팩이 터져서 왔어요</td>
               <td class='author'>김*식</td>
               <td class='created-date'>2022.11.11</td>
               <td class='status answer--complete'>답변완료</td>
@@ -731,14 +754,14 @@
                       불편을 드려 정말 죄송할 따름이며, 고객님께 늘 신선하고 최상의 상품을 불편 없이 전달드리기 위해 최선을 다하는 칼리가 되겠습니다.
                       칼리 드림.
                     </p>
-                    <time datetime='2022-11-11'>2022.11.11</time>
+                    <time datetime="2022-11-11">2022.11.11</time>
                   </div>
                 </div>
               </td>
             </tr>
             <!-- 2. 비공개 / 답변완료 -->
             <tr scope='row'>
-              <td tabindex='0' class='secret'>비밀글 입니다.<span class='icon icon--lock'></span></td>
+              <td tabindex="0" class="secret">비밀글 입니다.<span class='icon icon--lock'></span></td>
               <td class='author'>김*진</td>
               <td class='created-date'>2022.11.11</td>
               <td class='status answer--complete'>답변완료</td>
@@ -762,21 +785,21 @@
                       불편을 드려 정말 죄송할 따름이며, 고객님께 늘 신선하고 최상의 상품을 불편 없이 전달드리기 위해 최선을 다하는 칼리가 되겠습니다.
                       칼리 드림.
                     </p>
-                    <time datetime='2022-11-11'>2022.11.11</time>
+                    <time datetime="2022-11-11">2022.11.11</time>
                   </div>
                 </div>
               </td>
             </tr> -->
             <!-- 3. 공개 / 답변대기 -->
             <tr scope='row'>
-              <td tabindex='0'>배송언제되나요?</td>
+              <td tabindex="0">배송언제되나요?</td>
               <td class='author'>이*호</td>
               <td class='created-date'>2023.03.11</td>
               <td class='status answer--waitting'>답변대기</td>
             </tr>
             <!-- 4. 비공개 / 답변대기 -->
             <tr scope='row'>
-              <td tabindex='0' class='secret'>비밀글 입니다.<span class='icon icon--lock'></span></td>
+              <td tabindex="0" class="secret">비밀글 입니다.<span class='icon icon--lock'></span></td>
               <td class='author'>김*주</td>
               <td class='created-date'>2024.07.08</td>
               <td class='status answer--waitting'>답변대기</td>
@@ -784,156 +807,6 @@
           </tbody>
         </table>
       </div>
-    </div>
-
-    <div id='productInfo' class='template'>
-      <h3>Product info</h3>
-      <!-- original--sm -->
-      <div class='product__info product__info--sm'>
-        <span class='product__info--sm-delivery'>샛별배송</span>
-        <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-        <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-        <span class='product__info--sm-price'>5,000&nbsp;원</span>
-      </div>
-      <!-- discount--sm -->
-      <div class='product__info discount product__info--sm'>
-        <span class='product__info--sm-delivery'>샛별배송</span>
-        <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-        <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-        <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-        <div class='product__info--sm-discount discount'>
-          <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-          <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-        </div>
-      </div>
-      <!-- original--lg -->
-      <div class='product__info product__info--lg'>
-        <span class='product__info--lg-delivery'>샛별배송</span>
-        <span class='product__info--lg-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-        <span class='product__info--lg-desc'>튀기지 않아 부담 없는 매콤함</span>
-        <span class='product__info--lg-price'>5,000<span>&nbsp;원</span></span>
-      </div>
-      <!-- discount--lg -->
-      <div class='product__info discount product__info--lg'>
-        <span class='product__info--lg-delivery'>샛별배송</span>
-        <span class='product__info--lg-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-        <span class='product__info--lg-desc'>튀기지 않아 부담 없는 매콤함</span>
-        <span class='product__info--lg-price discount'>5,000&nbsp;원</span>
-        <div class='product__info--lg-discount discount'>
-          <span class='product__info--lg-discount-rate'>10%<span class='a11y'>할인</span></span>
-          <span class='product__info--lg-discount-price'>4,500<span>&nbsp;원</span></span>
-        </div>
-      </div>
-    </div>
-
-    <div id='card' class='template'>
-      <h3>Card</h3>
-      <div class='card'>
-        <a href='/' class='card__link'>
-          <!-- 상품 이미지 -->
-          <img class='card__img' src='/src/assets/탱탱쫄면.jpg' alt='상품 이미지' />
-          <!-- 상품 정보 -->
-          <div class='card__data'>
-            <div class='product__info discount product__info--sm'>
-              <span class='product__info--sm-delivery'>샛별배송</span>
-              <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-              <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-              <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-              <div class='product__info--sm-discount discount'>
-                <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-              </div>
-            </div>
-
-            <!-- badge -->
-            <div class='badge-container'>
-              <span class='badge badge--lg badge--only'>Karly Only</span>
-              <span class='badge badge--lg'>한정수량</span>
-            </div>
-          </div>
-        </a>
-        <!-- 장바구니 담기 버튼 -->
-        <button type='button' class='button--cart button button--xs'>
-          <span class='icon icon--cart'></span>담기
-        </button>
-      </div>
-    </div>
-
-    <div id='accordion' class='template'>
-      <h3>Accordion</h3>
-      <ul class='accordion'>
-        <!-- head -->
-        <li class='accordion__head'>
-          <button type='button' class='accordion__head--item'>
-            <div class='accordion__head--content'>
-              <span class='accordion__head--content-title'>카테고리</span>
-              <span class='accordion__head--content-count'>1</span>
-            </div>
-            <span class='icon icon--arrow--bottom'></span>
-          </button>
-          <!-- body -->
-          <ul class='accordion__body'>
-            <li class='accordion__body--item'>
-              <div class='checkbox__wrap'>
-                <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
-                <label for='checkbox01' class='checkbox__label'>
-                  <span class='checkbox__label--icon'></span>
-                  <div class='checkbox__content'>
-                    <span class='checkbox__content-title'>샐러드 · 간편식</span>
-                    <span class='checkbox__content-count'>65</span>
-                  </div>
-                </label>
-              </div>
-            </li>
-            <li class='accordion__body--item'>
-              <div class='checkbox__wrap'>
-                <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
-                <label for='checkbox02' class='checkbox__label'>
-                  <span class='checkbox__label--icon'></span>
-                  <div class='checkbox__content'>
-                    <span class='checkbox__content-title'>국 · 반찬 · 메인요리</span>
-                    <span class='checkbox__content-count'>65</span>
-                  </div>
-                </label>
-              </div>
-            </li>
-            <li class='accordion__body--item'>
-              <div class='checkbox__wrap'>
-                <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' />
-                <label for='checkbox02' class='checkbox__label'>
-                  <span class='checkbox__label--icon'></span>
-                  <div class='checkbox__content'>
-                    <span class='checkbox__content-title'>정육 · 계란</span>
-                    <span class='checkbox__content-count'>65</span>
-                  </div>
-                </label>
-              </div>
-            </li>
-            <button class='accordion__body--more'>
-              <span class='accordion__body--more-title'>카테고리 더보기</span>
-              <span class='icon icon--arrow--right'></span>
-            </button>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div id='count' class='template'>
-      <h3>Count</h3>
-      <div class='count'>총 <span id='count__card'>0</span>건</div>
-    </div>
-
-    <div id='pagination' class='template'>
-      <h3>Pagination</h3>
-      <ul class='pagination'>
-        <li><a href='#'><span class='icon icon--arrow--prev'></span></a></li>
-        <li><a href='#'><span class='icon icon--arrow--left'></span></a></li>
-        <li><a href='#'>1</a></li>
-        <li><a href='#'>2</a></li>
-        <li><a href='#'>3</a></li>
-        <li><a href='#'><span class='icon icon--arrow--right'></span></a></li>
-        <li><a href='#'><span class='icon icon--arrow--next'></span></a></li>
-      </ul>
     </div>
 </body>
 

@@ -48,7 +48,7 @@ $button-size: (
     outline: 0.125rem solid map-get($button, focus);
   }
   &:disabled {
-    opacity: 0.5;
+    opacity: .5;
   }
 
   &--xs {
@@ -80,7 +80,7 @@ $button-size: (
     color: map-get($button, text-primary);
     border-color: map-get($button, bd-primary);
     &:disabled {
-      opacity: 0.5;
+      opacity: .5;
     }
     .icon {
       color: map-get($button, text-primary);
@@ -94,7 +94,7 @@ $button-size: (
       color: map-get($button, text-white);
     }
     &:disabled {
-      opacity: 0.5;
+      opacity: .5;
     }
   }
   &--sharp {
@@ -122,7 +122,7 @@ $button-size: (
     border: 0rem;
     &:disabled {
       .icon {
-        opacity: 0.5;
+        opacity: .5;
       }
     }
     &--sm {
@@ -145,7 +145,7 @@ $button-size: (
 $list_link: (
   text-default: $content,
   focus: $secondary,
-  line: $gray-200,
+  line: $gray-200
 );
 
 .list__link {
@@ -189,7 +189,7 @@ $list_button: (
   text-hover: $gray-600,
   text-active: $content,
   focus: $secondary,
-  line: $gray-200,
+  line: $gray-200
 );
 .list__button {
   display: flex;
@@ -219,29 +219,6 @@ $list_button: (
       .icon {
         font-size: 1.5rem;
         color: map-get($list_button, text-default);
-        position: relative;
-
-        .popup {
-          display: none;
-          position: absolute;
-          transform: translate(-20%, 10%);
-
-          @include paragraph-sm;
-          color: map-get($button, text-default);
-          background-color: map-get($button, text-white);
-          border: 0.0625rem solid map-get($button, bd-gray-200);
-          border-radius: 0.25rem;
-          width: 13rem;
-          padding: 10px;
-          word-break: keep-all;
-          white-space: inherit;
-          text-align: left;
-          z-index: 1000;
-        }
-
-        &:hover .popup {
-          display: block;
-        }
       }
     }
     hr {
@@ -250,42 +227,6 @@ $list_button: (
       margin: 0;
       border: 0;
       background: map-get($list_button, line);
-    }
-  }
-}
-
-.counter__container {
-  align-items: center;
-  border: 2px solid map-get($button, bd-gray-200);
-  display: flex;
-  height: 1.875rem;
-  justify-content: space-between;
-  width: 5.25rem;
-
-  &:focus {
-    outline: 1px solid map-get($button, focus);
-  }
-
-  button {
-    align-items: center;
-    display: flex;
-    height: 1.875rem;
-    justify-content: center;
-    width: 1.875rem;
-
-    span {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
-    }
-
-    &:focus {
-      outline: 0.125rem solid map-get($button, focus);
-    }
-    &:disabled span {
-      color: map-get($button, bd-gray-300);
     }
   }
 }

@@ -77,22 +77,13 @@ dd {
     }
 
     &--selected {
-      overflow: auto;
+      overflow: scroll;
+      -ms-overflow-style: none; // IE and Edge
+      scrollbar-width: none; // Firefox
       width: 100%;
-      /* 전체 스크롤바 */
-      ::-webkit-scrollbar {
-        width: 0.5rem;
-        height: 0.75rem;
-      }
-      ::-webkit-scrollbar-track {
-        background: $gray-100;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: $gray-200;
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: $gray-300;
+
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
 
