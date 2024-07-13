@@ -26,8 +26,18 @@ $login: (
     gap: 0.75rem;
   }
 
+  .button__set {
+    order: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.75rem;
+    .button {
+      text-decoration: none;
+    }
+  }
+
   .login__helper {
     justify-content: flex-end;
-    margin: 0 0 1.75rem;
+    margin: 0rem 0rem 1rem;
   }
 }

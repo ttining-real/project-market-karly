@@ -83,6 +83,39 @@ $header: (
     justify-content: flex-end;
     width: 65.625rem;
     margin: 1rem auto 1rem;
+
+    .login-on{
+      position: relative;
+      &:hover {
+        .user__option {
+          display: flex;
+        }
+      }
+    }
+
+    .user__option {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      flex-flow: column nowrap;
+      padding: 4px 0;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: $white;
+      box-shadow: 0 0.25rem 0.25rem rgba($color: #000000, $alpha: 0.15);
+      button {
+        @include paragraph-sm;
+        padding: 4px 16px;
+        white-space: nowrap;
+        color: $content;
+        cursor: pointer;
+        &:hover, &:focus {
+          background-color: $gray-50;
+        }
+      }
+    }
   }
   .header__nav {
     display: flex;
