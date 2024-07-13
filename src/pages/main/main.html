@@ -1,384 +1,1465 @@
 <!doctype html>
-<html lang='ko-KR'>
+<html lang="ko-KR">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마켓칼리</title>
-    <script type='module' src='/main.js'></script>
-    <script type='module' src='/src/pages/main/swiper.js'></script>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/src/pages/main/swiper.js"></script>
   </head>
   <body>
-    <div class='main'>
-      <section class='main__visual'>
+    <div class="main">
+      <section class="main__visual">
         <!-- Slider main container -->
-        <div class='swiper mySwiper'>
+        <div class="swiper">
           <!-- Additional required wrapper -->
-          <div class='swiper-wrapper'>
+          <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class='swiper-slide'>
-              <img src='/src/assets/visual/visual01.png'>
+            <div class="swiper-slide">
+              <img src="/src/assets/visual/visual01.png" />
             </div>
-            <div class='swiper-slide'>
-              <img src='/src/assets/visual/visual02.png'>
+            <div class="swiper-slide">
+              <img src="/src/assets/visual/visual02.png" />
             </div>
-            <div class='swiper-slide'>
-              <img src='/src/assets/visual/visual03.png'>
+            <div class="swiper-slide">
+              <img src="/src/assets/visual/visual03.png" />
             </div>
-            <div class='swiper-slide'>
-              <img src='/src/assets/visual/visual04.png'>
+            <div class="swiper-slide">
+              <img src="/src/assets/visual/visual04.png" />
             </div>
           </div>
           <!-- If we need pagination -->
-          <div class='swiper-pagination'></div>
+          <div class="swiper-pagination"></div>
 
           <!-- If we need navigation buttons -->
-          <div class='swiper-button-prev'></div>
-          <div class='swiper-button-next'></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
 
           <!-- If we need scrollbar -->
-          <div class='swiper-scrollbar'></div>
+          <div class="swiper-scrollbar"></div>
         </div>
       </section>
-        <div class="main__content--wrap">
-          
-                <div class="main__content">
-          
-          <section class='main__products'>
-            <h3 class='products__title'>이 상품 어때요?</h3>
-            <div class='products__list'>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
-                    </div>
-                  </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
-                    </div>
-                  </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
+      <div class="main__content--wrap">
+        <div class="main__content">
+          <section class="main__products">
+            <h3 class="products__title">이 상품 어때요?</h3>
+            <div class="products__list">
+              <div class="product-list__swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >첫번째 슬라이드</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
                     </div>
                   </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
-                    </div>
-                  </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-            </div>
-          </section>
-          <section class='main__banner'>
-            <img src='/src/assets/banner/banner01.png' alt='Kurly Purple Week, 더 풍성해진 10월의 퍼플위크, 적립률 UP + 3종 쿠폰팩' />
-          </section>
-          <section class='main__products'>
-            <h3 class='products__title'>놓치면 후회할 가격</h3>
-            <div class='products__list'>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
                     </div>
                   </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
-                    </div>
-                  </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
                     </div>
                   </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-              <div class='card'>
-                <a href='/' class='card__link'>
-                  <!-- 상품 이미지 -->
-                  <img class='card__img' src='/src/assets/images/product01.png' alt='상품 이미지' />
-                  <!-- 상품 정보 -->
-                  <div class='card__data'>
-                    <div class='product__info discount product__info--sm'>
-                      <span class='product__info--sm-delivery'>샛별배송</span>
-                      <span class='product__info--sm-title'>[풀무원] 탱탱쫄면 (4개입)</span>
-                      <span class='product__info--sm-desc'>튀기지 않아 부담 없는 매콤함</span>
-                      <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
-                      <div class='product__info--sm-discount discount'>
-                        <span class='product__info--sm-discount-rate'>10%<span class='a11y'>할인</span></span>
-                        <span class='product__info--sm-discount-price'>4,500&nbsp;원</span>
-                      </div>
-                    </div>
-          
-                    <!-- badge -->
-                    <div class='badge-container'>
-                      <span class='badge badge--lg badge--only'>Karly Only</span>
-                      <span class='badge badge--lg'>한정수량</span>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
                     </div>
                   </div>
-                </a>
-                <!-- 장바구니 담기 버튼 -->
-                <button type='button' class='button--cart button button--xs'><span class='icon icon--cart'></span>담기</button>
-              </div>
-            </div>
-          </section>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  ...
                 </div>
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev">
+                <button
+                  type="button"
+                  class="button button--ratio button--md button--rounded button--opacity"
+                >
+                  <span class="icon icon--arrow--left"></span>
+                </button>
+              </div>
+              <div class="swiper-button-next">
+                <button
+                  type="button"
+                  class="button button--ratio button--md button--rounded button--opacity"
+                >
+                  <span class="icon icon--arrow--right"></span>
+                </button>
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+            </div>
+          </section>
+          <section class="main__banner">
+            <img
+              src="/src/assets/banner/banner01.png"
+              alt="Kurly Purple Week, 더 풍성해진 10월의 퍼플위크, 적립률 UP + 3종 쿠폰팩"
+            />
+          </section>
+          <section class="main__products">
+            <h3 class="products__title">놓치면 후회할 가격</h3>
+            <div class="products__list">
+              <div class="product-list__swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >첫번째 슬라이드</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
 
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
 
-          <!-- 최근 본 상품 사이드 바 -->
-              <aside class="sidebar sidebar--sticky">
-                <div class="sidebar__container">
-          <div id="recent-product" class="product-list" aria-live="polite">
-          <h2 class="sidebar__title product-list__title" aria-labelledby="recent-product">
-            최근 본 상품
-          </h2>
-            <button
-              class="product-list__nav product-list__nav--up"
-              aria-label="이전 상품 보기"
-            >
-              <span class="icon icon--arrow--top"></span>
-              <span class="a11y">위로</span>
-            </button>
-            <ul class="product-list__items" role="list">
-              <li class="product-list__item" role="listitem">
-                <a href="/" class="product-item">
-                  <!-- alt 택스트 바꾸기 -->
-                  <img
-                    src="/src/assets/images/product01.png"
-                    alt="상품1 이미지"
-                    class="product-item__image"
-                  />
-                </a>
-              </li>
-              <li class="product-list__item" role="listitem">
-                <a href="/" class="product-item">
-                  <img
-                    src="/src/assets/images/product02.png"
-                    alt="상품2 이미지"
-                    class="product-item__image"
-                  />
-                </a>
-              </li>
-              <li class="product-list__item" role="listitem">
-                <a href="/" class="product-item">
-                  <img
-                    src="/src/assets/images/product03.png"
-                    alt="상품3 이미지"
-                    class="product-item__image"
-                  />
-                </a>
-              </li>
-              <li class="product-list__item" role="listitem">
-                <a href="/" class="product-item">
-                  <img
-                    src="/src/assets/images/product04.png"
-                    alt="상품4 이미지"
-                    class="product-item__image"
-                  />
-                </a>
-              </li>
-            </ul>
-            <button
-              class="product-list__nav product-list__nav--down"
-              aria-label="다음 상품 보기"
-            >
-              <span class="a11y">아래로</span>
-              <span class="icon icon--arrow--bottom"></span>
-            </button>
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <a href="/" class="card__link">
+                        <!-- 상품 이미지 -->
+                        <img
+                          class="card__img"
+                          src="/src/assets/images/product01.png"
+                          alt="상품 이미지"
+                        />
+                        <!-- 상품 정보 -->
+                        <div class="card__data">
+                          <div class="product__info discount product__info--sm">
+                            <span class="product__info--sm-delivery"
+                              >샛별배송</span
+                            >
+                            <span class="product__info--sm-title"
+                              >[풀무원] 탱탱쫄면 (4개입)</span
+                            >
+                            <span class="product__info--sm-desc"
+                              >튀기지 않아 부담 없는 매콤함</span
+                            >
+                            <span class="product__info--sm-price discount"
+                              >5,000&nbsp;원</span
+                            >
+                            <div class="product__info--sm-discount discount">
+                              <span class="product__info--sm-discount-rate"
+                                >10%<span class="a11y">할인</span></span
+                              >
+                              <span class="product__info--sm-discount-price"
+                                >4,500&nbsp;원</span
+                              >
+                            </div>
+                          </div>
+
+                          <!-- badge -->
+                          <div class="badge-container">
+                            <span class="badge badge--lg badge--only"
+                              >Karly Only</span
+                            >
+                            <span class="badge badge--lg">한정수량</span>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- 장바구니 담기 버튼 -->
+                      <button
+                        type="button"
+                        class="button--cart button button--xs"
+                      >
+                        <span class="icon icon--cart"></span>담기
+                      </button>
+                    </div>
+                  </div>
+                  ...
+                </div>
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev">
+                <button
+                  type="button"
+                  class="button button--ratio button--md button--rounded button--opacity"
+                >
+                  <span class="icon icon--arrow--left"></span>
+                </button>
+              </div>
+              <div class="swiper-button-next">
+                <button
+                  type="button"
+                  class="button button--ratio button--md button--rounded button--opacity"
+                >
+                  <span class="icon icon--arrow--right"></span>
+                </button>
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 최근 본 상품 사이드 바 -->
+        <aside class="sidebar sidebar--sticky">
+          <div class="sidebar__container">
+            <div id="recent-product" class="product-list" aria-live="polite">
+              <h2
+                class="sidebar__title product-list__title"
+                aria-labelledby="recent-product"
+              >
+                최근 본 상품
+              </h2>
+              <button
+                class="product-list__nav product-list__nav--up"
+                aria-label="이전 상품 보기"
+              >
+                <span class="icon icon--arrow--top"></span>
+                <span class="a11y">위로</span>
+              </button>
+              <ul class="product-list__items" role="list">
+                <li class="product-list__item" role="listitem">
+                  <a href="/" class="product-item">
+                    <!-- alt 택스트 바꾸기 -->
+                    <img
+                      src="/src/assets/images/product01.png"
+                      alt="상품1 이미지"
+                      class="product-item__image"
+                    />
+                  </a>
+                </li>
+                <li class="product-list__item" role="listitem">
+                  <a href="/" class="product-item">
+                    <img
+                      src="/src/assets/images/product02.png"
+                      alt="상품2 이미지"
+                      class="product-item__image"
+                    />
+                  </a>
+                </li>
+                <li class="product-list__item" role="listitem">
+                  <a href="/" class="product-item">
+                    <img
+                      src="/src/assets/images/product03.png"
+                      alt="상품3 이미지"
+                      class="product-item__image"
+                    />
+                  </a>
+                </li>
+                <li class="product-list__item" role="listitem">
+                  <a href="/" class="product-item">
+                    <img
+                      src="/src/assets/images/product04.png"
+                      alt="상품4 이미지"
+                      class="product-item__image"
+                    />
+                  </a>
+                </li>
+              </ul>
+              <button
+                class="product-list__nav product-list__nav--down"
+                aria-label="다음 상품 보기"
+              >
+                <span class="a11y">아래로</span>
+                <span class="icon icon--arrow--bottom"></span>
+              </button>
+            </div>
           </div>
-                </div>
-              </aside>
-              
-        </div>
-      <!-- 팝업 광고 -->
-    <div
-      class="popup popup__ad"
-      role="dialog"
-      aria-label="popup__ad"
-      aria-modal="true"
-    >
-      <div class="popup__ad__content">
-        <div class="popup__ad__img">
-          <a href=""
-            ><img
-              src="/src/assets/images/PopupBanner.png"
-              alt="광고 배너 내용 설명"
-              class="ad__image"
-          /></a>
-        </div>
-
-        <div class="popup__actions">
-          <button
-            type="button"
-            class="popup__button popup__button--hide-today"
-            aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다"
-          >
-            오늘 하루 안 보기
-          </button>
-          <button
-            type="button"
-            class="popup__button popup__button--close"
-            aria-label="팝업 닫기"
-          >
-            닫기
-          </button>
-        </div>
+        </aside>
       </div>
-    </div>
-
-
-
-<!-- 장바구니 모달 -->
+      <!-- 팝업 광고 -->
+      <!-- <div
+          class="popup popup__ad"
+          role="dialog"
+          aria-label="popup__ad"
+          aria-modal="true"
+        >
+          <div class="popup__ad__content">
+            <div class="popup__ad__img">
+              <a href=""
+                ><img
+                  src="/src/assets/images/PopupBanner.png"
+                  alt="광고 배너 내용 설명"
+                  class="ad__image"
+              /></a>
+            </div>
+            <div class="popup__actions">
+              <button
+                type="button"
+                class="popup__button popup__button--hide-today"
+                aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다"
+              >
+                오늘 하루 안 보기
+              </button>
+              <button
+                type="button"
+                class="popup__button popup__button--close"
+                aria-label="팝업 닫기"
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        </div> -->
+      <!-- 장바구니 모달 -->
       <div
         class="modal__add-cart"
         role="dialog"
@@ -442,8 +1523,6 @@
           </button>
         </section>
       </div>
-
-
     </div>
   </body>
 </html>
