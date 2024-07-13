@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang='ko-KR'>
+
+<head>
+  <meta charset='UTF-8' />
+  <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>마켓칼리-장바구니</title>
+  <script type='module' src='/main.js'></script>
+  <script type='module' src='/src/layout/header/header.js'></script>
+  <script type='module' src='/src/layout/footer/footer.js'></script>
+</head>
+
+<body>
+  <c-header></c-header>
+  <main class='page cart'>
+    <h1 class='cart__title'>장바구니</h1>
+    <section class='cart__container'>
+      <div class='cart--selected'>
+        <div class='cart__checkbox'>
+          <ul class='list__button'>
+            <li class='checkbox__wrap'>
+              <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
+              <label for='checkbox02' class='checkbox__label'>
+                <span class='checkbox__label--icon'></span>
+                전체선택(3/3)
+              </label>
+            </li>
+            <li aria-hidden='true'>
+              <hr />
+            </li>
+            <li><button type='button' class=''>선택삭제</button></li>
+          </ul>
+        </div>
+
+        <div class='cart__list'>
+          <div class='cart__item'>
+            <button type='button'>
+              <span class='icon icon--food--refrigerated'></span>
+              냉장 식품
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <ul class='selected'>
+              <li class='selected__item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
+                  <label for='checkbox02' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                  </label>
+                </div>
+                <div class='product--link'>
+                  <a href='#'>
+                    <img src='/src/assets/images/product01.png' alt='product01제품명' />
+                  </a>
+                </div>
+                <strong>
+                  <a href='#'>
+                    [풀무원] 통통쫄면 (4개입)
+                  </a>
+                </strong>
+                <div class='input__price'>
+                  <button type='button' disabled>
+                    <span class='icon icon--minus'></span>
+                  </button>
+                  <input type='number' min='1' value='1' />
+                  <button type='button'>
+                    <span class='icon icon--plus'></span>
+                  </button>
+                </div>
+                <div class='price'>
+                  <span class='product__info--sm-discount-price'>5,000&nbsp;원</span>
+                  <span class='product__info--sm-price discount'>4,500&nbsp;원</span>
+                </div>
+                <button type='button' class='delete'>
+                  <span class='icon icon--cancel'></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class='cart__item'>
+            <button type='button'>
+              <span class='icon icon--food--frozen'></span>
+              냉동 식품
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div class='cart__item'>
+            <button type='button'>
+              <span class='icon icon--food--normal'></span>
+              상온 식품
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class='cart__result'>
+        <div class='result__location'>
+          <div class='header'>
+            <span class='icon icon--location'></span>
+            <h3>배송지</h3>
+          </div>
+          <address>서울 중랑구 면목로 42길 11 (행운빌딩) 603호</address>
+          <span class='delivery'>샛별배송</span>
+          <button type='button' class='button button--md button--outlined'>배송지 변경</button>
+        </div>
+        <div class='result__receipt'>
+          <dl class='receipt__price'>
+            <div class='product__price'>
+              <dt>상품금액</dt>
+              <dd><strong class='price'>40,680<span>원</span></strong></dd>
+            </div>
+            <div class='product__sale'>
+              <dt>상품할인금액</dt>
+              <dd>-<strong class='price'>4,651<span>원</span></strong></dd>
+            </div>
+            <div class='product__delivery'>
+              <dt>배송비</dt>
+              <dd>+<strong class='price'>3,000<span>원</span></strong></dd>
+            </div>
+          </dl>
+          <dl class='receipt__total'>
+            <div class='total__price'>
+              <dt>결제예정금액</dt>
+              <dd><strong class='price'>40,680<span>원</span></strong></dd>
+            </div>
+            <div class='alert'>
+              <dt>
+                <span class='badge badge--md badge--accent'>적립</span>
+              </dt>
+              <dd>
+                최대 36원 적립 일반 0.1%
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <button type='button' class='button button--md button--filled button--order'>
+          주문하기
+        </button>
+        <ul class='result__notice'>
+          <li>쿠폰/적립금은 주문서에서 사용 가능합니다.</li>
+          <li>[주문완료] 상태일 경우에만 주문 취소 가능합니다.</li>
+          <li>[마이컬리 > 주문내역 상세페이지] 에서 직접 취소하실 수 있습니다.</li>
+          <li>쿠폰, 적립금 사용 금액을 제외한 실 결제 금액 기준으로 최종 산정됩니다.</li>
+          <li>상품별로 적립금 지급 기준이 다를 수 있습니다. (상품 상세 페이지에서 확인 가능합니다)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <c-footer></c-footer>
+</body>
+
+</html>
