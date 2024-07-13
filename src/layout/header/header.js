@@ -1,4 +1,7 @@
+import pb from '@/api/pocketbase';
+import defaultAuthData from '@/api/defaultAuthData';
 import styles from '/src/styles/style.scss?inline';
+import { getStorage, setStorage } from 'kind-tiger';
 
 class Header extends HTMLElement {
   constructor() {
@@ -35,11 +38,13 @@ class Header extends HTMLElement {
             <li aria-hidden='true'>
               <hr />
             </li>
-            <li><a href='/src/pages/login/login.html'>로그인</a></li>
+            <li class='login-off'>
+              <a href='/src/pages/login/login.html'>로그인</a>
+            </li>
             <li aria-hidden='true'>
               <hr />
             </li>
-            <li><a href='/src/pages/login/login.html'>고객센터<span class='icon icon--triangle--bottom' aria-hidden='true'></span></a></li>
+            <li><a href='/src/pages/login/login.html'>고객센터</a></li>
           </ul>
         </div>
         <div class='header__nav'>
@@ -64,6 +69,51 @@ class Header extends HTMLElement {
         </div>
       </header>
     `;
+
+    this.logout();
+  }
+
+  /* ---------------------------------- 로그아웃 ---------------------------------- */
+  async logout() {
+    if (localStorage.getItem('auth')) {
+      const { isAuth, user } = await getStorage('auth');
+
+      if (isAuth) {
+        const utils = this.shadowRoot.querySelector('.header__utils');
+
+        if (utils) {
+          const template = `
+            <ul class='list__link'>
+              <li class='login-on'>
+                <a href='/src/pages/login/login.html' class='login'>${user.username}님 반갑습니다!</a>
+                <div class='user__option'>
+                  <button type="button" class='logout'>로그아웃</button>
+                  <button type="button" class='user-delete'>회원탈퇴</button>
+                </div>
+              </li>
+              <li aria-hidden='true'>
+                <hr />
+              </li>
+              <li><a href='/src/pages/login/login.html'>고객센터<span class='icon icon--triangle--bottom' aria-hidden='true'></span></a></li>
+            </ul>
+          `;
+          utils.innerHTML = template;
+
+          const logout = this.shadowRoot.querySelector('.logout');
+
+          function handleLogout() {
+            if (confirm('로그아웃 하시겠습니까?')) {
+              pb.authStore.clear();
+              // deleteStorage('auth');
+              setStorage('auth', defaultAuthData);
+              location.reload();
+            }
+          }
+
+          logout.addEventListener('click', handleLogout);
+        }
+      }
+    }
   }
 }
 
