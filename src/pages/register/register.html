@@ -8,6 +8,7 @@
   <script type='module' src='/main.js'></script>
   <script type='module' src='/src/layout/header/header.js'></script>
   <script type='module' src='/src/layout/footer/footer.js'></script>
+  <script type='module' src='/src/pages/register/register.js'></script>
 </head>
 <body>
   <c-header></c-header>
@@ -19,51 +20,60 @@
     <form action='/' class='register__form'>
       <fieldset>
         <legend class='a11y'>회원가입 작성 양식</legend>
-        <div class='form--layout'>
+        <!-- <div class='form--layout'>
           <label for='userID' class='input__label' aria-label='필수입력사항'>아이디<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
             <input type='text' class='input is--invalid' name='userID' id='' placeholder='아이디를 입력해주세요' />
             <span class='hint'>필수 입력 사항입니다.</span>
           </div>
           <button type='button' class='button button--md button--outlined'>중복 확인</button>
+        </div> -->
+        <div class='form--layout'>
+          <label for='userEmail' class='input__label' aria-label='필수입력사항'>아이디<span class='required' aria-hidden='true'>*</span></label>
+          <div class='input__wrap'>
+            <input type='email' class='input is--invalid' name='userEmail' id='userId' placeholder='예&#41; marketkarly@karly.com' />
+            <span class='hint'>필수 입력 사항입니다. 아이디는 이메일 형식이어야 합니다.</span>
+            <!-- <span class='hint'></span> -->
+          </div>
+          <button type='button' class='button button--md button--outlined'>중복 확인</button>
         </div>
         <div class='form--layout'>
           <label for='userPassword' class='input__label' aria-label='필수입력사항'>비밀번호<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
-            <input type='password' class='input is--invalid' name='userPassword' id='' placeholder='비밀번호를 입력해주세요' />
-            <span class='hint'>필수 입력 사항입니다.</span>
+            <input type='password' class='input is--invalid' name='userPassword' id='userPw' placeholder='비밀번호를 입력해주세요' />
+            <span class='hint'>필수 입력 사항입니다. 최소 6자리 이상, 특수문자가 포함되어야 합니다.</span>
           </div>
         </div>
         <div class='form--layout'>
           <label for='userPasswordCkeck' class='input__label' aria-label='필수입력사항'>비밀번호 확인<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
-            <input type='password' class='input is--invalid' name='userPasswordCkeck' id='' placeholder='비밀번호를 한번 더 입력해주세요' />
+            <input type='password' class='input is--invalid' name='userPasswordCkeck' id='userPwCheck' placeholder='비밀번호를 한번 더 입력해주세요' />
             <span class='hint'>필수 입력 사항입니다.</span>
           </div>
         </div>
         <div class='form--layout'>
           <label for='userName' class='input__label' aria-label='필수입력사항'>이름<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
-            <input type='password' class='input is--invalid' name='userName' id='' placeholder='이름을 입력해주세요' />
+            <input type='text' class='input is--invalid' name='userName' id='userName' placeholder='이름을 입력해주세요' />
             <span class='hint'>필수 입력 사항입니다.</span>
           </div>
         </div>
-        <div class='form--layout'>
+        <!-- <div class='form--layout'>
           <label for='userEmail' class='input__label' aria-label='필수입력사항'>이메일<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
             <input type='email' class='input is--invalid' name='userEmail' id='' placeholder='예&#41; marketkarly@karly.com' />
             <span class='hint'>필수 입력 사항입니다.</span>
           </div>
           <button type='button' class='button button--md button--outlined'>중복 확인</button>
-        </div>
-        <div class='form--layout'>
+        </div> -->
+        <!-- <div class='form--layout'>
           <label for='userPhone' class='input__label' aria-label='필수입력사항'>휴대폰<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
             <input type='tel' class='input is--invalid' name='userPhone' id='' placeholder='숫자만 입력해주세요' />
             <span class='hint'>필수 입력 사항입니다.</span>
           </div>
           <button type='button' class='button button--md button--outlined'>인증번호 받기</button>
-        </div>
+        </div> -->
         <div class='form--layout'>
           <p class='label' aria-label='필수입력사항'>주소<span class='required' aria-hidden='true'>*</span></p>
           <div class='layout'>
@@ -125,8 +135,8 @@
         <div class='agree_list'>
           <div class='checkbox__desc__set'>
             <div class='checkbox__wrap'>
-              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
-              <label for='checkbox01' class='checkbox__label'>
+              <input type='checkbox' class='checkbox' id='agreeAll' name='agreeCheck' />
+              <label for='agreeAll' class='checkbox__label'>
                 <span class='checkbox__label--icon'></span>전체 동의합니다.
               </label>
             </div>
@@ -134,8 +144,8 @@
           </div>
           <div class='checkbox__button__set'>
             <div class='checkbox__wrap'>
-              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
-              <label for='checkbox01' class='checkbox__label'>
+              <input type='checkbox' class='checkbox checkbox-list' id='agreeTerms' name='agreeCheck' />
+              <label for='agreeTerms' class='checkbox__label'>
                 <span class='checkbox__label--icon'></span>이용약관 동의(필수)
               </label>
             </div>
@@ -143,8 +153,8 @@
           </div>
           <div class='checkbox__button__set'>
             <div class='checkbox__wrap'>
-              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
-              <label for='checkbox01' class='checkbox__label'>
+              <input type='checkbox' class='checkbox checkbox-list' id='agreePrivacy' name='agreeCheck' />
+              <label for='agreePrivacy' class='checkbox__label'>
                 <span class='checkbox__label--icon'></span>개인정보 수집·이용 동의 (필수)
               </label>
             </div>
@@ -152,8 +162,8 @@
           </div>
           <div class='checkbox__button__set'>
             <div class='checkbox__wrap'>
-              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
-              <label for='checkbox01' class='checkbox__label'>
+              <input type='checkbox' class='checkbox checkbox-list' id='agreeBenefit' name='agreeCheck' />
+              <label for='agreeBenefit' class='checkbox__label'>
                 <span class='checkbox__label--icon'></span>무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)
               </label>
             </div>
@@ -161,8 +171,8 @@
           </div>
           <div class='checkbox__button__set'>
             <div class='checkbox__wrap'>
-              <input type='checkbox' class='checkbox' id='checkbox01' name='checkbox-name01' />
-              <label for='checkbox01' class='checkbox__label'>
+              <input type='checkbox' class='checkbox checkbox-list' id='agreeAge' name='agreeCheck' />
+              <label for='agreeAge' class='checkbox__label'>
                 <span class='checkbox__label--icon'></span>본인은 만 14세 이상입니다. (필수)
               </label>
             </div>
@@ -171,7 +181,7 @@
         </div>
       </fieldset>
 
-      <button type='submit' class='button button--lg button--filled button--full'>가입하기</button>
+      <button type='button' class='button button--lg button--filled button--full join-us' disabled>가입하기</button>
     </form>
   </section>
   <c-footer></c-footer>
