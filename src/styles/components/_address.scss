@@ -1,0 +1,49 @@
+.modal__address {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  padding: 1.875rem;
+  position: relative;
+  width: 28.125rem;
+
+  .title {
+    @include heading-lg;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+
+    label {
+      @include label-sm;
+      color: $content;
+      display: inline-block;
+    }
+
+    input {
+      @include paragraph-md;
+      border: 1px solid $gray-100;
+      border-radius: 4px;
+      color: $content;
+      height: 2.75rem;
+      outline: none;
+      padding: 0 11px 1px 15px;
+      width: 100%;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+
+  span.icon--cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 1.875rem;
+    top: 1.875rem;
+  }
+}

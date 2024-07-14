@@ -1,0 +1,28 @@
+.modal__order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 18.75rem;
+  border: 1px solid $gray-100;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  &__content {
+    border-bottom: 1px solid $gray-100;
+    color: $content;
+    padding: 2.5rem 1.875rem;
+    text-align: center;
+    width: 100%;
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  button {
+    @include label-md;
+    color: $primary;
+    width: 100%;
+  }
+}
