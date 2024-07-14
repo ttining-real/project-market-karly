@@ -85,5 +85,3 @@ function handleLogin(e) {
 }
 
 loginButton.addEventListener('click', handleLogin);
-
-// pb.authStore.clear();

@@ -85,7 +85,7 @@ class Header extends HTMLElement {
           const template = `
             <ul class='list__link'>
               <li class='login-on'>
-                <a href='/src/pages/login/login.html' class='login'>${user.username}님 반갑습니다!</a>
+                <a href='/src/pages/login/login.html' class='login'>${user.name}님 반갑습니다!</a>
                 <div class='user__option'>
                   <button type="button" class='logout'>로그아웃</button>
                   <button type="button" class='user-delete'>회원탈퇴</button>
@@ -104,13 +104,22 @@ class Header extends HTMLElement {
           function handleLogout() {
             if (confirm('로그아웃 하시겠습니까?')) {
               pb.authStore.clear();
-              // deleteStorage('auth');
               setStorage('auth', defaultAuthData);
               location.reload();
             }
           }
 
           logout.addEventListener('click', handleLogout);
+
+          const userDelete = this.shadowRoot.querySelector('.user-delete');
+
+          function handleUserDelete() {
+            pb.collection('users').delete(user.id);
+            pb.authStore.clear();
+            setStorage('auth', defaultAuthData);
+          }
+
+          userDelete.addEventListener('click', handleUserDelete);
         }
       }
     }
