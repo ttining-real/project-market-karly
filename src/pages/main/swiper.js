@@ -38,7 +38,6 @@ const swiper = new Swiper('.swiper', {
 const productSwiper = new Swiper('.product-list__swiper', {
   slidesPerView: 4,
   slidesPerGroup: 4,
-  // spaceBetween: 18,
   // Optional parameters
   modules: [Navigation, Keyboard],
   direction: 'horizontal',
