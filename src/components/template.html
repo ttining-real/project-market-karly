@@ -935,6 +935,39 @@
         <li><a href='#'><span class='icon icon--arrow--next'></span></a></li>
       </ul>
     </div>
+
+    <div id="address" class="template">
+      <h3>배송지 모달</h3>
+      <section class="modal__address">
+        <h1 class="title">배송지 수정</h1>
+        <div class="modal__address__content">
+          <label for="name">받으실 분</label>
+          <input type="text" name="name" id="name" />
+          <label for="address">주소</label>
+          <input type="text" name="address" id="address" />
+          <label for="tel">휴대폰</label>
+          <input type="tel" name="tel" id="tel" />
+        </div>
+        <button type='button' class='button button--md button--filled button--save'>
+          저장
+        </button>
+        <button type='button' class='button--close' aria-label="닫기">
+          <span class='icon icon--cancel'></span>
+        </button>
+      </section>
+    </div>
+
+    <div id="order" class="teamplte">
+      <h3>주문완료 모달</h3>
+      <section class="modal__order">
+        <h1 class="a11y">주문완료</h1>
+        <div class="modal__order__content">
+          <p>주문이 완료되었습니다.</p>
+          <span>5초 뒤 메인페이지로 이동합니다.</span>
+        </div>
+        <button type="button" class="button--lg button--confirm">확인</button>
+      </section>
+    </div>
 </body>
 
 </html>
