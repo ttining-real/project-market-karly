@@ -55,12 +55,33 @@
       object-fit: cover;
     }
   }
-
+  .products__list {
+    position: relative;
+    .product-list__swiper {
+      overflow: hidden;
+      .swiper-wrapper {
+        width: 65.625rem;
+      }
+    }
+    .swiper-button {
+      &-prev,
+      &-next {
+        position: absolute;
+        top: 33%;
+        &::after {
+          display: none;
+        }
+      }
+      &-prev {
+        left: -0.8125rem;
+      }
+      &-next {
+        right: 0px;
+      }
+    }
+  }
   // # popup ad
-
   .popup {
-    // background-color: lightblue;
-
     &__ad {
       z-index: 11;
       position: absolute;
@@ -94,19 +115,14 @@
     &__actions {
       display: flex;
       flex-flow: row nowrap;
-
-      /* ---------------------------- // ! 이 부분 스타일링 확인 --------------------------- */
       margin-top: -3px;
-
       button {
         @include paragraph-md;
         width: 50%;
         line-height: 5.375rem;
         background-color: white;
-
         &:first-child {
           position: relative;
-
           &::after {
             position: absolute;
             right: -0.0625rem;
@@ -119,11 +135,9 @@
       }
     }
   }
-
   // # 최근 본 상품
   .sidebar {
     // aside 태그
-
     z-index: 11;
     display: flex;
     flex-flow: column nowrap;
@@ -133,65 +147,54 @@
     padding: 8px 0;
     border: 1px solid $gray-200;
     background-color: white;
-
     position: sticky;
     top: 193px;
     align-self: flex-start;
     max-height: calc(100vh - 300px);
     right: 1.875rem;
     margin: 193px 0;
-
     &__title {
       @include paragraph-sm;
       font-weight: 600;
       letter-spacing: -0.3px;
     }
-
     .product-list {
       // 전체 div태그
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
       gap: 8px;
-
       &__nav--up {
         order: -1;
       }
-
       &__items {
         // ul 태그
         width: 2.5rem;
         height: 7.375rem;
         overflow: hidden;
       }
-
       &__item {
         // li태그
-
         width: 2.5rem;
         height: 3.1875rem;
         margin-bottom: 0.25rem;
       }
-
       .product-item {
         // a태그
         display: inline-block;
       }
-
       img {
         width: 100%;
         height: auto;
       }
     }
   }
-
   @media screen and (max-width: 1200px) {
     .sidebar--sticky {
       display: none;
     }
   }
 }
-
 // # add-cart
 .modal__add-cart {
   display: none;
@@ -199,12 +202,10 @@
   padding: 1.5rem 1.25rem;
   border-radius: 1rem;
   box-shadow: 0px 8px 36px 0px #00000033;
-
   .add-cart {
     &__content > div {
       margin-bottom: 1.75rem;
     }
-
     &__product-info {
       .product-info__name {
         margin-bottom: 8px;
@@ -225,22 +226,18 @@
         }
       }
     }
-
     &__quantity-form {
       display: inline-block;
       border: 1px solid $gray-200;
-
       .quantity-form {
         &__button {
           padding: 8px;
         }
-
         span {
           padding: 8px;
         }
       }
     }
-
     &__total-info {
       .total-info {
         &__price {
@@ -249,13 +246,11 @@
           flex-flow: row nowrap;
           justify-content: space-between;
           align-items: end;
-
           .price {
             @include heading-xl;
             line-height: 3rem;
           }
         }
-
         &__benefit {
           display: flex;
           flex-flow: row nowrap;
@@ -264,7 +259,6 @@
         }
       }
     }
-
     &__button {
       display: flex;
       flex-flow: row nowrap;
