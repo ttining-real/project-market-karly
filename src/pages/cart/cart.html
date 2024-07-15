@@ -9,9 +9,7 @@
   <script type='module' src='/main.js'></script>
   <script type='module' src='/src/layout/header/header.js'></script>
   <script type='module' src='/src/layout/footer/footer.js'></script>
-  <script type="module" src="/src/pages/cart/cart.js"></script>
-  <script type="module" src="/src/pages/cart/delete.js"></script>
-  <script type="module" src="/src/pages/cart/modal.js"></script>
+  <script type="module" src='/src/pages/cart/index.js'></script>
 </head>
 
 <body>
@@ -211,15 +209,15 @@
         </ul>
       </div>
     </section>
-    <section class="modal__order is--open is--center">
+    <section class="modal__order is--center">
       <h1 class="a11y">주문완료</h1>
       <div class="modal__order__content">
         <p>주문이 완료되었습니다.</p>
-        <span><span class="count">5</span>초 뒤 메인페이지로 이동합니다.</span>
+        <span><span class="order--count">5</span>초 뒤 메인페이지로 이동합니다.</span>
       </div>
       <button type="button" class="button--lg button--confirm">확인</button>
     </section>
-    <section class='modal__address is--open is--center'>
+    <section class='modal__address is--center'>
       <h1 class="title">배송지 수정</h1>
       <div class="modal__address__content">
         <div class="post--wrap">
@@ -245,6 +243,7 @@
   </main>
   <c-footer></c-footer>
   <div class="overlay" aria-hidden="true"></div>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 
 </html>

@@ -54,20 +54,10 @@
     top: 1.875rem;
   }
 
-  &--center {
+  &.is--center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 }
-
-// .wrong_text {
-//   font-size: 1rem;
-//   color: #f44e38;
-//   letter-spacing: -0.2px;
-//   font-weight: 300;
-//   margin: 8px 0 2px;
-//   line-height: 1em;
-//   display: none;
-// }
