@@ -86,10 +86,6 @@
                     </label>
                   </div>
                 </li>
-                <!-- <button class='accordion__body--more'>
-                  <span class='accordion__body--more-title'>카테고리 더보기</span>
-                  <span class='icon icon--arrow--right'></span>
-                </button> -->
               </ul>
             </li>
             <!-- head -->
@@ -97,7 +93,6 @@
               <button type='button' class='accordion__head--item'>
                 <div class='accordion__head--content'>
                   <span class='accordion__head--content-title'>가격</span>
-                  <!-- <span class='accordion__head--content-count'>0</span> -->
                 </div>
                 <span class='icon icon--arrow--bottom'></span>
               </button>
@@ -106,37 +101,49 @@
                 <!-- 라디오 버튼 -->
                 <li class='accordion__body--item'>
                   <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='radio01' name='name' value='value' />
-                    <label for='radio01' class='radio__label'>
+                    <input type='radio' class='radio' id='price-section1' name='radio' value='value' />
+                    <label for='price-section1' class='radio__label'>
                       <span class='radio__label--icon'></span>
-                      <span class="radio__label--content">6,950원 미만</span>
+                      <div class='radio__content'>
+                        <span class="radio__content-title">10,000원 미만</span>
+                        <span class='radio__content-count' id="count--section1">0</span>
+                      </div>
                     </label>
                   </div>
                 </li>
                 <li class='accordion__body--item'>  
                   <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='radio02' name='name' value='value' />
-                    <label for='radio02' class='radio__label'>
+                    <input type='radio' class='radio' id='price-section2' name='radio' value='value' />
+                    <label for='price-section2' class='radio__label'>
                       <span class='radio__label--icon'></span>
-                      <span class="radio__label--content">6,950원 ~ 10,300원</span>
+                      <div class='radio__content'>
+                        <span class="radio__content-title">10,000원 ~ 49,900원</span>
+                        <span class='radio__content-count' id="count--section2">0</span>
+                      </div>
                     </label>
                   </div>
                 </li>
                 <li class='accordion__body--item'>  
                   <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='radio02' name='name' value='value' />
-                    <label for='radio02' class='radio__label'>
+                    <input type='radio' class='radio' id='price-section3' name='radio' value='value' />
+                    <label for='price-section3' class='radio__label'>
                       <span class='radio__label--icon'></span>
-                      <span class="radio__label--content">10,300원 ~ 14,900원</span>
+                      <div class='radio__content'>
+                        <span class="radio__content-title">50,000원 ~ 99,900원</span>
+                        <span class='radio__content-count' id="count--section3">0</span>
+                      </div>
                     </label>
                   </div>
                 </li>
                 <li class='accordion__body--item'>
                   <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='radio02' name='name' value='value' />
-                    <label for='radio02' class='radio__label'>
+                    <input type='radio' class='radio' id='price-section4' name='radio' value='value' />
+                    <label for='price-section4' class='radio__label'>
                       <span class='radio__label--icon'></span>
-                      <span class="radio__label--content">14,900원 이상</span>
+                      <div class='radio__content'>
+                        <span class="radio__content-title">100,000원 이상</span>
+                        <span class='radio__content-count' id="count--section4">0</span>
+                      </div>
                     </label>
                   </div>
                 </li>
