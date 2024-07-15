@@ -33,7 +33,7 @@ $accordion: (
       display: flex;
       flex-flow: row;
       align-items: center;
-      padding-top: 0.175em;
+      margin-top: 0.175em;
 
       .icon{
         font-size: 1.25rem;
@@ -42,9 +42,6 @@ $accordion: (
       }
       .title{
         @include label-sm;
-        // font-size: 0.625rem;
-        // font-weight: 600;
-        // line-height: 160%;
         color: map-get($accordion, reset-text);
       }
       &:focus{
@@ -62,6 +59,7 @@ $accordion: (
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-between;
+
       &:focus{
         outline: 0.125rem solid map-get($button, focus);
       }
@@ -129,15 +127,16 @@ $accordion: (
       .radio__wrap{
         margin-left: 0.2rem;
         
-        .radio {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          gap: 0.25rem;
-  
-          &__label--content {
+        .radio__content {
+          display: inline-block;
+          
+          &-title{
             @include paragraph-md;
             color: map-get($accordion, body-text);
+          }
+          &-count{
+            @include paragraph-sm;
+            color: map-get($accordion, count);
           }
         }
       }
