@@ -11,7 +11,6 @@
 
   &__visual {
     height: 23.125rem;
-    background: lightcyan;
 
     .swiper {
       width: 100%;
@@ -59,8 +58,8 @@
     position: relative;
     .product-list__swiper {
       overflow: hidden;
+      width: 65.625rem;
       .swiper-wrapper {
-        width: 65.625rem;
       }
     }
     .swiper-button {

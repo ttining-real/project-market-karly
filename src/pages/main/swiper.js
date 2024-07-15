@@ -35,53 +35,29 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-const productSwiper = new Swiper('.product-list__swiper', {
-  slidesPerView: 4,
-  slidesPerGroup: 4,
-  // Optional parameters
-  modules: [Navigation, Keyboard],
-  direction: 'horizontal',
-  loop: true,
-  keyboard: {
-    enabled: true,
-  },
-  mousewheel: true,
+const swiperContainers = document.querySelectorAll('.swiper-container');
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+swiperContainers.forEach((container, index) => {
+  container.id = `swiper-${index + 1}`;
+  console.log(container);
+  const productSwiper = new Swiper(`#swiper-${index + 1}`, {
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    // Optional parameters
+    modules: [Navigation, Keyboard],
+    direction: 'horizontal',
+    keyboard: {
+      enabled: true,
+    },
+    mousewheel: true,
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+    // Navigation arrows
+    navigation: {
+      nextEl: `#next-${index + 1}`,
+      prevEl: `#prev-${index + 1}`,
+    },
+    scrollbar: {
+      el: `#scrollbar-${index + 1} .swiper-scrollbar`,
+    },
+  });
 });
-
-// document.querySelectorAll('.products__list').forEach((container, index) => {
-//   container.id = `swiper-${index}`;
-//   new Swiper(`#swiper-${index}`, {
-//     slidesPerView: 4,
-//     slidesPerGroup: 4,
-//     // Optional parameters
-//     modules: [Navigation, Keyboard],
-//     direction: 'horizontal',
-//     loop: true,
-//     keyboard: {
-//       enabled: true,
-//     },
-//     mousewheel: true,
-
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: `#swiper-${index} .swiper-button-next`,
-//       prevEl: `#swiper-${index} .swiper-button-prev`,
-//     },
-
-//     // And if we need scrollbar
-//     scrollbar: {
-//       el: '.swiper-scrollbar',
-//     },
-//   });
-// });
