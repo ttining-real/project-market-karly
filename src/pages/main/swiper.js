@@ -58,3 +58,30 @@ const productSwiper = new Swiper('.product-list__swiper', {
     el: '.swiper-scrollbar',
   },
 });
+
+// document.querySelectorAll('.products__list').forEach((container, index) => {
+//   container.id = `swiper-${index}`;
+//   new Swiper(`#swiper-${index}`, {
+//     slidesPerView: 4,
+//     slidesPerGroup: 4,
+//     // Optional parameters
+//     modules: [Navigation, Keyboard],
+//     direction: 'horizontal',
+//     loop: true,
+//     keyboard: {
+//       enabled: true,
+//     },
+//     mousewheel: true,
+
+//     // Navigation arrows
+//     navigation: {
+//       nextEl: `#swiper-${index} .swiper-button-next`,
+//       prevEl: `#swiper-${index} .swiper-button-prev`,
+//     },
+
+//     // And if we need scrollbar
+//     scrollbar: {
+//       el: '.swiper-scrollbar',
+//     },
+//   });
+// });
