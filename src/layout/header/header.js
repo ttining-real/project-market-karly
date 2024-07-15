@@ -80,7 +80,6 @@ class Header extends HTMLElement {
 
       if (isAuth) {
         const utils = this.shadowRoot.querySelector('.header__utils');
-
         if (utils) {
           const template = `
             <ul class='list__link'>
@@ -113,11 +112,13 @@ class Header extends HTMLElement {
 
           const userDelete = this.shadowRoot.querySelector('.user-delete');
 
-          function handleUserDelete() {
-            pb.collection('users').delete(user.id);
-            pb.authStore.clear();
-            setStorage('auth', defaultAuthData);
-            location.href = '/index.html'
+          async function handleUserDelete() {
+            if (confirm('탈퇴 하시겠습니까?')) {
+              await pb.collection('users').delete(user.id);
+              pb.authStore.clear();
+              setStorage('auth', defaultAuthData);
+              location.reload();
+            }
           }
 
           userDelete.addEventListener('click', handleUserDelete);
