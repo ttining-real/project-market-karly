@@ -1,69 +1,71 @@
 import pb from '@/api/pocketbase';
 import { getNode, getStorage, setStorage } from 'kind-tiger';
+import { idReg, pwReg, charsReg } from '@/lib/regExp.js';
 
-/* --------------------------------- 정규 표현식 --------------------------------- */
-function emailReg(text) {
-  const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const idCheck = getNode('#idField');
+const pwCheck = getNode('#pwField');
+const loginButton = getNode('#loginButton');
 
-  return re.test(String(text).toLowerCase());
-}
-
-function pwReg(text) {
-  const re = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{6,16}$/;
-  return re.test(String(text).toLowerCase());
-}
-
-/* ------------------------------- 아이디 유효성 검사 ------------------------------- */
-const loginId = getNode('#loginId');
 let idCheckPass = false;
+let pwCheckPass = false;
 
 function handleIdCheck() {
   const value = this.value;
+  const hint = this.nextElementSibling;
 
-  if (emailReg(value)) {
+  if (idReg(value)) {
     this.classList.remove('is--invalid');
     idCheckPass = true;
+  } else if (charsReg(value)) {
+    this.classList.add('is--invalid');
+    hint.textContent = '아이디는 특수문자와 공백을 포함할 수 없습니다.';
+    idCheckPass = false;
   } else {
     this.classList.add('is--invalid');
+    hint.textContent =
+      '아이디는 4자 이상 20자 이하의 영문과 숫자를 포함해야 합니다.';
     idCheckPass = false;
   }
+
+  updateLoginState();
 }
-
-loginId.addEventListener('input', handleIdCheck);
-
-/* ------------------------------- 비밀번호 유효성 검사 ------------------------------ */
-const loginPw = getNode('#loginPw');
-let pwCheckPass = false;
 
 function handlePwCheck() {
   const value = this.value;
-  console.log(value);
 
   if (pwReg(value)) {
     this.classList.remove('is--invalid');
     pwCheckPass = true;
-    loginButton.disabled = false;
   } else {
     this.classList.add('is--invalid');
     pwCheckPass = false;
   }
+
+  updateLoginState();
 }
 
-loginPw.addEventListener('input', handlePwCheck);
-
-/* ------------------------------- 로그인 버튼 클릭 시 ------------------------------ */
-const loginButton = getNode('.login_button');
+function updateLoginState() {
+  if (idCheckPass && pwCheckPass) {
+    loginButton.disabled = false;
+  } else {
+    loginButton.disabled = true;
+  }
+}
 
 function handleLogin(e) {
   e.preventDefault();
 
-  const id = getNode('#loginId').value;
-  const pw = getNode('#loginPw').value;
+  const id = idCheck.value;
+  const pw = pwCheck.value;
 
-  if (pwCheckPass && pwCheckPass) {
+  console.log(pb.authStore.isValid);
+  console.log(pb.authStore.token);
+  console.log(pb.authStore.model.id);
+  console.log(pb.authStore.userId);
+
+  if (idCheckPass && pwCheckPass) {
     pb.collection('users')
-      .authWithPassword(id, pw)
+      .authWithPassword({ userId: id, password: pw })
       .then(
         async () => {
           const { model, token } = await getStorage('pocketbase_auth');
@@ -71,11 +73,11 @@ function handleLogin(e) {
           setStorage('auth', {
             isAuth: !!model,
             user: model,
-            token: token,
+            token,
           });
 
-          alert('로그인 성공! 메인페이지로 이동');
-          location.href = '/index.html';
+          alert('로그인 완료! 메인 페이지로 이동합니다.');
+          location.href = '/';
         },
         () => {
           alert('인증된 사용자가 아닙니다.');
@@ -84,4 +86,6 @@ function handleLogin(e) {
   }
 }
 
+idCheck.addEventListener('input', handleIdCheck);
+pwCheck.addEventListener('input', handlePwCheck);
 loginButton.addEventListener('click', handleLogin);
