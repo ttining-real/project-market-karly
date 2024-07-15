@@ -1,5 +1,6 @@
 .modal__address {
   align-items: flex-start;
+  background-color: $white;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -10,6 +11,7 @@
 
   .title {
     @include heading-lg;
+    margin-bottom: 1.5rem;
   }
 
   &__content {

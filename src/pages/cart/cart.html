@@ -11,6 +11,7 @@
   <script type='module' src='/src/layout/footer/footer.js'></script>
   <script type="module" src="/src/pages/cart/cart.js"></script>
   <script type="module" src="/src/pages/cart/delete.js"></script>
+  <script type="module" src="/src/pages/cart/modal.js"></script>
 </head>
 
 <body>
@@ -166,7 +167,7 @@
           </div>
           <address>서울 중랑구 면목로 42길 11 (행운빌딩) 603호</address>
           <span class='delivery'>샛별배송</span>
-          <button type='button' class='button button--md button--outlined'>배송지 변경</button>
+          <button type='button' class='button button--md button--outlined button--address'>배송지 변경</button>
         </div>
         <div class='result__receipt'>
           <dl class='receipt__price'>
@@ -210,8 +211,34 @@
         </ul>
       </div>
     </section>
+    <section class="modal__order">
+      <h1 class="a11y">주문완료</h1>
+      <div class="modal__order__content">
+        <p>주문이 완료되었습니다.</p>
+        <span><span class="count">5</span>초 뒤 메인페이지로 이동합니다.</span>
+      </div>
+      <button type="button" class="button--lg button--confirm">확인</button>
+    </section>
+    <section class="modal__address">
+      <h1 class="title">배송지 수정</h1>
+      <form class="modal__address__content">
+        <label for="name">받으실 분</label>
+        <input type="text" name="name" id="name" required />
+        <label for="address">주소</label>
+        <input type="text" name="address" id="address" class="address" required />
+        <label for="tel">휴대폰</label>
+        <input type="tel" name="tel" id="tel" required />
+        <button type='submit' class='button button--md button--filled button--save'>
+          저장
+        </button>
+      </form>
+      <button type='button' class='button--close' aria-label="닫기">
+        <span class='icon icon--cancel'></span>
+      </button>
+    </section>
   </main>
   <c-footer></c-footer>
+  <div class="overlay" aria-hidden="true"></div>
 </body>
 
 </html>
