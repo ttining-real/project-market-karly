@@ -938,16 +938,22 @@
 
     <div id="address" class="template">
       <h3>배송지 모달</h3>
-      <section class="modal__address">
+      <section class='modal__address'>
         <h1 class="title">배송지 수정</h1>
         <div class="modal__address__content">
-          <label for="name">받으실 분</label>
-          <input type="text" name="name" id="name" />
-          <label for="address">주소</label>
-          <input type="text" name="address" id="address" />
-          <label for="tel">휴대폰</label>
-          <input type="tel" name="tel" id="tel" />
+          <div class="post--wrap">
+            <label class="a11y" for="sample6_postcode">우편번호</label>
+            <input type="text" id="sample6_postcode" class="post--find" placeholder="우편번호">
+            <input type="button" class="button button--md button--filled" value="우편번호 찾기">
+          </div>
+          <label class="a11y" for="sample6_address">주소</label>
+          <input type="text" id="sample6_address" placeholder="주소">
+          <label class="a11y" for="sample6_detailAddress">상세주소</label>
+          <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+          <label class="a11y" for="sample6_detailAddress">참고항목</label>
+          <input type="text" id="sample6_extraAddress" placeholder="참고항목">
         </div>
+
         <button type='button' class='button button--md button--filled button--save'>
           저장
         </button>
