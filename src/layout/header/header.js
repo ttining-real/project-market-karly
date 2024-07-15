@@ -117,6 +117,7 @@ class Header extends HTMLElement {
             pb.collection('users').delete(user.id);
             pb.authStore.clear();
             setStorage('auth', defaultAuthData);
+            location.href = '/index.html'
           }
 
           userDelete.addEventListener('click', handleUserDelete);
