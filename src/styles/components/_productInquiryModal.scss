@@ -10,6 +10,7 @@
   border: 1px solid $gray-100; // Todo: 완성 후 지우기
   border-radius: 1rem;
   gap: 1.25rem;
+  z-index: 100;
 
   .button--close {
     position: absolute;
@@ -113,6 +114,18 @@
         color: $white;
         border: 0;
       }
+    }
+  }
+
+  &.is--center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    &.is--open {
+      display: block;
     }
   }
 }

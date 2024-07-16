@@ -111,4 +111,17 @@
       }
     }
   }
+
+  &.is--center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 100;
+
+    &.is--open {
+      display: block;
+    }
+  }
 }
