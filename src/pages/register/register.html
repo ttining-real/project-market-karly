@@ -5,9 +5,9 @@
   <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>마켓칼리 회원가입</title>
-  <script type='module' src='/main.js'></script>
+  <!-- <script type='module' src='/main.js'></script>
   <script type='module' src='/src/layout/header/header.js'></script>
-  <script type='module' src='/src/layout/footer/footer.js'></script>
+  <script type='module' src='/src/layout/footer/footer.js'></script> -->
   <script type='module' src='/src/pages/register/register.js'></script>
 </head>
 <body>
@@ -21,7 +21,7 @@
       <fieldset>
         <legend class='a11y'>회원가입 작성 양식</legend>
         <div class='form--layout'>
-          <label for='userID' class='input__label' aria-label='필수입력사항'>아이디<span class='required' aria-hidden='true'>*</span></label>
+          <label for='userID' class='input__label' aria-label='필수입력사항' bind:value='{username}'>아이디<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
             <input type='text' class='input is--invalid' name='userID' id='idField' placeholder='아이디를 입력해주세요' />
             <span class='hint'>아이디는 4자 이상 20자 이하의 영문과 숫자를 포함해야 합니다.</span>
@@ -55,53 +55,56 @@
             <input type='email' class='input is--invalid' name='userEmail' id='emailField' placeholder='예&#41; marketkarly@karly.com' required />
             <span class='hint'>이메일은 @, .을 포함해야 합니다.</span>
           </div>
-          <button type='button' class='button button--md button--outlined' disabled>중복 확인</button>
+          <button type='button' class='button button--md button--outlined' id='emailCheckButton' disabled>중복 확인</button>
         </div>
-        <!-- <div class='form--layout'>
+        <div class='form--layout'>
           <label for='userPhone' class='input__label' aria-label='필수입력사항'>휴대폰<span class='required' aria-hidden='true'>*</span></label>
           <div class='input__wrap'>
             <input type='tel' class='input is--invalid' name='userPhone' id='phoneField' placeholder='숫자만 입력해주세요' />
             <span class='hint'>필수 입력 사항입니다.</span>
           </div>
-          <button type='button' class='button button--md button--outlined' disabled>인증번호 받기</button>
-        </div> -->
-        <!-- <div class='form--layout'>
+          <button type='button' class='button button--md button--outlined' id='phoneCheckButton' disabled>인증번호 받기</button>
+        </div>
+        <div class='form--layout'>
           <p class='label' aria-label='필수입력사항'>주소<span class='required' aria-hidden='true'>*</span></p>
           <div class='layout'>
-            <button type='button' class='button button--md button--outlined button--full' id='addressButton' disabled>주소 검색</button>
+            <input type='text' class='input is--invalid' name='userPhone' id='addressField' placeholder='' />
+             <!-- <address id='addressField' class='input is--invalid address'></address> -->
+             <span class='hint'>필수 입력 사항입니다.</span>
             <span class='desc'>배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
           </div>
-        </div> -->
-        <!-- <div class='form--layout'>
+          <button type='button' class='button button--md button--outlined button--full' id='addressButton'>주소 검색</button>
+        </div>
+        <div class='form--layout'>
           <p class='label'>성별</p>
           <div class='layout layout--row'>
-            <div class='radio__wrap'>
-              <input type='radio' class='radio' id='male' name='gender' value='male' />
+            <div class='radio__wrap genderButton'>
+              <input type='radio' class='radio' id='genderMale' name='gender' value='male' />
               <label for='male' class='radio__label'>
                 <span class='radio__label--icon'></span>남성
               </label>
             </div>
-            <div class='radio__wrap'>
-              <input type='radio' class='radio' id='female' name='gender' value='female' />
+            <div class='radio__wrap genderButton'>
+              <input type='radio' class='radio' id='genderFemale' name='gender' value='female' />
               <label for='female' class='radio__label'>
                 <span class='radio__label--icon'></span>여성
               </label>
             </div>
-            <div class='radio__wrap'>
-              <input type='radio' class='radio' id='notSelect' name='gender' value='notSelect' />
-              <label for='notSelect' class='radio__label'>
+            <div class='radio__wrap genderButton'>
+              <input type='radio' class='radio' id='genderNone' name='gender' value='none' />
+              <label for='none' class='radio__label'>
                 <span class='radio__label--icon'></span>선택 안함
               </label>
             </div>
           </div>
-        </div> -->
-        <!-- <div class='form--layout'>
+        </div>
+        <div class='form--layout'>
           <label for='named' class='input__label'>생년월일</label>
           <div class='input__wrap'>
-            <input type='text' class='input' name='named' id='' placeholder='YYYY / MM / DD' />
+            <input type='date' class='input' name='named' id='birthField' placeholder='YYYY / MM / DD' />
             <span class='hint'>hint text</span>
           </div>
-        </div> -->
+        </div>
         <!-- <div class='form--layout'>
           <p class='label'>추가입력 사항</p>
           <div class='layout layout--row'>
@@ -174,7 +177,44 @@
 
       <button type='button' class='button button--lg button--filled button--full' id='registerButton' disabled>가입하기</button>
     </form>
+
+    <!-- 주소 검색 팝업 -->
+    <section class='modal__address is--center'>
+      <h1 class="title">주소 검색</h1>
+      <div class="modal__address__content">
+        <div class="post--wrap">
+          <label class="a11y" for="sample6_postcode">우편번호</label>
+          <input type="text" id="sample6_postcode" placeholder="우편번호">
+          <input type="button" class="button button--md button--filled post--find" value="우편번호 찾기">
+        </div>
+        <label class="a11y" for="sample6_address">주소</label>
+        <input type="text" id="sample6_address" placeholder="주소">
+        <label class="a11y" for="sample6_detailAddress">상세주소</label>
+        <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+        <label class="a11y" for="sample6_detailAddress">참고항목</label>
+        <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+      </div>
+
+      <button type='button' class='button button--md button--filled button--save'>
+        저장
+      </button>
+      <button type='button' class='button--close' aria-label="닫기">
+        <span class='icon icon--cancel'></span>
+      </button>
+    </section>
   </section>
+  <!-- 회원가입 완료 팝업 -->
+  <section class="modal is--center">
+    <h1 class="modal__title">회원 가입이 완료되었습니다.</h1>
+    <div class="modal__content">
+      <p>로그인 페이지로 이동합니다.</p>
+    </div>
+    <button type="button" class="button--lg button--confirm">확인</button>
+  </section>
+
+  
   <c-footer></c-footer>
+  <div class="overlay" aria-hidden='true'></div>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

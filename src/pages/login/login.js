@@ -1,6 +1,10 @@
+import '@/styles/style.scss';
+import '@/layout/header/header.js';
+import '@/layout/footer/footer.js';
 import pb from '@/api/pocketbase';
-import { getNode, getStorage, setStorage } from 'kind-tiger';
+import modalHandle from '@/lib/modal.js';
 import { idReg, pwReg, charsReg } from '@/lib/regExp.js';
+import { getNode, getStorage, setStorage } from 'kind-tiger';
 
 const idCheck = getNode('#idField');
 const pwCheck = getNode('#pwField');
@@ -52,20 +56,15 @@ function updateLoginState() {
   }
 }
 
-function handleLogin(e) {
+async function handleLogin(e) {
   e.preventDefault();
 
-  const id = idCheck.value;
-  const pw = pwCheck.value;
-
-  console.log(pb.authStore.isValid);
-  console.log(pb.authStore.token);
-  console.log(pb.authStore.model.id);
-  console.log(pb.authStore.userId);
+  const username = idCheck.value;
+  const password = pwCheck.value;
 
   if (idCheckPass && pwCheckPass) {
     pb.collection('users')
-      .authWithPassword({ userId: id, password: pw })
+      .authWithPassword(username, password)
       .then(
         async () => {
           const { model, token } = await getStorage('pocketbase_auth');
@@ -76,15 +75,30 @@ function handleLogin(e) {
             token,
           });
 
-          alert('로그인 완료! 메인 페이지로 이동합니다.');
-          location.href = '/';
+          modalHandle('.modal', 'is--open', open);
         },
         () => {
-          alert('인증된 사용자가 아닙니다.');
+          modalHandle('.modal', 'is--open', open);
+          const modal = getNode('.modal');
+          const modalButton = getNode('.button--confirm');
+          const modalText = getNode('.modal__content p');
+
+          modalText.innerHTML = '인증된 사용자가 아닙니다.<br>다시 시도해주세요.';
+          modalButton.addEventListener('click', function () {
+            modal.remove();
+            location.reload();
+          });
         }
       );
   }
 }
+
+const modalButton = getNode('.button--confirm');
+
+modalButton.addEventListener('click', function () {
+  modalHandle('.modal', 'is--open', close);
+  location.href = '/';
+});
 
 idCheck.addEventListener('input', handleIdCheck);
 pwCheck.addEventListener('input', handlePwCheck);

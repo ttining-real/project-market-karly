@@ -104,6 +104,9 @@ $register: (
         color: map-get($register, text-black);
       }
     }
+    .address {
+      line-height: 268%;
+    }
   }
   // 이용약관 동의
   .conditions__agree {

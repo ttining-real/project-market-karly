@@ -84,8 +84,12 @@ $header: (
     width: 65.625rem;
     margin: 1rem auto 1rem;
 
-    .login-on{
+    .login-on {
       position: relative;
+      p {
+        @include paragraph-sm;
+        color: $content;
+      }
       &:hover {
         .user__option {
           display: flex;
@@ -111,7 +115,8 @@ $header: (
         white-space: nowrap;
         color: $content;
         cursor: pointer;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background-color: $gray-50;
         }
       }
@@ -131,7 +136,8 @@ $header: (
       display: flex;
       align-items: center;
       height: inherit;
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         .category__menu {
           display: flex;
         }
@@ -175,7 +181,11 @@ $header: (
         border-bottom-right-radius: 0.25rem;
         background-color: map-get($header, bg-color);
         box-shadow: 0 0.25rem 0.25rem rgba($color: #000000, $alpha: 0.15);
+        &.is--active {
+          display: flex;
+        }
         li {
+          padding: 3px;
           a {
             @include label-md;
             display: flex;
@@ -185,9 +195,13 @@ $header: (
             padding: 1rem 0rem 1rem 1.5rem;
             color: map-get($header, nav-text);
             text-decoration: none;
+            border-radius: 2px;
             &:hover {
               color: map-get($header, primary);
               background-color: $gray-50;
+            }
+            &:focus-within {
+              outline: 0.125rem solid map-get($header, focus);
             }
             span {
               display: flex;
