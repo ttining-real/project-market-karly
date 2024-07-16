@@ -8,7 +8,7 @@ async function renderProductCard() {
     '.product-list__swiper .swiper-wrapper'
   );
   productLists.forEach((productList) => {
-    productData.forEach((product) => {
+    productData.forEach((product, index) => {
       const discountPrice =
         Math.floor((product.price * (1 - product.ratio * 0.01)) / 100) * 100;
 
@@ -46,7 +46,7 @@ async function renderProductCard() {
                                       </div>
                                   </div>
                               </a>
-                          <button type="button" class="button--cart button button--xs">
+                          <button type="button" class="button--cart button button--xs" id='add-cart--${index}'>
                             <span class="icon icon--cart"></span>담기
                           </button>
                           </div>
@@ -70,7 +70,7 @@ async function renderProductCard() {
                                       </div>
                                   </div>
                               </a>
-                          <button type="button" class="button--cart button button--xs">
+                          <button type="button" class="button--cart button button--xs" id='add-cart--${index}'>
                             <span class="icon icon--cart"></span>담기
                           </button>
                           </div>
