@@ -965,9 +965,9 @@
 
     <div id="order" class="teamplte">
       <h3>주문완료 모달</h3>
-      <section class="modal__order">
-        <h1 class="a11y">주문완료</h1>
-        <div class="modal__order__content">
+      <section class="modal">
+        <h1 class="a11y modal__title">주문완료</h1>
+        <div class="modal__content">
           <p>주문이 완료되었습니다.</p>
           <span>5초 뒤 메인페이지로 이동합니다.</span>
         </div>
@@ -1074,58 +1074,45 @@
       </section>
     </div>
     <p>장바구니 추가 모달</p>
-       <div
-        class="modal__add-cart template" id="addCartModal"
-        role="dialog"
-        aria-label="장바구니에 상품 추가 모달창"
-        aria-modal="true"
-      >
-        <div class="add-cart__content">
-          <div class="add-cart__product-info">
-            <h2 class="product-info__name">[풀무원] 탱탱쫄면 (4개입)</h2>
-            <div>
-              <p class="product-info__price">
-                4,980<span class="price">원</span>
-              </p>
-              <form class="add-cart__quantity-form">
-                <label for="quantity" class="quantity-form__label a11y"
-                  >수량</label
-                >
-                <div style='display: flex; gap: 8px;'>
-                  <div class="counter__container uantity-form__controls">
-                    <button type="button" disabled><span class='icon icon--minus'></span></button>
-                    <span class=count>1</span>
-                    <button type="button"><span class='icon icon--plus'></span></button>
-                  </div>
+    <div class="modal__add-cart template" id="addCartModal" role="dialog" aria-label="장바구니에 상품 추가 모달창"
+      aria-modal="true">
+      <div class="add-cart__content">
+        <div class="add-cart__product-info">
+          <h2 class="product-info__name">[풀무원] 탱탱쫄면 (4개입)</h2>
+          <div>
+            <p class="product-info__price">
+              4,980<span class="price">원</span>
+            </p>
+            <form class="add-cart__quantity-form">
+              <label for="quantity" class="quantity-form__label a11y">수량</label>
+              <div style='display: flex; gap: 8px;'>
+                <div class="counter__container uantity-form__controls">
+                  <button type="button" disabled><span class='icon icon--minus'></span></button>
+                  <span class=count>1</span>
+                  <button type="button"><span class='icon icon--plus'></span></button>
                 </div>
-              </form>
-            </div>
-          </div>
-          <div class="add-cart__total-info">
-            <p class="total-info__price">
-              <span>합계</span><span class="price">4,980원</span>
-            </p>
-            <p class="total-info__benefit" aria-label="적립 혜택">
-              <span class="badge badge--sm badge--accent">적립</span
-              ><span class="benefit">구매 시 5원 적립</span>
-            </p>
+              </div>
+            </form>
           </div>
         </div>
-        <section class="add-cart__button">
-          <button
-            type="button"
-            class="modal__button modal__button--cancel button button--lg button--full"
-          >
-            취소
-          </button>
-          <button
-            type="button"
-            class="modal__button modal__button--confirm button button--lg button--outlined"
-          >
-            장바구니 담기
-          </button>
-        </section>
+        <div class="add-cart__total-info">
+          <p class="total-info__price">
+            <span>합계</span><span class="price">4,980원</span>
+          </p>
+          <p class="total-info__benefit" aria-label="적립 혜택">
+            <span class="badge badge--sm badge--accent">적립</span><span class="benefit">구매 시 5원 적립</span>
+          </p>
+        </div>
       </div>
+      <section class="add-cart__button">
+        <button type="button" class="modal__button modal__button--cancel button button--lg button--full">
+          취소
+        </button>
+        <button type="button" class="modal__button modal__button--confirm button button--lg button--outlined">
+          장바구니 담기
+        </button>
+      </section>
+    </div>
 </body>
 
 </html>
