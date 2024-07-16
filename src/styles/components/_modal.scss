@@ -16,14 +16,31 @@
   }
 
   &__content {
+    display: flex;
+    flex-flow: column nowrap;
     border-bottom: 1px solid $gray-100;
     color: $content;
-    padding: 2.5rem 1.875rem;
+    padding: 2rem 1.875rem;
     text-align: center;
     width: 100%;
 
     p {
-      margin-bottom: 1.5rem;
+      line-height: 140%;
+    }
+  }
+
+  &__foot {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    button {
+      @include label-md;
+      flex: 1;
+      white-space: nowrap;
+      color: $gray-500;
+      &:hover {
+        background-color: $gray-50;
+      }
     }
   }
 
@@ -41,7 +58,11 @@
     display: none;
 
     &.is--open {
-      display: block;
+      display: flex;
     }
+  }
+  
+  &__address__content {
+    padding-bottom: 2rem;
   }
 }
