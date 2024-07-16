@@ -9,5 +9,5 @@ accordionButtons.forEach((button) => {
       accordionBody.classList.toggle('active');
       iconArrow.classList.toggle('active');
     }
-  });
-});
+  })
+})
