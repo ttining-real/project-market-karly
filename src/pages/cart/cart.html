@@ -6,10 +6,7 @@
   <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>마켓칼리-장바구니</title>
-  <script type='module' src='/main.js'></script>
-  <script type='module' src='/src/layout/header/header.js'></script>
-  <script type='module' src='/src/layout/footer/footer.js'></script>
-  <script type="module" src='/src/pages/cart/index.js'></script>
+  <script type="module" src='/src/pages/cart/cart.js'></script>
 </head>
 
 <body>
@@ -23,7 +20,7 @@
             <li class='checkbox__wrap'>
               <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
               <label for='checkbox02' class='checkbox__label'>
-                <span class='checkbox__label--icon'></span>
+                <span class='checkbox__label--icon' aria-hidden="true"></span>
                 전체선택(3/3)
               </label>
             </li>
@@ -209,11 +206,11 @@
         </ul>
       </div>
     </section>
-    <section class="modal__order is--center">
-      <h1 class="a11y">주문완료</h1>
-      <div class="modal__order__content">
+    <section class="modal is--center">
+      <h1 class="a11y modal__title">주문완료</h1>
+      <div class="modal__content">
         <p>주문이 완료되었습니다.</p>
-        <span><span class="order--count">5</span>초 뒤 메인페이지로 이동합니다.</span>
+        <span><span class="count">5</span>초 뒤 메인페이지로 이동합니다.</span>
       </div>
       <button type="button" class="button--lg button--confirm">확인</button>
     </section>
