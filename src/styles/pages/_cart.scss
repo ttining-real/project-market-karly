@@ -29,12 +29,3 @@ $cart: (
     flex-shrink: 0;
   }
 }
-
-.modal__order.is--center,
-.modal__address.is--center {
-  display: none;
-
-  &.is--open {
-    display: block;
-  }
-}
