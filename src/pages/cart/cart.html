@@ -20,8 +20,8 @@
             <li class='checkbox__wrap'>
               <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
               <label for='checkbox02' class='checkbox__label'>
-                <span class='checkbox__label--icon' aria-hidden="true"></span>
-                전체선택(3/3)
+                <!-- <span class='checkbox__label--icon' aria-hidden="true"></span>
+                전체선택(3/3) -->
               </label>
             </li>
             <li aria-hidden='true'>
@@ -62,11 +62,11 @@
                   <button type="button"><span class='icon icon--plus'></span></button>
                 </div>
                 <div class='price'>
-                  <span class='product__info--sm-discount-price'>5,000&nbsp;원</span>
-                  <span class='product__info--sm-price discount'>4,500&nbsp;원</span>
+                  <span class='product__info--sm-discount-price original-price'>4,500&nbsp;원</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
                 </div>
-                <button type='button' class='delete'>
-                  <span class='icon icon--cancel'></span>
+                <button type='button' class='delete' aria-label="선택 삭제 버튼">
+                  <span class='icon icon--cancel' aria-hidden="true"></span>
                 </button>
               </li>
               <li class='selected__item'>
@@ -92,11 +92,11 @@
                   <button type="button"><span class='icon icon--plus'></span></button>
                 </div>
                 <div class='price'>
-                  <span class='product__info--sm-discount-price'>5,000&nbsp;원</span>
-                  <span class='product__info--sm-price discount'>4,500&nbsp;원</span>
+                  <span class='product__info--sm-discount-price original-price'>4,500&nbsp;원</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
                 </div>
-                <button type='button' class='delete'>
-                  <span class='icon icon--cancel'></span>
+                <button type='button' class='delete' aria-label="선택 삭제 버튼">
+                  <span class='icon icon--cancel' aria-hidden="true"></span>
                 </button>
               </li>
               <li class='selected__item'>
@@ -122,11 +122,11 @@
                   <button type="button"><span class='icon icon--plus'></span></button>
                 </div>
                 <div class='price'>
-                  <span class='product__info--sm-discount-price'>5,000&nbsp;원</span>
-                  <span class='product__info--sm-price discount'>4,500&nbsp;원</span>
+                  <span class='product__info--sm-discount-price original-price'>4,500&nbsp;원</span>
+                  <span class='product__info--sm-price discount'>5,000&nbsp;원</span>
                 </div>
-                <button type='button' class='delete'>
-                  <span class='icon icon--cancel'></span>
+                <button type='button' class='delete' aria-label="선택 삭제 버튼">
+                  <span class='icon icon--cancel' aria-hidden="true"></span>
                 </button>
               </li>
             </ul>
@@ -168,11 +168,11 @@
           <dl class='receipt__price'>
             <div class='product__price'>
               <dt>상품금액</dt>
-              <dd><strong class='price'>40,680<span>원</span></strong></dd>
+              <dd><strong class='price'>5,000<span>원</span></strong></dd>
             </div>
             <div class='product__sale'>
               <dt>상품할인금액</dt>
-              <dd>-<strong class='price'>4,651<span>원</span></strong></dd>
+              <dd>-<strong class='price'>500<span>원</span></strong></dd>
             </div>
             <div class='product__delivery'>
               <dt>배송비</dt>
@@ -182,7 +182,7 @@
           <dl class='receipt__total'>
             <div class='total__price'>
               <dt>결제예정금액</dt>
-              <dd><strong class='price'>40,680<span>원</span></strong></dd>
+              <dd><strong class='price'>7,500<span>원</span></strong></dd>
             </div>
             <div class='alert'>
               <dt>
