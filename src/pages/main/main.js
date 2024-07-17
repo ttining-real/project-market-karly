@@ -11,3 +11,6 @@ import '/src/pages/main/close.js';
 import '/src/pages/main/productCard.js';
 import '/src/lib/moveTop.js';
 import '/src/pages/main/pagination.js';
+import '/src/pages/main/details.js';
+import '/src/pages/main/getPbData.js';
+import '/src/pages/main/sideBar.js';
