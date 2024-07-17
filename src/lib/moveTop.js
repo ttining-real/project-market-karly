@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('scroll', function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
+    console.log(scrollTop);
+    // 스크롤을 더 많이 내렸을 때 나타나게 하고 싶으면 비교값 크게하기
+    if (scrollTop > 300) {
       moveTopButton.classList.add('show');
       moveTopButton.classList.remove('hide');
     } else {
