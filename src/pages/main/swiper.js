@@ -3,6 +3,7 @@ import { Navigation, Pagination, Autoplay, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import getActivePage from './pagination';
 
 const swiper = new Swiper('.swiper', {
   // Optional parameters
@@ -17,11 +18,6 @@ const swiper = new Swiper('.swiper', {
     enabled: true,
   },
   mousewheel: true,
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true, // 버튼 클릭 여부
-  },
 
   // Navigation arrows
   navigation: {
@@ -32,6 +28,11 @@ const swiper = new Swiper('.swiper', {
   // And if we need scrollbar
   scrollbar: {
     el: '.swiper-scrollbar',
+  },
+  on: {
+    slideChange: function () {
+      getActivePage();
+    },
   },
 });
 

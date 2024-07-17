@@ -1,7 +1,8 @@
+import styles from '@/styles/style.scss?inline';
 import pb from '@/api/pocketbase';
 import defaultAuthData from '@/api/defaultAuthData';
-import styles from '/src/styles/style.scss?inline';
-import { getStorage, setStorage } from 'kind-tiger';
+import modalHandle from '@/lib/modal.js';
+import { getNode, getStorage, setStorage, insertLast } from 'kind-tiger';
 
 class Header extends HTMLElement {
   constructor() {
@@ -44,7 +45,7 @@ class Header extends HTMLElement {
             <li aria-hidden='true'>
               <hr />
             </li>
-            <li><a href='/src/pages/login/login.html'>고객센터</a></li>
+            <li><a href='/index.html'>고객센터</a></li>
           </ul>
         </div>
         <div class='header__nav'>
@@ -71,6 +72,14 @@ class Header extends HTMLElement {
     `;
 
     this.logout();
+
+    const categoryButton = this.shadowRoot.querySelector('.category__button');
+    const categoryMenu = this.shadowRoot.querySelector('.category__menu');
+    categoryButton.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        categoryMenu.classList.toggle('is--active');
+      }
+    });
   }
 
   /* ---------------------------------- 로그아웃 ---------------------------------- */
@@ -84,16 +93,16 @@ class Header extends HTMLElement {
           const template = `
             <ul class='list__link'>
               <li class='login-on'>
-                <a href='/src/pages/login/login.html' class='login'>${user.name}님 반갑습니다!</a>
+                <p class='login'>${user.name}님 반갑습니다!</p>
                 <div class='user__option'>
-                  <button type="button" class='logout'>로그아웃</button>
-                  <button type="button" class='user-delete'>회원탈퇴</button>
+                  <button type='button' class='logout'>로그아웃</button>
+                  <button type='button' class='user-delete'>회원탈퇴</button>
                 </div>
               </li>
               <li aria-hidden='true'>
                 <hr />
               </li>
-              <li><a href='/src/pages/login/login.html'>고객센터<span class='icon icon--triangle--bottom' aria-hidden='true'></span></a></li>
+              <li><a href='/index.html'>고객센터</a></li>
             </ul>
           `;
           utils.innerHTML = template;
@@ -101,11 +110,37 @@ class Header extends HTMLElement {
           const logout = this.shadowRoot.querySelector('.logout');
 
           function handleLogout() {
-            if (confirm('로그아웃 하시겠습니까?')) {
+            const template = `
+              <section class='modal is--center modal__logout'>
+                <div class='modal__content'>
+                  <p>로그아웃 하시겠습니까?</p>
+                </div>
+                <div class='modal__foot'>
+                  <button type='button' class='button--lg button--cancel'>취소</button>
+                  <button type='button' class='button--lg button--confirm'>확인</button>
+                </div>
+              </section>
+              <div class='overlay'></div>
+            `;
+            insertLast('body', template);
+
+            modalHandle('.modal', 'is--open', open);
+
+            const modalCancel = getNode('.button--cancel');
+            const modalConfirm = getNode('.button--confirm');
+            const modalLogout = getNode('.modal__logout');
+
+            modalCancel.addEventListener('click', function () {
+              modalHandle('.modal', 'is--open', close);
+              modalLogout.remove();
+            });
+            modalConfirm.addEventListener('click', async function () {
+              modalHandle('.modal', 'is--open', close);
               pb.authStore.clear();
               setStorage('auth', defaultAuthData);
+              modalLogout.remove();
               location.reload();
-            }
+            });
           }
 
           logout.addEventListener('click', handleLogout);
@@ -113,12 +148,39 @@ class Header extends HTMLElement {
           const userDelete = this.shadowRoot.querySelector('.user-delete');
 
           async function handleUserDelete() {
-            if (confirm('탈퇴 하시겠습니까?')) {
+            const template = `
+              <section class='modal is--center modal__delete'>
+                <h1 class='modal__title'>정말 탈퇴하시겠어요?</h1>
+                <div class='modal__content'>
+                  <p>확인 버튼 선택 시, 계정은 삭제되며<br>복구되지 않습니다.</p>
+                </div>
+                <div class='modal__foot'>
+                  <button type='button' class='button--lg button--cancel'>취소</button>
+                  <button type='button' class='button--lg button--confirm'>확인</button>
+                </div>
+              </section>
+              <div class='overlay'></div>
+            `;
+            insertLast('body', template);
+
+            modalHandle('.modal', 'is--open', open);
+
+            const modalCancel = getNode('.button--cancel');
+            const modalConfirm = getNode('.button--confirm');
+            const modalDelete = getNode('.modal__delete');
+
+            modalCancel.addEventListener('click', function () {
+              modalHandle('.modal', 'is--open', close);
+              modalDelete.remove();
+            });
+            modalConfirm.addEventListener('click', async function () {
+              modalHandle('.modal', 'is--open', close);
               await pb.collection('users').delete(user.id);
               pb.authStore.clear();
               setStorage('auth', defaultAuthData);
+              modalDelete.remove();
               location.reload();
-            }
+            });
           }
 
           userDelete.addEventListener('click', handleUserDelete);

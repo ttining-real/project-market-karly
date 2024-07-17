@@ -1,3 +1,4 @@
+import { UpdateCount } from './checkbox';
 /* ---------- toggle ---------- */
 const cartListButton = document.querySelectorAll('.cart__item > button');
 
@@ -10,9 +11,11 @@ cartListButton.forEach((button) => {
     if (selectedList.children.length !== 0) {
       selectedList.classList.toggle('is--open');
       arrowButton.classList.toggle('is--open');
+      UpdateCount();
     } else {
       selectedList.classList.remove('is--open');
       arrowButton.classList.remove('is--open');
+      UpdateCount();
     }
 
     selectedItem.forEach((liELement) => {
@@ -24,13 +27,15 @@ cartListButton.forEach((button) => {
         if (selectedList.children.length !== 0) {
           selectedList.classList.add('is--open');
           arrowButton.classList.add('is--open');
-          console.log(selectedList.children.length);
+          UpdateCount();
         } else {
-          console.log(selectedList.children.length);
           selectedList.classList.remove('is--open');
           arrowButton.classList.remove('is--open');
+          UpdateCount();
         }
       });
     });
+
+    UpdateCount();
   });
 });

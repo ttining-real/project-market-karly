@@ -1,10 +1,11 @@
+import { UpdateCount } from './checkbox';
 const selectDeleteButton = document.querySelector('.select--delete');
-const checkbox = document.querySelectorAll('.selected__item input.checkbox');
-const selectedList = document.querySelectorAll('.selected');
 
 selectDeleteButton.addEventListener('click', function () {
+  const checkbox = document.querySelectorAll('.selected__item input.checkbox');
+  const selectedList = document.querySelectorAll('.selected');
+
   selectedList.forEach((list) => {
-    console.log(list);
     if (list.classList.contains('is--open') === true) {
       checkbox.forEach((item) => {
         const liElement = item.parentElement.parentElement;
@@ -23,4 +24,5 @@ selectDeleteButton.addEventListener('click', function () {
       list.classList.add('is--open');
     }
   });
+  UpdateCount();
 });
