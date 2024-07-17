@@ -43,5 +43,14 @@ export default function priceHandler() {
     let productCount = parseInt(count.textContent, 10);
     const resultPrice = basicPrice * productCount;
     priceElement.textContent = `${resultPrice.toLocaleString()} 원`;
+    resultProductPrice(resultPrice);
+  }
+
+  /* 총 가격 계산을 출력 */
+  function resultProductPrice(resultPrice) {
+    const resultProductPrice = document.querySelector(
+      '.product__info__result .price'
+    );
+    resultProductPrice.textContent = `${resultPrice.toLocaleString()} 원`;
   }
 }
