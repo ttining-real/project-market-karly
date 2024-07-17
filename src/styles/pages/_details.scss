@@ -2,14 +2,14 @@ $product-details: (
   width-default: 1050px,
 );
 
-#product__details {
+.product__details {
   margin: 0 auto;
   max-width: map-get($product-details, width-default);
   padding-bottom: 6rem;
   padding-top: 2.5rem;
 }
 
-.product__details {
+.product__details__header {
   align-items: flex-start;
   display: flex;
   gap: 5rem;
