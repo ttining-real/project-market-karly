@@ -14,6 +14,15 @@ dd {
 .product__details {
   width: 100%;
 
+  .product__image {
+    img {
+      display: block;
+      width: 400px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   .product__info {
     margin-bottom: 1.25rem;
 
