@@ -2,7 +2,7 @@ import pb from '@/api/pocketbase';
 const categories = ['food', 'necessity', 'personalcare', 'animal'];
 
 /* filter count */
-export async function countFilterDatas(){
+export async function countFilterDatas(category){
   const products = await pb.collection('products').getFullList();
   
   const counts = {
@@ -32,7 +32,10 @@ export async function countFilterDatas(){
     }
   };
   
-  products.forEach(product => {
+  // 해당 카테고리에 맞는 제품들만 필터링
+  const filteredProducts = category ? products.filter(product => product.category === category) : products;
+
+  filteredProducts.forEach(product => {
     const benefits = Array.isArray(product.benefit) ? product.benefit : [product.benefit];
     // 카테고리 별 count
     if (counts.categories.hasOwnProperty(product.category)) {
