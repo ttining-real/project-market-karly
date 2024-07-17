@@ -2,9 +2,11 @@ import '@/styles/style.scss';
 import '@/layout/header/header.js';
 import '@/layout/footer/footer.js';
 import '@/pages/product/accordionToggle.js';
+import '@/pages/product/addCart.js';
 import getPbImageURL from '@/api/getPbImageURL';
 import pb from '@/api/pocketbase';
 import { countFilterDatas, countTotalProducts } from '@/pages/product/count.js';
+import { addCart } from './addCart.js';
 
 const categories = ['food', 'necessity', 'personalcare', 'animal'];
 const priceSections = {
@@ -83,6 +85,12 @@ function createProductCard(product) {
       <span class="icon icon--cart"></span>담기
     </button>
   `;
+
+
+  const button = card.querySelector('.button--cart');
+  button.addEventListener('click', () => {
+    addCart(product.id);
+  });
 
   return card;
 }
