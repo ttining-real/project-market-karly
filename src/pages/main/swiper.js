@@ -40,7 +40,6 @@ const swiperContainers = document.querySelectorAll('.swiper-container');
 
 swiperContainers.forEach((container, index) => {
   container.id = `swiper-${index + 1}`;
-  console.log(container);
   const productSwiper = new Swiper(`#swiper-${index + 1}`, {
     slidesPerView: 4,
     slidesPerGroup: 4,
@@ -61,4 +60,22 @@ swiperContainers.forEach((container, index) => {
       el: `#scrollbar-${index + 1} .swiper-scrollbar`,
     },
   });
+});
+
+const recentProductSwiper = new Swiper('#test-1', {
+  slidesPerView: 2.3,
+  slidesPerGroup: 1,
+  modules: [Navigation, Keyboard],
+  direction: 'vertical',
+  keyboard: {
+    enabled: true,
+  },
+  mousewheel: true,
+  navigation: {
+    nextEl: '#recent-next',
+    prevEl: '#recent-prev',
+  },
+  scrollbar: {
+    el: '#scrollbar-3',
+  },
 });

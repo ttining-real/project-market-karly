@@ -6,6 +6,8 @@ export default async function renderProductDetail() {
   const detailWrapper = document.querySelector('.product__details');
   const params = new URLSearchParams(window.location.search);
   const productId = params.get('product');
+  console.log(detailWrapper);
+  console.log(productId);
 
   if (!productId) {
     detailWrapper.innerHTML = '<p>유효한 상품 ID가 없습니다.</p>';
