@@ -1,5 +1,6 @@
 import { insertLast } from 'kind-tiger';
 import pb from '@/api/pocketbase';
+import priceHandler from '@/lib/priceHandler.js';
 
 const params = new URLSearchParams(location.search);
 const productId = params.get('product');
@@ -7,7 +8,6 @@ const BaseURL = pb.baseUrl;
 
 async function getData() {
   const product = await pb.collection('products').getOne(productId);
-  console.log(product);
   const productTemplate = `
     <div class="product__image">
       <img
@@ -112,7 +112,7 @@ async function getData() {
     </div>
   `;
   insertLast('.product__details', productTemplate);
+
+  priceHandler();
 }
 getData();
-
-window.addEventListener('DOMContentLoaded');
