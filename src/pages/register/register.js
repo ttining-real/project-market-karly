@@ -4,7 +4,14 @@ import '@/layout/footer/footer.js';
 import pb from '@/api/pocketbase';
 import modalHandle from '@/lib/modal.js';
 import sample6_execDaumPostcode from '@/pages/cart/kakaoAddressApi.js';
-import { idReg, pwReg, charsReg, emailReg, nameReg } from '@/lib/regExp.js';
+import {
+  idReg,
+  pwReg,
+  charsReg,
+  emailReg,
+  nameReg,
+  phoneReg,
+} from '@/lib/regExp.js';
 import { getNode as $ } from 'kind-tiger';
 
 function register() {
@@ -20,12 +27,15 @@ function register() {
   const registerButton = $('#registerButton');
   const idCheckButton = $('#idCheckButton');
   const emailCheckButton = $('#emailCheckButton');
+  const phoneCheckButton = $('#phoneCheckButton');
 
   let idCheckPass = false;
   let pwCheckPass = false;
   let pwConfirmPass = false;
   let nameCheckPass = false;
   let emailCheckPass = false;
+  let phoneCheckPass = false;
+  let addressCheckPass = false;
   let agreeAllPass = false;
 
   // 아이디
@@ -36,23 +46,27 @@ function register() {
     if (idReg(value)) {
       this.classList.remove('is--invalid');
       idCheckButton.disabled = false;
-      idCheckPass = true;
     } else if (charsReg(value)) {
       this.classList.add('is--invalid');
       hint.textContent = '아이디는 특수문자와 공백을 포함할 수 없습니다.';
-      idCheckPass = false;
     } else {
       this.classList.add('is--invalid');
       hint.textContent =
         '아이디는 4자 이상 20자 이하의 영문과 숫자를 포함해야 합니다.';
-      idCheckPass = false;
     }
   }
-  
-  // ![BugFix] 아이디 중복 확인 기능 안됨
+
+  // 아이디 중복 확인
   async function handleIdDuplicate() {
     const username = idCheck.value;
-    console.log('username:', username);
+    const modalTitle = $('.modal__title');
+    const modalButton = $('.button--confirm');
+    const modalText = $('.modal__content p');
+
+    function handleModalButton() {
+      modalHandle('.modal', 'is--open', close);
+      modalButton.removeEventListener('click', handleModalButton);
+    }
 
     try {
       const response = await pb
@@ -61,13 +75,40 @@ function register() {
       const users = response.items;
       console.log(users);
 
+      modalButton.removeEventListener('click', handleModalButton);
+
       if (users.length > 0) {
         console.log('이미 있음');
+        idCheckPass = false;
+
+        modalHandle('.modal', 'is--open', open);
+        if (modalTitle) {
+          modalTitle.remove();
+        }
+        modalText.innerHTML =
+          '사용할 수 없는 아이디입니다.<br>다시 시도해주세요.';
+        modalButton.addEventListener('click', handleModalButton);
       } else {
         console.log('사용 가능');
+        idCheckPass = true;
+
+        modalHandle('.modal', 'is--open', open);
+        if (modalTitle) {
+          modalTitle.remove();
+        }
+        modalText.innerHTML = '사용 가능한 아이디입니다.';
+        modalButton.addEventListener('click', handleModalButton);
       }
     } catch (error) {
       console.error('에러 발생');
+      idCheckPass = false;
+
+      modalHandle('.modal', 'is--open', open);
+      if (modalTitle) {
+        modalTitle.remove();
+      }
+      modalText.innerHTML = '오류가 발생했습니다. 다시 시도해주세요.';
+      modalButton.addEventListener('click', handleModalButton);
     }
   }
 
@@ -117,58 +158,102 @@ function register() {
 
     if (emailReg(value)) {
       this.classList.remove('is--invalid');
-      emailCheckPass = true;
       emailCheckButton.disabled = false;
     } else {
       this.classList.add('is--invalid');
-      emailCheckPass = false;
     }
   }
 
-  // ![BugFix] 이메일 중복 확인 기능 안됨
-  // async function handleEmailDuplicate() {
-  //   const email = emailCheck.value;
+  // 이메일 중복 확인
+  async function handleEmailDuplicate() {
+    const email = emailCheck.value;
+    console.log('email:', email);
+    
+    const modalTitle = $('.modal__title');
+    const modalButton = $('.button--confirm');
+    const modalText = $('.modal__content p');
 
-  //   try {
-  //     // API 호출
-  //     const response = await fetch(
-  //       `${pb}/collections/users/records?filter=(email='${email}')`
-  //     );
-  //     const data = await response.json();
+    function handleModalButton() {
+      modalHandle('.modal', 'is--open', close);
+      modalButton.removeEventListener('click', handleModalButton);
+    }
 
-  //     // console.log(data);
+    try {
+      const response = await pb
+        .collection('users')
+        .getList(1, 1, { filter: `email="${email}"` });
+      const users = response.items;
+      console.log(users);
 
-  //     if (data.items && data.items.length > 0) {
-  //       alert('이메일이 이미 존재합니다.');
-  //     } else {
-  //       alert('이메일을 사용할 수 있습니다.');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //     alert('중복 확인 중 오류가 발생했습니다.');
-  //   }
-  // }
+      modalButton.removeEventListener('click', handleModalButton);
+
+      if (users.length > 0) {
+        console.log('이미 있음');
+        emailCheckPass = false;
+
+        modalHandle('.modal', 'is--open', open);
+        if (modalTitle) {
+          modalTitle.remove();
+        }
+        modalText.innerHTML =
+          '사용할 수 없는 이메일입니다.<br>다시 시도해주세요.';
+        modalButton.addEventListener('click', handleModalButton);
+      } else {
+        console.log('사용 가능');
+        emailCheckPass = true;
+
+        modalHandle('.modal', 'is--open', open);
+        if (modalTitle) {
+          modalTitle.remove();
+        }
+        modalText.innerHTML = '사용 가능한 이메일입니다.';
+        modalButton.addEventListener('click', handleModalButton);
+      }
+    } catch (error) {
+      console.error('에러 발생');
+      emailCheckPass = false;
+
+      modalHandle('.modal', 'is--open', open);
+      if (modalTitle) {
+        modalTitle.remove();
+      }
+      modalText.innerHTML = '오류가 발생했습니다. 다시 시도해주세요.';
+      modalButton.addEventListener('click', handleModalButton);
+    }
+  }
 
   // 휴대폰
-  const phoneCheckButton = $('#phoneCheckButton');
-  let phoneCheckPass = false;
+  function handlePhoneCheck(event) {
+    const inputField = event.target;
+    const value = inputField.value.trim();
 
-  function handlePhoneCheck() {
-    const value = this.value;
-    const hint = this.nextElementSibling;
-
-    if (charsReg(value)) {
-      this.classList.add('is--invalid');
-      hint.textContent = '숫자만 입력해야 합니다.';
-      phoneCheckPass = false;
-    } else {
-      this.classList.remove('is--invalid');
+    if (phoneReg(value)) {
+      inputField.classList.remove('is--invalid');
       phoneCheckButton.disabled = false;
       phoneCheckPass = true;
+    } else {
+      inputField.classList.add('is--invalid');
+      phoneCheckButton.disabled = true;
+      phoneCheckPass = false;
     }
-  }
 
-  phoneCheck.addEventListener('input', handlePhoneCheck);
+    let str = value.replace(/[^0-9]/g, '');
+    let strPhone = '';
+
+    if (str.length < 4) {
+      strPhone = str;
+    } else if (str.length < 7) {
+      strPhone = str.substr(0, 3) + '-' + str.substr(3);
+    } else if (str.length < 11) {
+      strPhone =
+        str.substr(0, 3) + '-' + str.substr(3, 3) + '-' + str.substr(6);
+    } else {
+      strPhone =
+        str.substr(0, 3) + '-' + str.substr(3, 4) + '-' + str.substr(7);
+    }
+
+    inputField.value = strPhone;
+  }
 
   // 주소
   const addressSearch = $('#addressButton');
@@ -192,7 +277,6 @@ function register() {
 
   /* ---------- 저장 버튼 클릭하면 주소 변경 ---------- */
   addressSaveButton.addEventListener('click', function () {
-    // const currentAddress = addressCheck.value;
     const inputAddress = document.querySelectorAll(
       '.modal__address__content input[type="text"]'
     );
@@ -201,12 +285,12 @@ function register() {
     for (let i = 1; i < inputAddress.length; i++) {
       addressCheck.value += inputAddress[i].value + ' ';
       addressCheck.classList.remove('is--invalid');
+      addressCheckPass = true;
     }
     modalHandle('.modal__address', 'is--open', close);
   });
 
   // 성별
-  // 성별 선택 요소 가져오기
   const genderButton = document.querySelectorAll('.genderButton');
   let genderValue = '';
 
@@ -217,39 +301,44 @@ function register() {
       console.log(genderValue);
     });
   });
+  
 
-  // 생년월일
-
-  /* ------------------------------- 이용약관 전체 동의 ------------------------------- */
+  // 이용약관 전체 동의
   const agreeList = $('.agree_list');
   const agreeAll = agreeList.querySelector('#agreeAll'); // 전체 선택
   const agreeCheck = agreeList.querySelectorAll('.checkbox-list'); // 개별 체크박스
-
+  const agreeCheckRequired = agreeList.querySelectorAll('.checkbox-list[required]'); // 개별 체크박스 (필수)
+  
+  // 이용약관 전체 동의
   function handleAgreeAll() {
     if (agreeAll.checked) {
-      agreeAll.checked = true;
       agreeCheck.forEach((item) => {
         item.checked = true;
       });
-      agreeAllPass = true;
     } else {
-      agreeAll.checked = false;
       agreeCheck.forEach((item) => {
         item.checked = false;
       });
-      agreeAllPass = false;
     }
+    handleAgreeCheckRequired();
   }
 
+  // 필수 약관 체크박스
+  function handleAgreeCheckRequired() {
+    const allRequiredChecked = Array.from(agreeCheckRequired).every(
+      (checkbox) => checkbox.checked
+    );
+    agreeAllPass = allRequiredChecked;
+  }
+
+  // 전체 약관 체크박스
   function handleAgreeCheck() {
     const allChecked = Array.from(agreeCheck).every(
       (checkbox) => checkbox.checked
     );
     agreeAll.checked = allChecked;
-    agreeAllPass = allChecked;
   }
 
-  // 아이디 && 비밀번호 && 비밀번호 확인 && 이름 && 이메일 && 이용약관
   function checkAllFields() {
     if (
       idCheckPass &&
@@ -257,15 +346,16 @@ function register() {
       pwConfirmPass &&
       nameCheckPass &&
       emailCheckPass &&
+      phoneCheckPass &&
+      addressCheckPass &&
       agreeAllPass
     ) {
       registerButton.disabled = false;
-      registerButton.removeEventListener('click', handleRegisterClick);
-      registerButton.addEventListener('click', handleRegisterClick);
     } else {
       registerButton.disabled = true;
     }
   }
+  
 
   // 회원가입 버튼
   function handleRegisterClick() {
@@ -279,44 +369,52 @@ function register() {
       address: addressCheck.value,
       gender: genderValue,
       birth: birthCheck.value,
+      emailVisibility: true,
     };
 
     console.log(data);
 
+    const modalButton = $('.button--confirm');
+    const modalContent = $('.modal__content');
+    const modalText = $('.modal__content p');
+
     pb.collection('users')
       .create(data)
       .then(() => {
-        const modal = $('.modal');
-        const modalButton = $('.button--confirm');
         modalHandle('.modal', 'is--open', open);
+
+        if (!document.querySelector('.modal__title')) {
+          const modalTitle = document.createElement('h1');
+          modalTitle.className = 'modal__title';
+          modalTitle.textContent = '회원 가입이 완료되었습니다.';
+
+          modalContent.parentNode.insertBefore(modalTitle, modalContent);
+        }
+
+        modalText.textContent = '로그인 페이지로 이동합니다.';
+
         modalButton.addEventListener('click', function () {
-          modal.remove();
+          modalHandle('.modal', 'is--open', close);
           location.href = '/src/pages/login/login.html';
         });
+
+        console.log('회원 가입 완료');
       })
       .catch(() => {
         modalHandle('.modal', 'is--open', open);
 
-        const modal = $('.modal');
-        const modalButton = $('.button--confirm');
-        const modalTitle = $('.modal__title');
-        const modalText = $('.modal__content');
+        if (!document.querySelector('.modal__title')) {
+          const modalTitle = document.createElement('h1');
+          modalTitle.className = 'modal__title';
+          modalTitle.textContent = '사용할 수 없는 정보입니다.';
 
-        modalTitle.textContent = '사용할 수 없는 정보입니다.';
+          modalContent.parentNode.insertBefore(modalTitle, modalContent);
+        }
+
         modalText.textContent = '다시 입력해주세요.';
-        modalButton.addEventListener('click', function () {
-          modal.remove();
-          location.reload();
-        });
+        console.log('회원 가입 실패');
       });
   }
-
-  const modalButton = $('.button--confirm');
-
-  modalButton.addEventListener('click', function () {
-    modalHandle('.modal', 'is--open', close);
-    location.href = '/';
-  });
 
   idCheck.addEventListener('input', function () {
     handleIdCheck.call(this);
@@ -338,10 +436,10 @@ function register() {
     handleEmailCheck.call(this);
     checkAllFields();
   });
-
-  idCheckButton.addEventListener('click', handleIdDuplicate);
-  // emailCheckButton.addEventListener('click', handleEmailDuplicate);
-
+  phoneCheck.addEventListener('input', function (event) {
+    handlePhoneCheck(event);
+    checkAllFields();
+  });
   agreeAll.addEventListener('click', function () {
     handleAgreeAll.call(this);
     checkAllFields();
@@ -349,10 +447,16 @@ function register() {
   agreeCheck.forEach((checkbox) => {
     checkbox.addEventListener('change', function () {
       handleAgreeCheck.call(this);
+      handleAgreeCheckRequired.call(this);
       checkAllFields();
     });
   });
   handleAgreeCheck();
+  handleAgreeCheckRequired();
+
+  idCheckButton.addEventListener('click', handleIdDuplicate);
+  emailCheckButton.addEventListener('click', handleEmailDuplicate);
+  registerButton.addEventListener('click', handleRegisterClick);
 }
 
 register();
