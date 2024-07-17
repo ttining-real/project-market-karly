@@ -111,7 +111,7 @@ async function getData() {
       </div>
     </div>
   `;
-  insertLast('.product__details', productTemplate);
+  insertLast('.product__details__header', productTemplate);
 
   priceHandler();
 }
