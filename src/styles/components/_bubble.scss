@@ -1,0 +1,79 @@
+$bubble: (
+  border-gray : $gray-200,
+  bg-white: $white,
+  text-gray: $gray-300,
+  text-black: $content
+);
+$tooltip-size: 1rem;
+
+.bubble{
+  width: 15.87rem;
+  height: 6.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color:  map-get($bubble, bg-white);
+  border: 0.0625rem solid map-get($bubble, border-gray);
+  z-index: 100;
+  position: relative; 
+
+  &::before, &::after{
+    position: absolute;
+    top: -#{$tooltip-size * 2};
+    right: 1.75rem;
+    transform: translateX(-50%);
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: $tooltip-size solid transparent;
+    border-right: 0.625rem solid transparent;
+    border-bottom: $tooltip-size solid $white;
+    border-left: 0.625rem solid transparent;
+    content: '';
+  }
+  &::before{
+    border-bottom-color: map-get($bubble, border-gray);
+  }
+  &::after{
+    border-bottom-color: map-get($bubble, bg-white);
+    top: -#{$tooltip-size * 2 - 0.125rem};
+  }
+
+  &__img{
+    width: 2.88rem;
+    height: 100%;
+  }
+
+  &__text--wrapper{
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+    gap: 0.5rem;
+    
+    .bubble__product{
+      @include label-sm;
+      color: map-get($bubble, text-gray);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    p{
+      @include paragraph-sm;
+      color: map-get($bubble, text-black);
+    }
+  }
+
+  &.is--active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    &.is--open {
+      display: flex;
+    }
+  }
+}

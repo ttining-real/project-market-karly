@@ -85,6 +85,8 @@
       <li><a href='#accordion'>Accordion</a></li>
       <li><a href='#count'>Count</a></li>
       <li><a href='#pagination'>Pagination</a></li>
+      <li><a href='#addCartModal'>Addcart Modal</a></li>
+      <li><a href='#bubble'>Bubble</a></li>
     </ul>
   </aside>
   <div class='template__wrapper'>
@@ -1073,45 +1075,45 @@
         </button>
       </section>
     </div>
-    <p>장바구니 추가 모달</p>
-    <div class="modal__add-cart template" id="addCartModal" role="dialog" aria-label="장바구니에 상품 추가 모달창"
-      aria-modal="true">
-      <div class="add-cart__content">
-        <div class="add-cart__product-info">
-          <h2 class="product-info__name">[풀무원] 탱탱쫄면 (4개입)</h2>
-          <div>
-            <p class="product-info__price">
-              4,980<span class="price">원</span>
-            </p>
-            <form class="add-cart__quantity-form">
-              <label for="quantity" class="quantity-form__label a11y">수량</label>
-              <div style='display: flex; gap: 8px;'>
-                <div class="counter__container uantity-form__controls">
-                  <button type="button" disabled><span class='icon icon--minus'></span></button>
-                  <span class=count>1</span>
-                  <button type="button"><span class='icon icon--plus'></span></button>
-                </div>
-              </div>
-            </form>
+    <div id='addCartModal' class='template'>
+      <h3>담기 모달</h3>
+      <p>컴포넌트 사용시 modal__addcart 클래스 옆에 is--center 클래스 추가해서 쓰셔야 합니다!</p>
+      <section class="modal__addcart">
+        <span class="modal__addcart--title">탱탱 쫄면</span>
+        <div class="modal__addcart--wrapper">
+          <div class="modal__addcart--price">
+            <span class="modal__addcart--price-original">원래 가격</span>
+            <span class="modal__addcart--price-final">4980원</span>
+          </div>
+          <div class="modal__addcart--count counter__container">
+            <button type="button" class="button--minus" disabled><span class='icon icon--minus'></span></button>
+            <span class='count'>1</span>
+            <button type="button" class="button--plus"><span class='icon icon--plus'></span></button>
           </div>
         </div>
-        <div class="add-cart__total-info">
-          <p class="total-info__price">
-            <span>합계</span><span class="price">4,980원</span>
-          </p>
-          <p class="total-info__benefit" aria-label="적립 혜택">
-            <span class="badge badge--sm badge--accent">적립</span><span class="benefit">구매 시 5원 적립</span>
-          </p>
+        <div class="modal__addcart--total">
+          <span class="modal__addcart--total-title">합계</span>
+          <span class="modal__addcart--total-price">4980원</span>
+        </div>
+        <div class="modal__addcart--saving">
+          <span class='badge badge--sm badge--accent'>적립</span>
+          <p class="modal__addcart--saving-info">구매 시 5원 적립</p>
+        </div>
+        <div class="modal__addcart--button">
+          <button type='button' class='button--cancel button button--lg'>취소</button>
+          <button type='button' class='button--addcart button button--lg button--filled'>장바구니 담기</button>
+        </div>
+      </section>
+    </div>
+    <div id='bubble' class='template'>
+      <h3>Bubble</h3>
+      <div class="bubble">
+        <img src="" alt="상품 이미지" class="bubble__img"/>
+        <div class="bubble__text--wrapper">
+          <span class="bubble__product">풀무원 탱탱쫄면</span>
+          <p>장바구니에 상품을 담았습니다.</p>
         </div>
       </div>
-      <section class="add-cart__button">
-        <button type="button" class="modal__button modal__button--cancel button button--lg button--full">
-          취소
-        </button>
-        <button type="button" class="modal__button modal__button--confirm button button--lg button--outlined">
-          장바구니 담기
-        </button>
-      </section>
     </div>
 </body>
 

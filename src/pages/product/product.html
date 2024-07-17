@@ -12,8 +12,8 @@
     <!-- product_list page layout -->
     <main class='page product'>
       <h1 class='product__title'>베스트</h1>
-      <section class='product__container'>
-        <nav class='sidebar'>
+      <div class='product__container'>
+        <section class='sidebar'>
           <ul class='accordion'>
             <div class="accordion__title">
               <span class="accordion__title--content">필터</span>
@@ -22,7 +22,6 @@
                 <span class="title">초기화</span>
               </button>
             </div>
-            
             <!-- head -->
             <li class='accordion__head' id="category">
               <button type='button' class='accordion__head--item'>
@@ -257,8 +256,8 @@
               </ul>
             </li>
           </ul>
-        </nav>
-        <div class='align'>
+        </section>
+        <section class='align'>
           <!-- count -->
           <div class='count'>총 <span id='count__card'>0</span>건</div>
           <!-- sort -->
@@ -291,11 +290,45 @@
             </li>
             <li><button type='button' class='list__button--highprice'>높은 가격순</button></li>
           </ul>
-        </div>
+        </section>
         <!-- card -->
-        <nav id='card-list' class='card__list'>   
+        <section id='card-list' class='card__list'>   
 
-        </nav>
+        </section>
+        <!-- 장바구니 담기 모달 -->
+        <section class="modal__addcart is--center">
+          <span class="modal__addcart--title">탱탱 쫄면</span>
+          <div class="modal__addcart--wrapper">
+            <div class="modal__addcart--price">
+              <span class="modal__addcart--price-original">원래 가격</span>
+              <span class="modal__addcart--price-final">4980원</span>
+            </div>
+            <div class="modal__addcart--count counter__container">
+              <button type="button" class="button--minus" disabled><span class='icon icon--minus'></span></button>
+              <span class='count'>1</span>
+              <button type="button" class="button--plus"><span class='icon icon--plus'></span></button>
+            </div>
+          </div>
+          <div class="modal__addcart--total">
+            <span class="modal__addcart--total-title">합계</span>
+            <span class="modal__addcart--total-price">4980원</span>
+          </div>
+          <div class="modal__addcart--saving">
+            <span class='badge badge--sm badge--accent'>적립</span>
+            <p class="modal__addcart--saving-info">구매 시 5원 적립</p>
+          </div>
+          <div class="modal__addcart--button">
+            <button type='button' class='button--cancel button button--lg'>취소</button>
+            <button type='button' class='button--addcart button button--lg button--filled'>장바구니 담기</button>
+          </div>
+        </section>
+        <div class="bubble is--active">
+          <img src="" alt="상품 이미지" class="bubble__img"/>
+          <div class="bubble__text--wrapper">
+            <span class="bubble__product">풀무원 탱탱쫄면</span>
+            <p>장바구니에 상품을 담았습니다.</p>
+          </div>
+        </div>
         <nav class='pagination__container'>
           <ul class='pagination'>
             <li><a href='#'><span class='icon icon--arrow--prev'></span></a></li>
@@ -307,8 +340,9 @@
             <li><a href='#'><span class='icon icon--arrow--next'></span></a></li>
           </ul>
         </nav>
-      </section>
+      </div>
     </main>
     <c-footer></c-footer>
+    <div class="overlay" aria-hidden="true"></div>
   </body>
 </html>
