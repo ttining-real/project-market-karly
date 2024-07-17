@@ -6,8 +6,15 @@
     <title>마켓칼리</title>
     <script type="module" src="/src/pages/main/main.js"></script>
   </head>
-
   <body>
+    <button type="button" id="move-top-button" class="template">
+      <a href="">
+        <img
+          src="/src/assets/icons/icon-go-to-top.png"
+          alt="상단으로 이동하기"
+        />
+      </a>
+    </button>
     <div class="main">
       <section class="main__visual">
         <!-- Slider main container -->
@@ -28,7 +35,6 @@
               <img src="/src/assets/visual/visual04.png" />
             </div>
           </div>
-          <div class="swiper-pagination"></div>
           <div class="swiper-button-prev">
             <button
               type="button"
@@ -49,10 +55,18 @@
           <!-- If we need scrollbar -->
           <div class="swiper-scrollbar"></div>
         </div>
+
+        <div class="costom-swiper-pagination">
+          <div class="pagination__wrapper">
+            <span class="current-page">1</span>
+            <span>/</span>
+            <span class="total-page"></span>
+          </div>
+        </div>
       </section>
       <div class="main__content--wrap">
         <div class="main__content">
-          <section class="main__products">
+          <section class="main__products products--all">
             <h3 class="products__title">이 상품 어때요?</h3>
             <div class="products__list">
               <div class="product-list__swiper swiper-container">
@@ -75,7 +89,7 @@
               alt="Kurly Purple Week, 더 풍성해진 10월의 퍼플위크, 적립률 UP + 3종 쿠폰팩"
             />
           </section>
-          <section class="main__products">
+          <section class="main__products products--discount">
             <h3 class="products__title">놓치면 후회할 가격</h3>
             <div class="products__list">
               <div class="product-list__swiper swiper-container">
@@ -192,70 +206,6 @@
             </button>
           </div>
         </div>
-      </div>
-      <!-- 장바구니 모달 -->
-      <div
-        class="modal__add-cart"
-        role="dialog"
-        aria-label="장바구니에 상품 추가 모달창"
-        aria-modal="true"
-      >
-        <div class="add-cart__content">
-          <div class="add-cart__product-info">
-            <h2 class="product-info__name">[풀무원] 탱탱쫄면 (4개입)</h2>
-            <div>
-              <p class="product-info__price">
-                4,980<span class="price">원</span>
-              </p>
-              <form class="add-cart__quantity-form">
-                <label for="quantity" class="quantity-form__label a11y"
-                  >수량</label
-                >
-                <div class="quantity-form__controls">
-                  <button
-                    type="button"
-                    class="quantity-form__button quantity-form__button--decrease"
-                    aria-label="수량 감소"
-                  >
-                    -
-                  </button>
-                  <!-- <input type="number" id="quantity" class="quantity-form__input" value="1" min="1" max="99" aria-label="상품 수량"> -->
-                  <span>1</span>
-                  <button
-                    type="button"
-                    class="quantity-form__button quantity-form__button--increase"
-                    aria-label="수량 증가"
-                  >
-                    +
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="add-cart__total-info">
-            <p class="total-info__price">
-              <span>합계</span><span class="price">4,980원</span>
-            </p>
-            <p class="total-info__benefit" aria-label="적립 혜택">
-              <span class="badge badge--sm badge--accent">적립</span
-              ><span class="benefit">구매 시 5원 적립</span>
-            </p>
-          </div>
-        </div>
-        <section class="add-cart__button">
-          <button
-            type="button"
-            class="modal__button modal__button--cancel button button--lg button--full"
-          >
-            취소
-          </button>
-          <button
-            type="button"
-            class="modal__button modal__button--confirm button button--lg button--outlined"
-          >
-            장바구니 담기
-          </button>
-        </section>
       </div>
     </div>
   </body>
