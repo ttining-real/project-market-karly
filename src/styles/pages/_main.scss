@@ -9,6 +9,30 @@
     transform: translateX(4.625rem);
   }
   &__visual {
+    position: relative;
+    // 페이지 네이션
+    .costom-swiper-pagination {
+      z-index: 20;
+      position: absolute;
+      bottom: 1.75rem;
+      right: 6.25rem;
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      @media screen and (max-width: 1200px) {
+        right: 50%;
+        transform: translateX(ㅋ);
+      }
+      .pagination__wrapper {
+        display: flex;
+        padding: 0.25rem 0.75rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.625rem;
+        span {
+          font-size: 0.75rem;
+          color: white;
+        }
+      }
+    }
     height: 23.125rem;
     .swiper {
       width: 100%;
