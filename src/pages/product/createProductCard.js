@@ -17,8 +17,8 @@ export function createProductCard(product) {
         <span class='product__info--sm-discount-rate'>${product.ratio}%<span class='a11y'>할인</span></span>
         <span class='product__info--sm-discount-price'>${product.finalPrice.toLocaleString()}&nbsp;원</span>
       </div>
-    </div>` :
-    `
+    </div>` 
+    :`
     <div class='product__info product__info--sm'>
       <span class='product__info--sm-delivery'>${product.deliver}</span>
       <span class='product__info--sm-title'>[${product.brand}] ${product.name}</span>
@@ -38,7 +38,7 @@ export function createProductCard(product) {
   }
 
   card.innerHTML = `
-    <a href="/" class="card__link">
+    <a href="/src/pages/productDetail/details.html?product=${product.id}" class="card__link">
       <img class="card__img" src="${getPbImageURL(product)}" alt="${product.brand} ${product.name} 이미지" />
       <div class="card__data">
         ${template}
