@@ -50,6 +50,28 @@
     width: 100%;
   }
 
+  .button-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .button--confirm {
+      @include label-md;
+      color: $primary;
+      width: 50%;
+    }
+    .button--cancel {
+      @include label-md;
+      color: $gray-300;
+      width: 50%;
+    }
+  }
+
+  &__address__content {
+    padding-bottom: 2rem;
+  }
+
   &.is--center {
     position: fixed;
     top: 50%;
@@ -60,9 +82,5 @@
     &.is--open {
       display: flex;
     }
-  }
-  
-  &__address__content {
-    padding-bottom: 2rem;
   }
 }
