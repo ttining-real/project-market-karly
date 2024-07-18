@@ -125,12 +125,12 @@
     &__ad {
       z-index: 21;
       position: absolute;
-      top: 15rem;
-      left: 6.25rem;
-
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 27.5rem;
       height: auto;
-      box-shadow: 0px 8px 36px 0px #00000033;
+      box-shadow: 0rem 0rem 2.4rem 0rem rgba(0, 0, 0, 0.4);
 
       border-radius: 1rem;
       overflow: hidden;
@@ -184,7 +184,6 @@
     align-items: center;
     width: 4.625rem;
     height: 100%;
-    padding: 8px 0;
     border: 1px solid $gray-200;
     background-color: white;
     position: sticky;
@@ -206,6 +205,16 @@
       gap: 8px;
       &__nav--up {
         order: -1;
+        border-radius: 2px;
+        &:focus {
+          outline: 2px solid $secondary;
+        }
+      }
+      &__nav--down {
+        border-radius: 2px;
+        &:focus {
+          outline: 2px solid $secondary;
+        }
       }
       &__items {
         // ul 태그
