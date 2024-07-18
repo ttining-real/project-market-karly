@@ -75,6 +75,15 @@ $header: (
           color: $primary;
         }
       }
+      &.button--cart {
+        position: relative;
+        .bubble {
+          position: absolute;
+          top: 54px;
+          right: -28px;
+          z-index: 100;
+        }
+      }
     }
   }
   .header__utils {
@@ -322,6 +331,18 @@ $header: (
 
       &__utils {
         display: none;
+      }
+      &__main {
+        .button__set {
+          a {
+            &.button--cart {
+              .bubble {
+                top: 44px;
+                right: -34px;
+              }
+            }
+          }
+        }
       }
     }
   }
