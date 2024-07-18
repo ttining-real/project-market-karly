@@ -1,6 +1,5 @@
 import modalHandle from '@/lib/modal.js';
 import pb from '@/api/pocketbase';
-import bubble from './bubble.js';
 
 export async function addCart(productId) {
   const cancelButton = document.querySelector('.button--cancel');
@@ -88,7 +87,12 @@ export async function addCart(productId) {
 
   addCartButton.addEventListener('click', () => {
     modalHandle('.modal__addcart', 'is--open', close);
-    bubble(product);
+
+    const item = new CustomEvent('cartAdded', {
+      detail: product
+    });
+
+    document.dispatchEvent(item);
 
     // 이벤트 리스너 제거
     addCartPlusButton.removeEventListener('click', increaseCount);
