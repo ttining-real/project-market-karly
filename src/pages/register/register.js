@@ -54,6 +54,7 @@ function register() {
       hint.textContent =
         '아이디는 4자 이상 20자 이하의 영문과 숫자를 포함해야 합니다.';
     }
+    checkAllFields();
   }
 
   // 아이디 중복 확인
@@ -110,6 +111,7 @@ function register() {
       modalText.innerHTML = '오류가 발생했습니다. 다시 시도해주세요.';
       modalButton.addEventListener('click', handleModalButton);
     }
+    checkAllFields();
   }
 
   // 비밀번호
@@ -123,6 +125,7 @@ function register() {
       this.classList.add('is--invalid');
       pwCheckPass = false;
     }
+    checkAllFields();
   }
 
   // 비밀번호 확인
@@ -130,7 +133,7 @@ function register() {
     const value = this.value;
     const hint = this.nextElementSibling;
 
-    if (pwReg(value) === pwReg(pwCheck.value)) {
+    if (value === pwCheck.value) {
       this.classList.remove('is--invalid');
       pwConfirmPass = true;
     } else {
@@ -138,6 +141,7 @@ function register() {
       hint.textContent = '비밀번호가 일치하지 않습니다.';
       pwConfirmPass = false;
     }
+    checkAllFields();
   }
 
   // 이름
@@ -150,6 +154,7 @@ function register() {
       this.classList.add('is--invalid');
       nameCheckPass = false;
     }
+    checkAllFields();
   }
 
   // 이메일
@@ -162,6 +167,7 @@ function register() {
     } else {
       this.classList.add('is--invalid');
     }
+    checkAllFields();
   }
 
   // 이메일 중복 확인
@@ -220,6 +226,7 @@ function register() {
       modalText.innerHTML = '오류가 발생했습니다. 다시 시도해주세요.';
       modalButton.addEventListener('click', handleModalButton);
     }
+    checkAllFields();
   }
 
   // 휴대폰
@@ -253,6 +260,7 @@ function register() {
     }
 
     inputField.value = strPhone;
+    checkAllFields();
   }
 
   // 주소
@@ -288,6 +296,7 @@ function register() {
       addressCheckPass = true;
     }
     modalHandle('.modal__address', 'is--open', close);
+    checkAllFields();
   });
 
   // 성별
@@ -321,6 +330,7 @@ function register() {
       });
     }
     handleAgreeCheckRequired();
+    checkAllFields();
   }
 
   // 필수 약관 체크박스
@@ -337,6 +347,8 @@ function register() {
       (checkbox) => checkbox.checked
     );
     agreeAll.checked = allChecked;
+    handleAgreeCheckRequired();
+    checkAllFields();
   }
 
   function checkAllFields() {
@@ -418,37 +430,29 @@ function register() {
 
   idCheck.addEventListener('input', function () {
     handleIdCheck.call(this);
-    checkAllFields();
   });
   pwCheck.addEventListener('input', function () {
     handlePwCheck.call(this);
-    checkAllFields();
   });
   pwConfirm.addEventListener('input', function () {
     handlePwConfirm.call(this);
-    checkAllFields();
   });
   nameCheck.addEventListener('input', function () {
     handleNameCheck.call(this);
-    checkAllFields();
   });
   emailCheck.addEventListener('input', function () {
     handleEmailCheck.call(this);
-    checkAllFields();
   });
   phoneCheck.addEventListener('input', function (event) {
     handlePhoneCheck(event);
-    checkAllFields();
   });
   agreeAll.addEventListener('click', function () {
     handleAgreeAll.call(this);
-    checkAllFields();
   });
   agreeCheck.forEach((checkbox) => {
     checkbox.addEventListener('change', function () {
       handleAgreeCheck.call(this);
       handleAgreeCheckRequired.call(this);
-      checkAllFields();
     });
   });
   handleAgreeCheck();

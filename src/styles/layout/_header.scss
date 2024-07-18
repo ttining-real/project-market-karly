@@ -88,7 +88,11 @@ $header: (
       position: relative;
       p {
         @include paragraph-sm;
+        padding: 0 0.5rem;
         color: $content;
+        span.username {
+          font-weight: bold;
+        }
       }
       &:hover {
         .user__option {
@@ -271,6 +275,53 @@ $header: (
       }
       &:focus {
         outline: 0.125rem solid map-get($header, focus);
+      }
+    }
+  }
+
+  &.is--scrolled {
+    z-index: 22;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    .header {
+      &__main {
+        order: 1;
+        width: auto;
+        margin: 0;
+        .logo {
+          display: none;
+        }
+        .search__field {
+          height: 2.25rem;
+          .input--search{
+            @include paragraph-sm;
+          }
+        }
+
+      }
+      &__nav {
+        order: 0;
+        flex-basis: 43.75rem;
+        width: auto;
+        margin: 0;
+        .nav__info {
+          display: none;
+        }
+        .nav__menu {
+          white-space: nowrap;
+          li a {
+            padding: 0 1rem;
+          }
+          
+        }
+      }
+
+      &__utils {
+        display: none;
       }
     }
   }

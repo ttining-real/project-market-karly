@@ -3,6 +3,7 @@ import pb from '@/api/pocketbase';
 import defaultAuthData from '@/api/defaultAuthData';
 import modalHandle from '@/lib/modal.js';
 import { getNode, getStorage, setStorage, insertLast } from 'kind-tiger';
+import throttle from 'lodash/throttle'; // Lodash의 throttle 함수
 
 class Header extends HTMLElement {
   constructor() {
@@ -80,7 +81,40 @@ class Header extends HTMLElement {
         categoryMenu.classList.toggle('is--active');
       }
     });
+
+    this.addScrollEvent();
   }
+
+
+  /* --------------------------------- 스크롤 이벤트 -------------------------------- */
+  addScrollEvent() {
+    const header = this.shadowRoot.querySelector('.header');
+    const searchButton = header.querySelector('.search__field .button');
+    const setButton = header.querySelectorAll('.button__set .button');
+
+    const handleScroll = throttle(() => {
+      if (window.scrollY > 184) {
+        header.classList.add('is--scrolled');
+        searchButton.classList.remove('button--lg');
+        searchButton.classList.add('button--xs');
+        setButton.forEach(item => {
+          item.classList.remove('button--md');
+          item.classList.add('button--xs');
+        })
+      } else {
+        header.classList.remove('is--scrolled');
+        searchButton.classList.remove('button--xs');
+        searchButton.classList.add('button--lg');
+        setButton.forEach(item => {
+          item.classList.remove('button--xs');
+          item.classList.add('button--md');
+        })
+      }
+    }, 100); // 100ms마다 이벤트 처리
+
+    window.addEventListener('scroll', handleScroll);
+  }
+
 
   /* ---------------------------------- 로그아웃 ---------------------------------- */
   async logout() {
