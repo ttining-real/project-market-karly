@@ -2,7 +2,7 @@ import '@/styles/style.scss';
 import '@/layout/header/header.js';
 import '@/layout/footer/footer.js';
 import '@/pages/product/accordionToggle.js';
-import '@/pages/product/addCart.js';
+import '@/pages/product/addCartModal.js';
 import '@/pages/product/categoryTitle.js';
 import pb from '@/api/pocketbase';
 import { countFilterDatas, countTotalProducts } from '@/pages/product/count.js';

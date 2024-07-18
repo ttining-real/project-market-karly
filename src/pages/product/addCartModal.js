@@ -1,7 +1,8 @@
 import modalHandle from '@/lib/modal.js';
 import pb from '@/api/pocketbase';
+import { addCartEvent } from '@/pages/cart/addCartEvent.js';
 
-export async function addCart(productId) {
+export async function addCartModal(productId) {
   const cancelButton = document.querySelector('.button--cancel');
   const addCartButton = document.querySelector('.button--addcart');
   const addCartTitle = document.querySelector('.modal__addcart--title');
@@ -94,6 +95,8 @@ export async function addCart(productId) {
 
     document.dispatchEvent(item);
 
+    const count = addCartCount.textContent;
+    addCartEvent(product, count);
     // 이벤트 리스너 제거
     addCartPlusButton.removeEventListener('click', increaseCount);
     addCartMinusButton.removeEventListener('click', decreaseCount);

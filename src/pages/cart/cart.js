@@ -9,3 +9,4 @@ import '@/pages/cart/delete.js';
 import '@/pages/cart/order.js';
 import '@/pages/cart/toggle.js';
 import '@/pages/cart/price.js';
+import '@/pages/cart/addCartEvent.js';
