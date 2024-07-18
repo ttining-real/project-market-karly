@@ -80,11 +80,20 @@
       <li><a href='#listList'>List Link / Button</a></li>
       <li><a href='#icon'>Icon</a></li>
       <li><a href='#image'>Image</a></li>
-      <li><a href='#productInfo'>Product info</a></li>
+      <li><a href='#tabButton'>Tab Button</a></li>
+      <li><a href='#Section Header'>Section Header</a></li>
+      <li><a href='#product__details'>Product Details</a></li>
+      <li><a href='#product__review__table'>Review Table</a></li>
+      <li><a href='#product__inquiry__table'>Inquiry Table</a></li>
+      <li><a href='#productInfo'>Product Info</a></li>
       <li><a href='#card'>Card</a></li>
       <li><a href='#accordion'>Accordion</a></li>
       <li><a href='#count'>Count</a></li>
       <li><a href='#pagination'>Pagination</a></li>
+      <li><a href='#address'>Address Modal</a></li>
+      <li><a href='#modal'>Modal</a></li>
+      <li><a href='#productReviewModal'>Product Review Modal</a></li>
+      <li><a href='#productInquiryModal'>Product Inquiry Modal</a></li>
       <li><a href='#addCartModal'>Addcart Modal</a></li>
       <li><a href='#bubble'>Bubble</a></li>
     </ul>
@@ -793,7 +802,6 @@
         </table>
       </div>
     </div>
-
     <div id='productInfo' class='template'>
       <h3>Product info</h3>
       <!-- original--sm -->
@@ -833,7 +841,6 @@
         </div>
       </div>
     </div>
-
     <div id='card' class='template'>
       <h3>Card</h3>
       <div class='card'>
@@ -866,7 +873,6 @@
         </button>
       </div>
     </div>
-
     <div id='accordion' class='template'>
       <h3>Accordion</h3>
       <ul class='accordion'>
@@ -925,12 +931,10 @@
         </li>
       </ul>
     </div>
-
     <div id='count' class='template'>
       <h3>Count</h3>
       <div class='count'>총 <span id='count__card'>0</span>건</div>
     </div>
-
     <div id='pagination' class='template'>
       <h3>Pagination</h3>
       <ul class='pagination'>
@@ -943,7 +947,6 @@
         <li><a href='#'><span class='icon icon--arrow--next'></span></a></li>
       </ul>
     </div>
-
     <div id="address" class="template">
       <h3>배송지 모달</h3>
       <section class='modal__address'>
@@ -970,8 +973,7 @@
         </button>
       </section>
     </div>
-
-    <div id="order" class="teamplte">
+    <div id="modal" class="teamplte">
       <h3>주문완료 모달</h3>
       <section class="modal">
         <h1 class="a11y modal__title">주문완료</h1>
@@ -980,9 +982,12 @@
           <span><span class="count">5</span>초 뒤 메인페이지로 이동합니다.</span>
         </div>
         <button type="button" class="button--lg button--confirm">확인</button>
+        <div class="button-group">
+          <button type="button" class="button--lg button--cancel">취소</button>
+          <button type="button" class="button--lg button--confirm">확인</button>
+        </div>
       </section>
     </div>
-
     <div id="productReviewModal" class="template">
       <section class="product__review__modal">
         <h1 class="title">후기 작성</h1>
@@ -1027,7 +1032,6 @@
         </button>
       </section>
     </div>
-
     <div id="productInquiryModal" class="template">
       <section class="product__inquiry__modal">
         <h1 class="title">상품 문의하기</h1>
@@ -1114,7 +1118,7 @@
     <div id='bubble' class='template'>
       <h3>Bubble</h3>
       <div class="bubble">
-        <img src="" alt="상품 이미지" class="bubble__img"/>
+        <img src="" alt="상품 이미지" class="bubble__img" />
         <div class="bubble__text--wrapper">
           <span class="bubble__product">풀무원 탱탱쫄면</span>
           <p>장바구니에 상품을 담았습니다.</p>
