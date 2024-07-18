@@ -15,16 +15,17 @@
 
     button {
       @include label-md;
-      align-items: center;
-      color: $black;
-      display: flex;
-      justify-content: flex-start;
-      padding: 1rem 0;
       position: relative;
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem 0;
+      border-radius: 0.125rem;
+      color: $black;
 
       &:focus {
-        outline: 2px solid $primary;
+        outline: 2px solid $secondary;
       }
     }
 
@@ -77,6 +78,10 @@
       justify-content: center;
       width: 60px;
 
+      a:focus {
+        outline: 2px solid $secondary;
+      }
+
       img {
         display: block;
         height: 100%;
@@ -86,6 +91,7 @@
     }
 
     strong {
+      display: flex;
       flex-grow: 2;
       flex-shrink: 0;
       margin-bottom: 0;
@@ -93,8 +99,12 @@
 
       a {
         @include paragraph-md;
-        color: inherit;
+        flex: 1;
+        color: $content;
         text-decoration: none;
+        &:focus {
+          outline: 0.125rem solid $secondary;
+        }
       }
     }
 

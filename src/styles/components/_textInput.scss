@@ -72,6 +72,9 @@ $input: (
     &:focus {
       outline: none;
     }
+    &::placeholder {
+      @include paragraph-lg;
+    }
   }
 
   .button__icon {
