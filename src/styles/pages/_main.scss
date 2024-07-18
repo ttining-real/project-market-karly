@@ -1,277 +1,277 @@
 .main {
-  .main__content--wrap {
-    display: flex;
-    justify-content: center;
-  }
-  &__content {
-    max-width: 1050px;
-    margin: 0 auto;
-    transform: translateX(4.625rem);
-  }
-  &__visual {
-    position: relative;
-    // 페이지 네이션
-    .costom-swiper-pagination {
-      z-index: 20;
-      position: absolute;
-      bottom: 1.75rem;
-      right: 6.25rem;
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      @media screen and (max-width: 1200px) {
-        right: 50%;
-        transform: translateX(500px);
-      }
-      .pagination__wrapper {
-        display: flex;
-        padding: 0.25rem 0.75rem;
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 0.625rem;
-        span {
-          font-size: 0.75rem;
-          color: white;
-        }
-      }
-    }
-    // height: 23.125rem;
-    .swiper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__swiper {
+    width: 100vw;
+    margin: 0;
+
+    .swiper-wrapper {
       width: 100%;
-      height: 100%;
-      min-width: 1200px;
-      .swiper-slide {
-        .card {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-      .swiper-button-prev {
-        margin-left: 6.25rem;
-        &::after {
-          display: none;
-        }
-      }
-      .swiper-button-next {
-        margin-right: 6.25rem;
-        &::after {
-          display: none;
-        }
-      }
-      // .button {
-      //   top: 50%;
-      //   transform: translateY(-50%);
-      // }
     }
-  }
-  &__products {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    gap: 1.75rem;
-    max-width: 65.625rem;
-    margin: 2.5rem auto;
-    .products__title {
-      @include heading-xl;
-      color: $content;
-    }
-    .products__list {
-      display: flex;
-      flex-flow: row nowrap;
-      gap: 1rem;
-      width: 65.625rem;
-    }
-  }
-  &__banner {
-    max-width: 65.625rem;
-    overflow: hidden;
-    height: 8.6875rem;
-    margin: 2.5rem auto;
-    border-radius: 0.25rem;
-    img {
+
+    .swiper-slide {
       width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-  }
-  .products__list {
-    position: relative;
-    .product-list__swiper {
-      overflow: hidden;
-      width: 65.625rem;
-    }
-    .swiper-button {
-      &-prev,
-      &-next {
-        position: absolute;
-        top: 33%;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        overflow: hidden;
-        &::after {
-          display: none;
-        }
-      }
-      &-prev {
-        left: -30px;
-      }
-      &-next {
-        right: -0.8125rem;
-      }
-    }
-  }
-  // # popup ad
-  .popup {
-    &__ad {
-      z-index: 21;
-      position: absolute;
-      top: 15rem;
-      left: 6.25rem;
 
-      width: 27.5rem;
-      height: auto;
-      box-shadow: 0px 8px 36px 0px #00000033;
-
-      border-radius: 1rem;
-      overflow: hidden;
-
-      &__content {
-        width: 100%;
-      }
-
-      &__img {
-        a {
-          display: inline-block;
-          width: 100%;
-          height: 100%;
-
-          img {
-            object-fit: contain;
-          }
-        }
-      }
-    }
-
-    &__actions {
-      display: flex;
-      flex-flow: row nowrap;
-      margin-top: -3px;
-      button {
-        @include paragraph-md;
-        width: 50%;
-        line-height: 5.375rem;
-        background-color: white;
-        &:first-child {
-          position: relative;
-          &::after {
-            position: absolute;
-            right: -0.0625rem;
-            content: '';
-            width: 0.0625rem;
-            height: 100%;
-            background-color: $gray-100;
-          }
-        }
-      }
-    }
-  }
-  // # 최근 본 상품
-  .sidebar {
-    // aside 태그
-    z-index: 11;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    width: 4.625rem;
-    height: 100%;
-    padding: 8px 0;
-    border: 1px solid $gray-200;
-    background-color: white;
-    position: sticky;
-    top: 193px;
-    align-self: flex-start;
-    max-height: calc(100vh - 300px);
-    right: 1.875rem;
-    margin: 193px 0;
-    &__title {
-      @include paragraph-sm;
-      font-weight: 600;
-      letter-spacing: -0.3px;
-    }
-    .product-list {
-      // 전체 div태그
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      gap: 8px;
-      &__nav--up {
-        order: -1;
-      }
-      &__items {
-        // ul 태그
-        width: 2.5rem;
-        height: 7.375rem;
-        overflow: hidden;
-      }
-      &__item {
-        // li태그
-        width: 2.5rem;
-        height: 3.1875rem;
-        margin-bottom: 0.25rem;
-      }
-      .product-item {
-        // a태그
-        display: inline-block;
-      }
       img {
         width: 100%;
-        height: auto;
+        height: 370px;
+        object-fit: cover;
+      }
+    }
+
+    button.swiper-button-next,
+    button.swiper-button-prev {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 52px;
+      height: 52px;
+      gap: 0;
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      &:after {
+        content: '';
+      }
+
+      button.swiper-button-next {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
-  @media screen and (max-width: 1200px) {
-    .sidebar--sticky {
+
+  &__content {
+    margin-bottom: 50px;
+  }
+}
+
+.banner__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  background-color: $primary;
+  transition: height 300ms ease-in-out;
+
+  .content {
+    @include paragraph-sm;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1050px;
+    height: 50px;
+
+    a {
+      display: inline-block;
+      color: $white;
+      text-decoration: none;
+      transition: all 300ms ease-in-out;
+
+      &:focus,
+      &:hover,
+      &:active {
+        font-weight: 700;
+      }
+    }
+
+    .button--close {
+      position: absolute;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+
+      span.icon--cancel {
+        color: $gray-100;
+        transition: all 300ms ease-in-out;
+      }
+
+      &:focus,
+      &:hover,
+      &:active {
+        span.icon--cancel {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1050px;
+  // gap: 40px;
+
+  section {
+    padding: 40px 0;
+    h2 {
+      @include heading-xl;
+      color: $content;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+  }
+}
+
+.product--eventProduct .swiper,
+.product--recommendation .swiper {
+  position: relative;
+
+  button.swiper-button-prev {
+    position: absolute;
+    left: 0;
+    transform: translateX(-30px);
+  }
+  button.swiper-button-next {
+    position: absolute;
+    right: 0;
+    transform: translateX(30px);
+  }
+
+  button.swiper-button-next,
+  button.swiper-button-prev {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-30%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    gap: 0;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
       display: none;
     }
   }
 }
-// 탑버튼 이동
-#move-top-button {
-  z-index: 20;
+
+.popup {
+  display: none;
   position: fixed;
-  bottom: -3.625rem;
-  right: 1.9375rem;
-  width: 3.625rem;
-  height: 3.625rem;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-  transition:
-    opacity 0.5s ease 0s,
-    bottom 0.5s ease 0s;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -50%);
+  width: 440px;
+  border-radius: 1rem;
+  border: 0;
 
-  a {
-    display: inline-block;
-    width: 100%;
+  &__image {
+    padding: 0;
+    flex-flow: row nowrap;
+
+    a {
+      display: block;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus,
+        &:active {
+          filter: brightness(0.9);
+        }
+      }
+    }
+  }
+
+  .button-group {
+    overflow: hidden;
+
+    button {
+      border: 1px solid $gray-100;
+      transition: all 300ms ease-in-out;
+
+      &:hover,
+      &:focus,
+      &:active {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.recent__item {
+  position: relative;
+  width: 74px;
+  height: 223px;
+  padding: 34px 1rem;
+
+  h2 {
+    @include label-sm;
+    color: $black;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .recent-swiper {
+    width: 40px;
+    height: 129px;
+  }
+
+  .recent-swiper-wrapper {
     height: 100%;
-    background-color: transparent;
+  }
+
+  .swiper-slide {
+    cursor: pointer;
+    transition: transform 300ms ease-in-out;
+
     img {
-      width: 100%;
-      height: 100%;
-      transition: filter 0.2s ease 0s;
+      width: 40px;
+      height: 52px;
+      object-fit: cover;
     }
-    &:hover img {
-      filter: brightness(0.85);
+
+    &:focus,
+    &:hover,
+    &:active {
+      transform: scale(1.05);
     }
   }
 
-  &.show {
-    bottom: 0.9375rem;
-    opacity: 1;
+  .swiper-button-prev {
+    position: absolute;
+    bottom: 0.5rem;
+    width: 18px;
+    height: 18px;
+    background-color: hotpink;
   }
 
-  &.hide {
-    bottom: -3.625rem;
-    opacity: 0;
+  .swiper-button-next {
+    position: absolute;
+    top: 0.5rem;
+    width: 18px;
+    height: 18px;
+    background-color: hotpink;
   }
 }
