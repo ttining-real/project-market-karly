@@ -26,29 +26,28 @@ async function getSwiperData() {
     slideElement.appendChild(imgElement);
     bannerSwiperWrapper.appendChild(slideElement);
   });
+
+  /* product swiper */
+  const productList = await pb.collection('products').getFullList();
+  const saleProductList = await pb.collection('products').getFullList({sort: '-ratio'});
+  
+  productList.forEach(product => {
+    const card = createProductCard(product); // 제품 카드 생성
+    const slide = document.createElement('div');
+    slide.classList.add('swiper-slide');
+    slide.appendChild(card);
+    productSwiperWrapper.appendChild(slide); // swiper-wrapper에 swiper-slide 추가
+  })
+  
+  saleProductList.forEach(product => {
+    const card = createProductCard(product); // 제품 카드 생성
+    const slide = document.createElement('div');
+    slide.classList.add('swiper-slide');
+    slide.appendChild(card);
+    saleProductSwiperWrapper.appendChild(slide); // swiper-wrapper에 swiper-slide 추가
+  })
 }
 window.addEventListener('DOMContentLoaded', getSwiperData);
-
-
-/* product swiper */
-const productList = await pb.collection('products').getFullList();
-const saleProductList = await pb.collection('products').getFullList({sort: '-ratio'});
-
-productList.forEach(product => {
-  const card = createProductCard(product); // 제품 카드 생성
-  const slide = document.createElement('div');
-  slide.classList.add('swiper-slide');
-  slide.appendChild(card);
-  productSwiperWrapper.appendChild(slide); // swiper-wrapper에 swiper-slide 추가
-})
-
-saleProductList.forEach(product => {
-  const card = createProductCard(product); // 제품 카드 생성
-  const slide = document.createElement('div');
-  slide.classList.add('swiper-slide');
-  slide.appendChild(card);
-  saleProductSwiperWrapper.appendChild(slide); // swiper-wrapper에 swiper-slide 추가
-})
 
 /* banner swiper */
 new Swiper('#banner-swiper', {
@@ -108,6 +107,4 @@ new Swiper('#saleProduct-swiper', {
 //     nextEl: '.recent-swiper-next',
 //     prevEl: '.recent-swiper-prev',
 //   },
-
-
 //  })
