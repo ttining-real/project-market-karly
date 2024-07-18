@@ -1,5 +1,5 @@
 import { getPbImageURL } from "kind-tiger";
-import { addCart } from "./addCart.js";
+import { addCartModal } from "./addCartModal.js";
 
 export function createProductCard(product) {
   const card = document.createElement('div');
@@ -54,7 +54,7 @@ export function createProductCard(product) {
 
   const button = card.querySelector('.button--cart');
   button.addEventListener('click', () => {
-    addCart(product.id);
+    addCartModal(product.id);
   });
 
   return card;

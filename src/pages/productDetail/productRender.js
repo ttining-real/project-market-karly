@@ -1,6 +1,7 @@
 import { insertLast } from 'kind-tiger';
 import pb from '@/api/pocketbase';
 import priceHandler from '@/lib/priceHandler.js';
+// import { addCart } from '@/pages/cart/cart.js';
 
 const params = new URLSearchParams(location.search);
 const productId = params.get('product');
@@ -8,6 +9,28 @@ const BaseURL = pb.baseUrl;
 
 async function getData() {
   const product = await pb.collection('products').getOne(productId);
+  const isDiscounted = product.ratio > 0;
+
+  const productInfoTemplate  = isDiscounted ? `
+    <div class='product__info discount product__info--lg'>
+      <span class='product__info--lg-delivery'>${product.deliver}</span>
+      <span class='product__info--lg-title'>[${product.brand}] ${product.name}</span>
+      <span class='product__info--lg-desc'>${product.description}</span>
+      <span class='product__info--lg-price discount'>${product.price.toLocaleString()}&nbsp;원</span>
+      <div class='product__info--lg-discount discount'>
+        <span class='product__info--lg-discount-rate'>${product.ratio}%<span class='a11y'>할인</span></span>
+        <span class='product__info--lg-discount-price'>${product.finalPrice.toLocaleString()}<span>&nbsp;원</span></span>
+      </div>
+    </div>`
+    :`
+    <div class="product__info product__info--lg">
+      <span class="product__info--lg-delivery">${product.deliver}</span>
+      <span class="product__info--lg-title">[${product.brand}] ${product.name}</span>
+      <span class="product__info--lg-desc">${product.description}</span>
+      <span class="product__info--lg-price">${product.finalPrice.toLocaleString()}<span>&nbsp;원</span></span>
+      <span class="alert">로그인 후, 적립 혜택이 제공됩니다.</span>
+    </div>`;
+
   const productTemplate = `
     <div class="product__image">
       <img
@@ -16,14 +39,7 @@ async function getData() {
       />
     </div>
     <div class="product__info--wrapper">
-      <div class="product__info product__info--lg">
-        <span class="product__info--lg-delivery">${product.deliver}</span>
-        <span class="product__info--lg-title">[${product.brand}] ${product.name}</span>
-        <span class="product__info--lg-desc">${product.description}</span>
-        <span class="product__info--lg-price">${product.finalPrice.toLocaleString()}<span>&nbsp;원</span></span>
-        <span class="alert">로그인 후, 적립 혜택이 제공됩니다.</span>
-      </div>
-
+      ${productInfoTemplate}
       <dl class="product__info__list">
         <div class="product__info__item delivery">
           <dt>배송</dt>
@@ -105,7 +121,7 @@ async function getData() {
         <button type="button" class="button button--ratio button--lg button--outlined">
           <span class="icon icon--bell"></span>
         </button>
-        <button type="button" class="button button--md button--primary button--filled button--basket">
+        <button type="button" class="button--cart button button--md button--primary button--filled button--basket">
           장바구니 담기
         </button>
       </div>
@@ -114,5 +130,9 @@ async function getData() {
   insertLast('.product__details__header', productTemplate);
 
   priceHandler();
+  // const addCartButton = productTemplate.querySelector('.button--addCart');
+  // addCartButton.addEventListener('click', ()=>{
+  //   addCart(product, count);
+  // })
 }
 getData();
