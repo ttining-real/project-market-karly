@@ -9,74 +9,53 @@
   <body>
     <button type="button" id="move-top-button" class="template">
       <a href="">
-        <img
-          src="/src/assets/icons/icon-go-to-top.png"
-          alt="상단으로 이동하기"
-        />
+        <img src="/src/assets/icons/icon-go-to-top.png" alt="상단으로 이동하기"/>
       </a>
     </button>
     <div class="main">
       <section class="main__visual">
         <!-- Slider main container -->
-        <div class="swiper">
+        <div class="swiper" id="banner-swiper">
           <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <img src="/src/assets/visual/visual01.png" />
-            </div>
-            <div class="swiper-slide">
-              <img src="/src/assets/visual/visual02.png" />
-            </div>
-            <div class="swiper-slide">
-              <img src="/src/assets/visual/visual03.png" />
-            </div>
-            <div class="swiper-slide">
-              <img src="/src/assets/visual/visual04.png" />
-            </div>
-          </div>
+          <div class="swiper-wrapper"></div>
           <div class="swiper-button-prev">
-            <button
-              type="button"
-              class="button button--ratio button--md button--rounded button--opacity"
-            >
+            <button type="button" class="button button--ratio button--md button--rounded button--opacity">
               <span class="icon icon--arrow--left"></span>
             </button>
           </div>
           <div class="swiper-button-next">
-            <button
-              type="button"
-              class="button button--ratio button--md button--rounded button--opacity"
-            >
+            <button type="button" class="button button--ratio button--md button--rounded button--opacity">
               <span class="icon icon--arrow--right"></span>
             </button>
           </div>
-
           <!-- If we need scrollbar -->
           <div class="swiper-scrollbar"></div>
         </div>
 
-        <div class="costom-swiper-pagination">
+        <!-- <div class="costom-swiper-pagination">
           <div class="pagination__wrapper">
             <span class="current-page">1</span>
             <span>/</span>
             <span class="total-page"></span>
           </div>
-        </div>
+        </div> -->
       </section>
       <div class="main__content--wrap">
         <div class="main__content">
           <section class="main__products products--all">
             <h3 class="products__title">이 상품 어때요?</h3>
             <div class="products__list">
-              <div class="product-list__swiper swiper-container">
-                <!-- Additional required wrapper -->
+              <div class="product-list__swiper swiper-container" id="product-swiper">
                 <div class="swiper-wrapper"></div>
-                <div class="swiper-button-prev" id="prev-1">
-                  <button></button>
+                <div class="swiper-button-prev">
+                  <button type="button" class="button button--ratio button--md button--rounded button--opacity">
+                    <span class="icon icon--arrow--left"></span>
+                  </button>
                 </div>
-                <div class="swiper-button-next" id="next-1">
-                  <button></button>
+                <div class="swiper-button-next">
+                  <button type="button" class="button button--ratio button--md button--rounded button--opacity">
+                    <span class="icon icon--arrow--right"></span>
+                  </button>
                 </div>
                 <!-- If we need scrollbar -->
                 <div class="swiper-scrollbar"></div>
@@ -84,23 +63,23 @@
             </div>
           </section>
           <section class="main__banner">
-            <img
-              src="/src/assets/banner/banner01.png"
-              alt="Kurly Purple Week, 더 풍성해진 10월의 퍼플위크, 적립률 UP + 3종 쿠폰팩"
-            />
+            <img src="/src/assets/banner/banner01.png" alt="Kurly Purple Week, 더 풍성해진 10월의 퍼플위크, 적립률 UP + 3종 쿠폰팩"/>
           </section>
           <section class="main__products products--discount">
             <h3 class="products__title">놓치면 후회할 가격</h3>
             <div class="products__list">
-              <div class="product-list__swiper swiper-container">
+              <div class="product-list__swiper swiper-container" id="saleProduct-swiper">
                 <div class="swiper-wrapper"></div>
-              </div>
-              <div class="swiper-button-prev" id="prev-2">
-                <button></button>
-              </div>
-              <div class="swiper-button-next" id="next-2">
-                <button></button>
-              </div>
+                <div class="swiper-button-prev">
+                  <button type="button" class="button button--ratio button--md button--rounded button--opacity">
+                    <span class="icon icon--arrow--left"></span>
+                  </button>
+                </div>
+                <div class="swiper-button-next">
+                  <button type="button" class="button button--ratio button--md button--rounded button--opacity">
+                    <span class="icon icon--arrow--right"></span>
+                  </button>
+                </div>
               <div class="swiper-scrollbar"></div>
             </div>
           </section>
@@ -109,28 +88,15 @@
         <aside class="sidebar sidebar--sticky">
           <div class="sidebar__container">
             <div id="recent-product" class="product-list" aria-live="polite">
-              <h2
-                class="sidebar__title product-list__title"
-                aria-labelledby="recent-product"
-              >
-                최근 본 상품
-              </h2>
-              <button
-                id="recent-prev"
-                class="product-list__nav product-list__nav--up"
-                aria-label="이전 상품 보기"
-              >
+              <h2 class="sidebar__title product-list__title" aria-labelledby="recent-product">최근 본 상품</h2>
+              <button id="recent-prev" class="product-list__nav product-list__nav--up" aria-label="이전 상품 보기">
                 <span class="icon icon--arrow--top"></span>
                 <span class="a11y">위로</span>
               </button>
               <div class="product-list__items" role="list" id="test-1">
                 <ul class="swiper-wrapper"></ul>
               </div>
-              <button
-                id="recent-next"
-                class="product-list__nav product-list__nav--down"
-                aria-label="다음 상품 보기"
-              >
+              <button id="recent-next" class="product-list__nav product-list__nav--down" aria-label="다음 상품 보기">
                 <span class="a11y">아래로</span>
                 <span class="icon icon--arrow--bottom"></span>
               </button>
@@ -139,35 +105,18 @@
         </aside>
       </div>
       <!-- 팝업 광고 -->
-      <div
-        class="popup popup__ad"
-        role="dialog"
-        aria-label="popup__ad"
-        aria-modal="true"
-        id="popup__ad"
-      >
+      <div class="popup popup__ad" role="dialog" aria-label="popup__ad" aria-modal="true" id="popup__ad">
         <div class="popup__ad__content">
           <div class="popup__ad__img">
-            <a href=""
-              ><img
-                src="/src/assets/images/PopupBanner.png"
-                alt="광고 배너 내용 설명"
-                class="ad__image"
-            /></a>
+            <a href="">
+              <img src="/src/assets/images/PopupBanner.png" alt="광고 배너 내용 설명" class="ad__image" />
+            </a>
           </div>
           <div class="popup__actions">
-            <button
-              type="button"
-              class="popup__button popup__button--close"
-              aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다"
-            >
+            <button type="button" class="popup__button popup__button--close" aria-label="오늘 하루 동안 이 팝업을 표시하지 않습니다">
               오늘 하루 안 보기
             </button>
-            <button
-              type="button"
-              class="popup__button popup__button--close"
-              aria-label="팝업 닫기"
-            >
+            <button type="button" class="popup__button popup__button--close" aria-label="팝업 닫기">
               닫기
             </button>
           </div>
