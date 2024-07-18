@@ -199,6 +199,7 @@ $list_button: (
   li {
     button {
       @include label-md;
+      position: relative;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -215,33 +216,31 @@ $list_button: (
       }
       &:hover {
         color: map-get($list_button, text-hover);
+        .popup {
+          display: block;
+        }
       }
       .icon {
         font-size: 1.5rem;
         color: map-get($list_button, text-default);
-        position: relative;
-
-        .popup {
-          display: none;
-          position: absolute;
-          transform: translate(-20%, 10%);
-
-          @include paragraph-sm;
-          color: map-get($button, text-default);
-          background-color: map-get($button, text-white);
-          border: 0.0625rem solid map-get($button, bd-gray-200);
-          border-radius: 0.25rem;
-          width: 13rem;
-          padding: 10px;
-          word-break: keep-all;
-          white-space: inherit;
-          text-align: left;
-          z-index: 1000;
-        }
-
-        &:hover .popup {
-          display: block;
-        }
+      }
+      .popup {
+        @include paragraph-sm;
+        z-index: 100;
+        position: absolute;
+        top: 1.75rem;
+        right: 0.5rem;
+        // transform: translate(-20%, 10%);
+        display: none;
+        width: 13rem;
+        padding: 0.5rem;
+        word-break: keep-all;
+        white-space: inherit;
+        text-align: left;
+        color: map-get($button, text-default);
+        border: 0.0625rem solid map-get($button, bd-gray-200);
+        border-radius: 0.25rem;
+        background-color: map-get($button, text-white);
       }
     }
     hr {
@@ -256,22 +255,23 @@ $list_button: (
 
 .counter__container {
   align-items: center;
-  border: 2px solid map-get($button, bd-gray-200);
+  border: 1px solid map-get($button, bd-gray-200);
   display: flex;
   height: 1.875rem;
   justify-content: space-between;
   width: 5.25rem;
-
+  
   &:focus {
     outline: 1px solid map-get($button, focus);
   }
-
+  
   button {
     align-items: center;
     display: flex;
     height: 1.875rem;
     justify-content: center;
     width: 1.875rem;
+    border-radius: 2px;
 
     span {
       align-items: center;

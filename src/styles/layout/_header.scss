@@ -295,6 +295,7 @@ $header: (
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    height: 4.5rem;
 
     .header {
       &__main {
@@ -308,6 +309,9 @@ $header: (
           height: 2.25rem;
           .input--search{
             @include paragraph-sm;
+            &::placeholder {
+              @include paragraph-sm;
+            }
           }
         }
 
@@ -323,7 +327,17 @@ $header: (
         .nav__menu {
           white-space: nowrap;
           li a {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            height: 3.125rem;
             padding: 0 1rem;
+            &:hover {
+              span {
+                padding-bottom: 0;
+              }
+            }
           }
           
         }

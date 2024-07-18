@@ -4,10 +4,11 @@ import { addCartModal } from "./addCartModal.js";
 export function createProductCard(product) {
   const card = document.createElement('div');
   card.classList.add('card');
-
+  card.setAttribute('data-id', product.id);
   const isDiscounted = product.ratio > 0;
 
-  const template = isDiscounted ? `
+  const template = isDiscounted
+    ? `
     <div class='product__info discount product__info--sm'>
       <span class='product__info--sm-delivery'>${product.deliver}</span>
       <span class='product__info--sm-title'>[${product.brand}] ${product.name}</span>
@@ -17,8 +18,8 @@ export function createProductCard(product) {
         <span class='product__info--sm-discount-rate'>${product.ratio}%<span class='a11y'>할인</span></span>
         <span class='product__info--sm-discount-price'>${product.finalPrice.toLocaleString()}&nbsp;원</span>
       </div>
-    </div>` 
-    :`
+    </div>`
+    : `
     <div class='product__info product__info--sm'>
       <span class='product__info--sm-delivery'>${product.deliver}</span>
       <span class='product__info--sm-title'>[${product.brand}] ${product.name}</span>
@@ -31,8 +32,10 @@ export function createProductCard(product) {
     badgeTemplate += `<span class="badge badge--lg badge--only">${product.type}</span>`;
   }
   if (product.benefit != 'none') {
-    const benefits = Array.isArray(product.benefit) ? product.benefit : [product.benefit];
-    benefits.forEach(benefit => {
+    const benefits = Array.isArray(product.benefit)
+      ? product.benefit
+      : [product.benefit];
+    benefits.forEach((benefit) => {
       badgeTemplate += `<span class="badge badge--lg">${benefit}</span>`;
     });
   }

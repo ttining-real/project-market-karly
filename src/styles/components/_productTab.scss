@@ -7,49 +7,55 @@ $product-tab: (
   text-color-active: $primary,
   bg-color-default: $gray-50,
   bg-color-active: $white,
+  focus: $secondary
 );
 
 .product__tab {
   &__list {
-    align-items: center;
     display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
   &__item {
-    margin-left: -1px;
-    min-width: calc(100% / 4);
-    width: 100%;
+    flex: 1;
+    border: map-get($product-tab, border-default);
+    border-right: 0;
+    &:nth-last-child(1) {
+      border-right: map-get($product-tab, border-default);
+    }
+    &.is--active {
+      border-bottom-color: #fff;
+    }
 
     button {
       @include label-md;
-      align-items: center;
-      background-color: map-get($product-tab, bg-color-default);
-      border: map-get($product-tab, border-default);
-      color: map-get($product-tab, text-color-default);
-      cursor: pointer;
       display: flex;
+      align-items: center;
       justify-content: center;
       width: 100%;
-
+      color: map-get($product-tab, text-color-default);
+      background-color: map-get($product-tab, bg-color-default);
+      cursor: pointer;
       strong {
         @include paragraph-sm;
         margin-left: 0.5rem;
       }
 
       &:focus {
-        border: map-get($product-tab, border-default-focus);
+        outline-offset: -2px;
+        outline: 2px solid map-get($product-tab, focus);
       }
     }
 
     &.is--active button {
-      background-color: map-get($product-tab, bg-color-active);
+      color: map-get($product-tab, text-color-active);
       border: map-get($product-tab, border-active);
       border-bottom-color: #fff;
-      color: map-get($product-tab, text-color-active);
-      outline: 0;
-
+      background-color: map-get($product-tab, bg-color-active);
+      
       &:focus {
-        border: map-get($product-tab, border-active-focus);
+        outline: 2px solid map-get($product-tab, focus);
       }
     }
   }
