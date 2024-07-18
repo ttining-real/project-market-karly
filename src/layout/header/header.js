@@ -4,6 +4,7 @@ import defaultAuthData from '@/api/defaultAuthData';
 import modalHandle from '@/lib/modal.js';
 import { getNode, getStorage, setStorage, insertLast } from 'kind-tiger';
 import throttle from 'lodash/throttle'; // Lodash의 throttle 함수
+import getPbImageURL from '../../api/getPbImageURL';
 
 class Header extends HTMLElement {
   constructor() {
@@ -31,7 +32,16 @@ class Header extends HTMLElement {
           <div class='button__set'>
             <a href='/src/pages/login/login.html' class='button button--ratio button--md'><span class='icon icon--location'></span></a>
             <a href='/src/pages/login/login.html' class='button button--ratio button--md'><span class='icon icon--favorite'></span></a>
-            <a href='/src/pages/cart/cart.html' class='button button--ratio button--md'><span class='icon icon--cart'></span></a>
+            <a href='/src/pages/cart/cart.html' class='button button--ratio button--md button--cart'>
+              <span class='icon icon--cart'></span>
+              <div class="bubble">
+                <img src="" alt="상품 이미지" class="bubble__img"/>
+                <div class="bubble__text--wrapper">
+                  <span class="bubble__product">풀무원 탱탱쫄면</span>
+                  <p>장바구니에 상품을 담았습니다.</p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
         <div class='header__utils'>
@@ -84,6 +94,43 @@ class Header extends HTMLElement {
 
     this.addScrollEvent();
   }
+
+  // 커스텀 리스너
+  connectedCallback() {
+    document.addEventListener('cartAdded', this.bubbleEvent.bind(this));
+  }
+  disconnectedCallback() {
+    document.removeEventListener('cartAdded', this.bubbleEvent.bind(this));
+  }
+
+  bubbleEvent(event) {
+    const cartButton = this.shadowRoot.querySelector('.button--cart');
+    const tooltip = this.shadowRoot.querySelector('.bubble');
+    const product = event.detail;
+  
+    if (cartButton && product) {
+      tooltip.classList.add('is--active');
+  
+      // 이미지와 상품명 설정
+      const bubbleImg = tooltip.querySelector('.bubble__img');
+      const bubbleProduct = tooltip.querySelector('.bubble__product');
+  
+      const imageURL = getPbImageURL(product);
+      if (imageURL) {
+        bubbleImg.src = imageURL;
+        bubbleImg.alt = `${product.brand}의 ${product.name} 상품 이미지`;
+      } else {
+        console.error('상품 이미지 URL을 가져오지 못했습니다.');
+      }
+  
+      bubbleProduct.textContent = `[${product.brand}] ${product.name}`;
+  
+      setTimeout(() => {
+        tooltip.classList.remove('is--active');
+      }, 4000);
+    }
+  }
+  
 
 
   /* --------------------------------- 스크롤 이벤트 -------------------------------- */
