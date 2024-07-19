@@ -107,14 +107,14 @@ class Header extends HTMLElement {
     const cartButton = this.shadowRoot.querySelector('.button--cart');
     const tooltip = this.shadowRoot.querySelector('.bubble');
     const product = event.detail;
-  
+
     if (cartButton && product) {
       tooltip.classList.add('is--active');
-  
+
       // 이미지와 상품명 설정
       const bubbleImg = tooltip.querySelector('.bubble__img');
       const bubbleProduct = tooltip.querySelector('.bubble__product');
-  
+
       const imageURL = getPbImageURL(product);
       if (imageURL) {
         bubbleImg.src = imageURL;
@@ -122,16 +122,14 @@ class Header extends HTMLElement {
       } else {
         console.error('상품 이미지 URL을 가져오지 못했습니다.');
       }
-  
+
       bubbleProduct.textContent = `[${product.brand}] ${product.name}`;
-  
+
       setTimeout(() => {
         tooltip.classList.remove('is--active');
       }, 4000);
     }
   }
-  
-
 
   /* --------------------------------- 스크롤 이벤트 -------------------------------- */
   addScrollEvent() {
@@ -144,24 +142,23 @@ class Header extends HTMLElement {
         header.classList.add('is--scrolled');
         searchButton.classList.remove('button--lg');
         searchButton.classList.add('button--xs');
-        setButton.forEach(item => {
+        setButton.forEach((item) => {
           item.classList.remove('button--md');
           item.classList.add('button--xs');
-        })
+        });
       } else {
         header.classList.remove('is--scrolled');
         searchButton.classList.remove('button--xs');
         searchButton.classList.add('button--lg');
-        setButton.forEach(item => {
+        setButton.forEach((item) => {
           item.classList.remove('button--xs');
           item.classList.add('button--md');
-        })
+        });
       }
     }, 100); // 100ms마다 이벤트 처리
 
     window.addEventListener('scroll', handleScroll);
   }
-
 
   /* ---------------------------------- 로그아웃 ---------------------------------- */
   async logout() {
@@ -207,8 +204,8 @@ class Header extends HTMLElement {
 
             modalHandle('.modal', 'is--open', open);
 
-            const modalCancel = getNode('.button--cancel');
-            const modalConfirm = getNode('.button--confirm');
+            const modalCancel = getNode('.modal__foot .button--cancel');
+            const modalConfirm = getNode('.modal__foot .button--confirm');
             const modalLogout = getNode('.modal__logout');
 
             modalCancel.addEventListener('click', function () {
