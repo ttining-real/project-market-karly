@@ -24,5 +24,6 @@ selectDeleteButton.addEventListener('click', function () {
       list.classList.add('is--open');
     }
   });
+
   UpdateCount();
 });

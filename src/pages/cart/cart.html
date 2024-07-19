@@ -6,7 +6,7 @@
   <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>마켓칼리-장바구니</title>
-  <script type="module" src='/src/pages/cart/cart.js'></script>
+  <script type="module" defer src='/src/pages/cart/cart.js'></script>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
             <li class='checkbox__wrap'>
               <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
               <label for='checkbox02' class='checkbox__label'>
-                <span class='checkbox__label--icon' aria-hidden="true"></span>
-                전체선택(3/3)
+                <!-- <span class='checkbox__label--icon' aria-hidden="true"></span>
+                전체선택(3/3) -->
               </label>
             </li>
             <li aria-hidden='true'>
@@ -33,12 +33,12 @@
 
         <div class='cart__list'>
           <div class='cart__item'>
-            <button type='button'>
+            <button type='button' class="food--refrigerated">
               <span class='icon icon--food--refrigerated'></span>
               냉장 식품
               <span class='icon icon--arrow--bottom'></span>
             </button>
-            <ul class='selected'>
+            <ul class='selected food--refrigerated'>
               <!-- <li class='selected__item'>
                 <div class='checkbox__wrap'>
                   <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
@@ -161,26 +161,26 @@
               </li> -->
             </ul>
           </div>
-          <!-- <div class='cart__item'>
-            <button type='button'>
+          <div class='cart__item'>
+            <button type='button' class="food--frozen">
               <span class='icon icon--food--frozen'></span>
               냉동 식품
               <span class='icon icon--arrow--bottom'></span>
             </button>
-            <ul class='selected'>
-             
+            <ul class='selected food--frozen'>
+
             </ul>
           </div>
           <div class='cart__item'>
-            <button type='button'>
+            <button type='button' class="food--normal">
               <span class='icon icon--food--normal'></span>
               상온 식품
               <span class='icon icon--arrow--bottom'></span>
             </button>
             <ul class='selected'>
-              
+
             </ul>
-          </div> -->
+          </div>
         </div>
       </div>
 
