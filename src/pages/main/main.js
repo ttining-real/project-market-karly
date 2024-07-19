@@ -8,3 +8,4 @@ import '@/pages/main/productSwiperRender.js';
 import '@/pages/main/sidebarData.js';
 import '@/pages/main/bannerClose.js';
 import '@/pages/main/swiper.js';
+
