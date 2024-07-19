@@ -54,22 +54,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 export function recentSwiper() {
-  new Swiper('.recent__item .recent-swiper', {
+  new Swiper('#recent-product', {
     modules: [Navigation, Keyboard, Autoplay],
     // loop: true,
-    slidesPerView: 1,
-    slidesPerGroup: 1,
+    slidesPerView: 2.5,
+    slidesPerGroup: 2,
     direction: 'vertical',
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.recent-swiper-next1',
+      prevEl: '.recent-swiper-prev1',
     },
     keyboard: {
       enabled: true,
     },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
   });
 }
