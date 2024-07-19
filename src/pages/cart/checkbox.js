@@ -1,5 +1,4 @@
 const checkboxAll = document.querySelector('#checkbox02');
-const checkboxSubAll = document.querySelectorAll('.selected__item .checkbox');
 
 /* cart page load되면 */
 export function UpdateCount() {
@@ -7,6 +6,7 @@ export function UpdateCount() {
   const checkedCount = document.querySelectorAll(
     '.selected__item .checkbox:checked'
   ).length;
+  if (!checkboxAll) return;
   const label = checkboxAll.nextElementSibling;
   const template = /* html */ `
       <span class='checkbox__label--icon' aria-hidden="true"></span>
@@ -16,28 +16,36 @@ export function UpdateCount() {
 }
 window.addEventListener('load', UpdateCount);
 
-window.addEventListener('DOMContentLoaded', function () {
-  /* ---------- checkbox 전체 선택 ---------- */
+export function checkboxChange() {
+  const checkboxAll = document.querySelector('#checkbox02');
+  if (!checkboxAll) return;
   checkboxAll.addEventListener('change', function () {
+    const checkboxSubAll = document.querySelectorAll(
+      '.selected__item .checkbox'
+    );
     checkboxSubAll.forEach((checkbox) => {
       checkbox.checked = checkboxAll.checked;
     });
     UpdateCount();
   });
 
+  const checkboxSubAll = document.querySelectorAll('.selected__item .checkbox');
   checkboxSubAll.forEach((checkbox) => {
     checkbox.addEventListener('change', function () {
-      UpdateCount();
       if (!this.checked) {
         checkboxAll.checked = false;
+        UpdateCount();
       } else {
         const allChecked = [...checkboxSubAll].every(
           (checkbox) => checkbox.checked
         );
+        UpdateCount();
         if (allChecked) {
           checkboxAll.checked = true;
+          UpdateCount();
         }
       }
     });
   });
-});
+}
+checkboxChange();

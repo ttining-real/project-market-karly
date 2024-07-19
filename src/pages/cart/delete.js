@@ -1,7 +1,7 @@
 import { UpdateCount } from './checkbox';
 const selectDeleteButton = document.querySelector('.select--delete');
 
-selectDeleteButton.addEventListener('click', function () {
+function selectedDeleteFn() {
   const checkbox = document.querySelectorAll('.selected__item input.checkbox');
   const selectedList = document.querySelectorAll('.selected');
 
@@ -24,6 +24,8 @@ selectDeleteButton.addEventListener('click', function () {
       list.classList.add('is--open');
     }
   });
-
+  window.localStorage.removeItem('cartItems');
   UpdateCount();
-});
+}
+
+selectDeleteButton.addEventListener('click', selectedDeleteFn);

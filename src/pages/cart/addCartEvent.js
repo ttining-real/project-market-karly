@@ -1,5 +1,8 @@
 import pb from '@/api/pocketbase';
 
+import cartPageLoadFn from './toggle.js';
+import { checkboxChange } from './checkbox.js';
+
 const BaseURL = pb.baseUrl;
 
 // addCartEvent.js
@@ -25,14 +28,16 @@ export function addCartEvent(product, count) {
   }
 
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  // updateCartUI(product, count);
 }
 
-function cartItemToCartList() {
+async function cartItemToCartList() {
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  cartItems.forEach(async (item) => {
-    const product = await pb.collection('products').getOne(item.productId);
-    const template = /* html */ `
+
+  // const categoryButtons = document.querySelectorAll('.cart__item__button');
+  for (const item of cartItems) {
+    try {
+      const product = await pb.collection('products').getOne(item.productId);
+      const template = /* html */ `
         <li class='selected__item'>
           <div class='checkbox__wrap'>
             <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
@@ -65,93 +70,36 @@ function cartItemToCartList() {
         </li>
       `;
 
-    const refrigeratedButton = document.querySelector(
-      'button.food--refrigerated'
-    );
-    const refrigeratedList = refrigeratedButton.nextElementSibling;
-    const frozenButton = document.querySelector('button.food--frozen');
-    const frozenList = frozenButton.nextElementSibling;
-    const normalButton = document.querySelector('button.food--normal');
-    const normalList = normalButton.nextElementSibling;
-    if (product.food_type === 'refrigerated') {
-      refrigeratedList.insertAdjacentHTML('beforeend', template);
-    } else if (product.food_type === 'frozen') {
-      frozenList.insertAdjacentHTML('beforeend', template);
-    } else {
-      normalList.insertAdjacentHTML('beforeend', template);
+      const cartItemButtons = document.querySelectorAll('.cart__item__button');
+      cartItemButtons.forEach((button) => {
+        if (product.food_type === 'refrigerated') {
+          if (button.classList.contains('button__food--refrigerated')) {
+            let ulElement = document.querySelector('.food--refrigerated');
+            ulElement.insertAdjacentHTML('beforeend', template);
+          }
+        } else if (product.food_type === 'frozen') {
+          if (button.classList.contains('button__food--frozen')) {
+            let ulElement = document.querySelector('.food--frozen');
+            ulElement.insertAdjacentHTML('beforeend', template);
+          }
+        } else {
+          if (button.classList.contains('button__food--normal')) {
+            let ulElement = document.querySelector('.food--normal');
+            ulElement.insertAdjacentHTML('beforeend', template);
+          }
+        }
+      });
+
+      cartPageLoadFn();
+      checkboxChange();
+    } catch (error) {
+      console.log(error);
     }
-  });
+  }
 }
-// async function cartItemToCartList() {
-//   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+cartItemToCartList();
 
-//   for (const item of cartItems) {
-//     try {
-//       const product = await pb.collection('products').getOne(item.productId);
-//       const template = /* html */ `
-//         <li class='selected__item'>
-//           <div class='checkbox__wrap'>
-//             <input type='checkbox' class='checkbox' id='checkbox02' name='checkbox-name02' checked />
-//             <label for='checkbox02' class='checkbox__label'>
-//               <span class='checkbox__label--icon'></span>
-//             </label>
-//           </div>
-//           <div class='product--link'>
-//             <a href='/src/pages/productDetail/details.html?product=${product.id}'>
-//               <img src='${BaseURL}api/files/${product.collectionId}/${product.id}/${product.photo}' alt='${product.brand} ${product.name} 이미지' />
-//             </a>
-//           </div>
-//           <strong>
-//             <a href='/src/pages/productDetail/details.html?product=${product.id}'>
-//               [${product.brand}] ${product.name}
-//             </a>
-//           </strong>
-//           <div class="counter__container">
-//             <button type="button" class="counter--minus"><span class='icon icon--minus'></span></button>
-//               <span class='count'>${item.productCount}</span>
-//             <button type="button" class="counter--plus"><span class='icon icon--plus'></span></button>
-//           </div>
-//           <div class='price'>
-//             <span class='product__info--sm-discount-price'>${product.finalPrice.toLocaleString()}&nbsp;원</span>
-//             <span class='product__info--sm-price discount'>${product.price.toLocaleString()}&nbsp;원</span>
-//           </div>
-//           <button type='button' class='delete'>
-//             <span class='icon icon--cancel'></span>
-//           </button>
-//         </li>
-//       `;
-
-//       let buttonSelector;
-//       if (product.food_type === 'refrigerated') {
-//         buttonSelector = 'button.food--refrigerated';
-//       } else if (product.food_type === 'frozen') {
-//         buttonSelector = 'button.food--frozen';
-//       } else {
-//         buttonSelector = 'button.food--normal';
-//       }
-
-//       const button = document.querySelector(buttonSelector);
-
-//       if (!button) {
-//         console.error('Button not found:', buttonSelector);
-//         continue;
-//       }
-
-//       const list = button.nextElementSibling;
-
-//       if (!list) {
-//         console.error('List element not found for', buttonSelector);
-//         continue;
-//       }
-
-//       list.insertAdjacentHTML('beforeend', template);
-//     } catch (error) {
-//       console.error('Error processing cart item', item, error);
-//     }
-//   }
-// }
-
-window.addEventListener('load', cartItemToCartList);
+// !!!!!! DOMContentLoaded, load > typemodule에서는 쓸 필요가 없음
 
 // UI 업데이트 함수
 // function updateCartUI(product, count) {

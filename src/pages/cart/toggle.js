@@ -2,18 +2,17 @@ import { UpdateCount } from './checkbox';
 /* ---------- toggle ---------- */
 const cartListButton = document.querySelectorAll('.cart__item > button');
 
-window.addEventListener('load', function () {
+export default function cartPageLoadFn() {
   cartListButton.forEach((button) => {
-    setTimeout(() => {
-      const selectedList = button.nextElementSibling;
-      const arrowButton = button.querySelector('.icon--arrow--bottom');
+    const selectedList = button.nextElementSibling;
+    const arrowButton = button.querySelector('.icon--arrow--bottom');
 
-      if (selectedList.children.length !== 0) {
-        selectedList.classList.add('is--open');
-        arrowButton.classList.add('is--open');
-        UpdateCount();
-      }
-    }, 1000);
+    if (selectedList.children.length !== 0) {
+      selectedList.classList.add('is--open');
+      arrowButton.classList.add('is--open');
+      UpdateCount();
+    }
+
     button.addEventListener('click', function () {
       const selectedList = this.nextElementSibling;
       const arrowButton = this.querySelector('.icon--arrow--bottom');
@@ -50,4 +49,4 @@ window.addEventListener('load', function () {
       UpdateCount();
     });
   });
-});
+}
