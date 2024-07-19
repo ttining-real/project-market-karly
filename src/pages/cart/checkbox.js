@@ -14,28 +14,30 @@ export function UpdateCount() {
     `;
   label.innerHTML = template;
 }
-UpdateCount();
+window.addEventListener('load', UpdateCount);
 
-/* ---------- checkbox 전체 선택 ---------- */
-checkboxAll.addEventListener('change', function () {
-  checkboxSubAll.forEach((checkbox) => {
-    checkbox.checked = checkboxAll.checked;
-  });
-  UpdateCount();
-});
-
-checkboxSubAll.forEach((checkbox) => {
-  checkbox.addEventListener('change', function () {
+window.addEventListener('DOMContentLoaded', function () {
+  /* ---------- checkbox 전체 선택 ---------- */
+  checkboxAll.addEventListener('change', function () {
+    checkboxSubAll.forEach((checkbox) => {
+      checkbox.checked = checkboxAll.checked;
+    });
     UpdateCount();
-    if (!this.checked) {
-      checkboxAll.checked = false;
-    } else {
-      const allChecked = [...checkboxSubAll].every(
-        (checkbox) => checkbox.checked
-      );
-      if (allChecked) {
-        checkboxAll.checked = true;
+  });
+
+  checkboxSubAll.forEach((checkbox) => {
+    checkbox.addEventListener('change', function () {
+      UpdateCount();
+      if (!this.checked) {
+        checkboxAll.checked = false;
+      } else {
+        const allChecked = [...checkboxSubAll].every(
+          (checkbox) => checkbox.checked
+        );
+        if (allChecked) {
+          checkboxAll.checked = true;
+        }
       }
-    }
+    });
   });
 });

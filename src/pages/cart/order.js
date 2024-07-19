@@ -8,14 +8,17 @@ const orderConfirm = document.querySelector('.button--confirm');
 orderButton.addEventListener('click', function () {
   modalHandle('.modal', 'is--open', open);
   timerFn();
+  window.localStorage.removeItem('cartItems');
 
   setTimeout(() => {
     modalHandle('.modal', 'is--open', close);
     location.href = '/';
+    window.localStorage.removeItem('cartItems');
   }, 5000);
 });
 
 orderConfirm.addEventListener('click', function () {
   modalHandle('.modal', 'is--open', close);
   location.href = '/';
+  window.localStorage.removeItem('cartItems');
 });
