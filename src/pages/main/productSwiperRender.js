@@ -1,5 +1,6 @@
 import { createProductCard } from '@/pages/product/createProductCard.js';
 import pb from '@/api/pocketbase';
+import getRecentProductData from '@/pages/main/sidebarData.js';
 
 const productSwiperWrapper = document.querySelector(
   '#product-swiper .swiper-wrapper'
@@ -30,6 +31,6 @@ async function getSwiperData() {
     slide.appendChild(card);
     saleProductSwiperWrapper.appendChild(slide); // swiper-wrapper에 swiper-slide 추가
   });
+  getRecentProductData();
 }
-
-window.addEventListener('DOMContentLoaded', getSwiperData);
+getSwiperData();

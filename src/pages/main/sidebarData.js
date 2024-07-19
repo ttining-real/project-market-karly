@@ -1,10 +1,9 @@
 import pb from '@/api/pocketbase';
 import { setStorage } from 'kind-tiger';
-import { recentSwiper } from '@/pages/main/swiper.js';
 
 const BaseURL = pb.baseUrl;
 
-window.addEventListener('click', function (e) {
+function cardClickHandler(e) {
   const card = e.target.closest('.card');
 
   if (card) {
@@ -18,31 +17,56 @@ window.addEventListener('click', function (e) {
       localStorage.setItem('productId', JSON.stringify(arr));
     }
   }
-});
+}
+window.addEventListener('click', cardClickHandler);
 
-window.addEventListener('DOMContentLoaded', function () {
+export default function getRecentProductData() {
   let localStorageData = JSON.parse(localStorage.getItem('productId'));
 
   localStorageData.forEach(async (id) => {
-    const data = await pb.collection('products').getOne(id);
+    try {
+      let data = await pb.collection('products').getOne(id);
 
-    const recentSwiper = document.querySelector(
-      '.recent-swiper .swiper-wrapper'
-    );
-    const divElement = document.createElement('div');
-    divElement.classList.add('swiper-slide');
-    const imgElement = document.createElement('img');
-    imgElement.setAttribute(
-      'src',
-      `${BaseURL}api/files/${data.collectionId}/${data.id}/${data.photo}`
-    );
-    divElement.appendChild(imgElement);
-    recentSwiper.appendChild(divElement);
+      const recentSwiper = document.querySelector(
+        '.recent-swiper .swiper-wrapper'
+      );
+      const divElement = document.createElement('div');
+      divElement.classList.add('swiper-slide');
+      const imgElement = document.createElement('img');
+      imgElement.setAttribute(
+        'src',
+        `${BaseURL}api/files/${data.collectionId}/${data.id}/${data.photo}`
+      );
+      divElement.appendChild(imgElement);
+      recentSwiper.appendChild(divElement);
 
-    divElement.addEventListener('click', function () {
-      location.href = `/src/pages/productDetail/details.html?product=${data.id}`;
-    });
+      divElement.addEventListener('click', function () {
+        location.href = `/src/pages/productDetail/details.html?product=${data.id}`;
+      });
+    } catch (error) {
+      console.log(error);
+    }
   });
+}
+getRecentProductData();
 
-  recentSwiper();
-});
+// localStorageData.forEach(async(id) => {
+//   const data = await pb.collection('products').getOne(id);
+
+//   const recentSwiper = document.querySelector(
+//     '.recent-swiper .swiper-wrapper'
+//   );
+//   const divElement = document.createElement('div');
+//   divElement.classList.add('swiper-slide');
+//   const imgElement = document.createElement('img');
+//   imgElement.setAttribute(
+//     'src',
+//     `${BaseURL}api/files/${data.collectionId}/${data.id}/${data.photo}`
+//   );
+//   divElement.appendChild(imgElement);
+//   recentSwiper.appendChild(divElement);
+
+//   divElement.addEventListener('click', function () {
+//     location.href = `/src/pages/productDetail/details.html?product=${data.id}`;
+//   });
+// });

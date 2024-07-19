@@ -95,13 +95,18 @@
       flex-grow: 2;
       flex-shrink: 0;
       margin-bottom: 0;
-      white-space: nowrap;
 
       a {
         @include paragraph-md;
+        display: inline-block;
         flex: 1;
         color: $content;
         text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 250px;
+
         &:focus {
           outline: 0.125rem solid $secondary;
         }
@@ -148,6 +153,7 @@
       align-items: center;
       display: flex;
       flex-direction: column;
+      min-width: 130px;
 
       span {
         margin: 0;

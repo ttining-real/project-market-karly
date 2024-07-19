@@ -15,6 +15,7 @@ orderButton.addEventListener('click', function () {
     location.href = '/';
     window.localStorage.removeItem('cartItems');
   }, 5000);
+  clearInterval(timerFn());
 });
 
 orderConfirm.addEventListener('click', function () {
