@@ -22,6 +22,7 @@ window.addEventListener('click', cardClickHandler);
 
 export default function getRecentProductData() {
   let localStorageData = JSON.parse(localStorage.getItem('productId'));
+  if (!localStorageData) return;
 
   localStorageData.forEach(async (id) => {
     try {

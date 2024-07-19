@@ -216,7 +216,7 @@ $list_button: (
       }
       &:hover {
         color: map-get($list_button, text-hover);
-        .popup {
+        .button--popup {
           display: block;
         }
       }
@@ -224,7 +224,7 @@ $list_button: (
         font-size: 1.5rem;
         color: map-get($list_button, text-default);
       }
-      .popup {
+      .button--popup {
         @include paragraph-sm;
         z-index: 100;
         position: absolute;
@@ -260,11 +260,11 @@ $list_button: (
   height: 1.875rem;
   justify-content: space-between;
   width: 5.25rem;
-  
+
   &:focus {
     outline: 1px solid map-get($button, focus);
   }
-  
+
   button {
     align-items: center;
     display: flex;
