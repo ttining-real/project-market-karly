@@ -1,341 +1,345 @@
 <!doctype html>
 <html lang='ko-KR'>
-  <head>
-    <meta charset='UTF-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>마켓칼리-제품 목록</title>
-    <script type='module' src='/src/pages/product/product.js'></script>
-  </head>
-  <body>
-    <c-header></c-header>
-    <!-- product_list page layout -->
-    <main class='page product'>
-      <h1 class='product__title'>베스트</h1>
-      <div class='product__container'>
-        <section class='sidebar'>
-          <ul class='accordion'>
-            <div class="accordion__title">
-              <span class="accordion__title--content">필터</span>
-              <button type="button" class="accordion__title--button-reset">
-                <span class='icon icon--refresh'></span>
-                <span class="title">초기화</span>
-              </button>
-            </div>
-            <!-- head -->
-            <li class='accordion__head' id="category">
-              <button type='button' class='accordion__head--item'>
-                <div class='accordion__head--content'>
-                  <span class='accordion__head--content-title'>카테고리</span>
-                  <span class='accordion__head--content-count'>0</span>
-                </div>
-                <span class='icon icon--arrow--bottom'></span>
-              </button>
-              <!-- body -->
-              <ul class='accordion__body'>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='category-food' name='category-food' />
-                    <label for='category-food' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>식품</span>
-                        <span class='checkbox__content-count' id="count--food">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='category-necessity' name='category-necessity'/>
-                    <label for='category-necessity' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>생필품</span>
-                        <span class='checkbox__content-count' id="count--necessity">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='category-personalcare' name='category-personalcare' />
-                    <label for='category-personalcare' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>케어용품</span>
-                        <span class='checkbox__content-count' id="count--personalcare">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='category-animal' name='category-animal' />
-                    <label for='category-animal' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>반려동물</span>
-                        <span class='checkbox__content-count' id="count--animal">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <!-- head -->
-            <li class='accordion__head' id="price">
-              <button type='button' class='accordion__head--item'>
-                <div class='accordion__head--content'>
-                  <span class='accordion__head--content-title'>가격</span>
-                </div>
-                <span class='icon icon--arrow--bottom'></span>
-              </button>
-              <!-- body -->
-              <ul class='accordion__body'>
-                <!-- 라디오 버튼 -->
-                <li class='accordion__body--item'>
-                  <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='price-section1' name='radio' value='value' />
-                    <label for='price-section1' class='radio__label'>
-                      <span class='radio__label--icon'></span>
-                      <div class='radio__content'>
-                        <span class="radio__content-title">10,000원 미만</span>
-                        <span class='radio__content-count' id="count--section1">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>  
-                  <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='price-section2' name='radio' value='value' />
-                    <label for='price-section2' class='radio__label'>
-                      <span class='radio__label--icon'></span>
-                      <div class='radio__content'>
-                        <span class="radio__content-title">10,000원 ~ 49,900원</span>
-                        <span class='radio__content-count' id="count--section2">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>  
-                  <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='price-section3' name='radio' value='value' />
-                    <label for='price-section3' class='radio__label'>
-                      <span class='radio__label--icon'></span>
-                      <div class='radio__content'>
-                        <span class="radio__content-title">50,000원 ~ 99,900원</span>
-                        <span class='radio__content-count' id="count--section3">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>
-                  <div class='radio__wrap'>
-                    <input type='radio' class='radio' id='price-section4' name='radio' value='value' />
-                    <label for='price-section4' class='radio__label'>
-                      <span class='radio__label--icon'></span>
-                      <div class='radio__content'>
-                        <span class="radio__content-title">100,000원 이상</span>
-                        <span class='radio__content-count' id="count--section4">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <!-- head -->
-            <li class='accordion__head' id="delivery">
-              <button type='button' class='accordion__head--item'>
-                <div class='accordion__head--content'>
-                  <span class='accordion__head--content-title'>배송</span>
-                  <span class='accordion__head--content-count'>0</span>
-                </div>
-                <span class='icon icon--arrow--bottom'></span>
-              </button>
-              <!-- body -->
-              <ul class='accordion__body'>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='delivery-daybreak' name='delivery-daybreak' />
-                    <label for='delivery-daybreak' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>샛별배송</span>
-                        <span class='checkbox__content-count' id="count--delivery-daybreak">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='delivery-seller' name='delivery-seller'/>
-                    <label for='delivery-seller' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>판매자배송</span>
-                        <span class='checkbox__content-count' id="count--delivery-seller">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <!-- head -->
-            <li class='accordion__head' id="benefit">
-              <button type='button' class='accordion__head--item'>
-                <div class='accordion__head--content'>
-                  <span class='accordion__head--content-title'>혜택</span>
-                  <span class='accordion__head--content-count'>0</span>
-                </div>
-                <span class='icon icon--arrow--bottom'></span>
-              </button>
-              <!-- body -->
-              <ul class='accordion__body'>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='benefit-discount' name='benefit-discount' />
-                    <label for='benefit-discount' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>할인상품</span>
-                        <span class='checkbox__content-count' id="count--discount">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='benefit-limited' name='benefit-limited'/>
-                    <label for='benefit-limited' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>한정수량</span>
-                        <span class='checkbox__content-count' id="count--limited">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='benefit-free-shipping' name='benefit-free-shipping' />
-                    <label for='benefit-free-shipping' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>무료배송</span>
-                        <span class='checkbox__content-count' id="count--free-shipping">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <!-- head -->
-            <li class='accordion__head' id="type">
-              <button type='button' class='accordion__head--item'>
-                <div class='accordion__head--content'>
-                  <span class='accordion__head--content-title'>유형</span>
-                  <span class='accordion__head--content-count'>0</span>
-                </div>
-                <span class='icon icon--arrow--bottom'></span>
-              </button>
-              <!-- body -->
-              <ul class='accordion__body'>
-                <li class='accordion__body--item'>
-                  <div class='checkbox__wrap'>
-                    <input type='checkbox' class='checkbox' id='type-karly-only' name='type-only' />
-                    <label for='type-only' class='checkbox__label'>
-                      <span class='checkbox__label--icon'></span>
-                      <div class='checkbox__content'>
-                        <span class='checkbox__content-title'>Karly Only</span>
-                        <span class='checkbox__content-count' id="count--karly-only">0</span>
-                      </div>
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section class='align'>
-          <!-- count -->
-          <div class='count'>총 <span id='count__card'>0</span>건</div>
-          <!-- sort -->
-          <ul class='list__button'>
-            <li>
-              <button type='button' class='list__button--recommend is--active'>추천순
-                <span class='icon icon--question--mark'>
-                </span>
-                <span class='popup'>소비자 인기도(판매량, 판매금액, 조회수 등), 상품 출시일, 수요 적합성, 상품 운영상 필요 등을 종합적으로 고려한 순서입니다.</span>
-              </button>
-            </li>
-            <li aria-hidden='true'>
-              <hr />
-            </li>
-            <li><button type='button' class='list__button--new'>신상품순</button></li>
-            <li aria-hidden='true'>
-              <hr />
-            </li>
-            <li><button type='button' class='list__button--sales'>판매량순</button></li>
-            <li aria-hidden='true'>
-              <hr />
-            </li>
-            <li><button type='button' class='list__button--benefit'>혜택순</button></li>
-            <li aria-hidden='true'>
-              <hr />
-            </li>
-            <li><button type='button' class='list__button--lowprice'>낮은 가격순</button></li>
-            <li aria-hidden='true'>
-              <hr />
-            </li>
-            <li><button type='button' class='list__button--highprice'>높은 가격순</button></li>
-          </ul>
-        </section>
-        <!-- card -->
-        <section id='card-list' class='card__list'>   
 
-        </section>
-        <!-- 장바구니 담기 모달 -->
-        <section class="modal__addcart is--center">
-          <span class="modal__addcart--title">탱탱 쫄면</span>
-          <div class="modal__addcart--wrapper">
-            <div class="modal__addcart--price">
-              <span class="modal__addcart--price-original">원래 가격</span>
-              <span class="modal__addcart--price-final">4980원</span>
-            </div>
-            <div class="modal__addcart--count counter__container">
-              <button type="button" class="button--minus" disabled><span class='icon icon--minus'></span></button>
-              <span class='count'>1</span>
-              <button type="button" class="button--plus"><span class='icon icon--plus'></span></button>
-            </div>
+<head>
+  <meta charset='UTF-8' />
+  <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>마켓칼리-제품 목록</title>
+  <script type='module' src='/src/pages/product/product.js'></script>
+</head>
+
+<body>
+  <c-header></c-header>
+  <!-- product_list page layout -->
+  <main class='page product'>
+    <h1 class='product__title'>베스트</h1>
+    <div class='product__container'>
+      <section class='sidebar'>
+        <ul class='accordion'>
+          <div class="accordion__title">
+            <span class="accordion__title--content">필터</span>
+            <button type="button" class="accordion__title--button-reset">
+              <span class='icon icon--refresh'></span>
+              <span class="title">초기화</span>
+            </button>
           </div>
-          <div class="modal__addcart--total">
-            <span class="modal__addcart--total-title">합계</span>
-            <span class="modal__addcart--total-price">4980원</span>
+          <!-- head -->
+          <li class='accordion__head' id="category">
+            <button type='button' class='accordion__head--item'>
+              <div class='accordion__head--content'>
+                <span class='accordion__head--content-title'>카테고리</span>
+                <span class='accordion__head--content-count'>0</span>
+              </div>
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <!-- body -->
+            <ul class='accordion__body'>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='category-food' name='category-food' />
+                  <label for='category-food' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>식품</span>
+                      <span class='checkbox__content-count' id="count--food">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='category-necessity' name='category-necessity' />
+                  <label for='category-necessity' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>생필품</span>
+                      <span class='checkbox__content-count' id="count--necessity">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='category-personalcare' name='category-personalcare' />
+                  <label for='category-personalcare' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>케어용품</span>
+                      <span class='checkbox__content-count' id="count--personalcare">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='category-animal' name='category-animal' />
+                  <label for='category-animal' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>반려동물</span>
+                      <span class='checkbox__content-count' id="count--animal">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- head -->
+          <li class='accordion__head' id="price">
+            <button type='button' class='accordion__head--item'>
+              <div class='accordion__head--content'>
+                <span class='accordion__head--content-title'>가격</span>
+              </div>
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <!-- body -->
+            <ul class='accordion__body'>
+              <!-- 라디오 버튼 -->
+              <li class='accordion__body--item'>
+                <div class='radio__wrap'>
+                  <input type='radio' class='radio' id='price-section1' name='radio' value='value' />
+                  <label for='price-section1' class='radio__label'>
+                    <span class='radio__label--icon'></span>
+                    <div class='radio__content'>
+                      <span class="radio__content-title">10,000원 미만</span>
+                      <span class='radio__content-count' id="count--section1">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='radio__wrap'>
+                  <input type='radio' class='radio' id='price-section2' name='radio' value='value' />
+                  <label for='price-section2' class='radio__label'>
+                    <span class='radio__label--icon'></span>
+                    <div class='radio__content'>
+                      <span class="radio__content-title">10,000원 ~ 49,900원</span>
+                      <span class='radio__content-count' id="count--section2">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='radio__wrap'>
+                  <input type='radio' class='radio' id='price-section3' name='radio' value='value' />
+                  <label for='price-section3' class='radio__label'>
+                    <span class='radio__label--icon'></span>
+                    <div class='radio__content'>
+                      <span class="radio__content-title">50,000원 ~ 99,900원</span>
+                      <span class='radio__content-count' id="count--section3">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='radio__wrap'>
+                  <input type='radio' class='radio' id='price-section4' name='radio' value='value' />
+                  <label for='price-section4' class='radio__label'>
+                    <span class='radio__label--icon'></span>
+                    <div class='radio__content'>
+                      <span class="radio__content-title">100,000원 이상</span>
+                      <span class='radio__content-count' id="count--section4">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- head -->
+          <li class='accordion__head' id="delivery">
+            <button type='button' class='accordion__head--item'>
+              <div class='accordion__head--content'>
+                <span class='accordion__head--content-title'>배송</span>
+                <span class='accordion__head--content-count'>0</span>
+              </div>
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <!-- body -->
+            <ul class='accordion__body'>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='delivery-daybreak' name='delivery-daybreak' />
+                  <label for='delivery-daybreak' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>샛별배송</span>
+                      <span class='checkbox__content-count' id="count--delivery-daybreak">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='delivery-seller' name='delivery-seller' />
+                  <label for='delivery-seller' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>판매자배송</span>
+                      <span class='checkbox__content-count' id="count--delivery-seller">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- head -->
+          <li class='accordion__head' id="benefit">
+            <button type='button' class='accordion__head--item'>
+              <div class='accordion__head--content'>
+                <span class='accordion__head--content-title'>혜택</span>
+                <span class='accordion__head--content-count'>0</span>
+              </div>
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <!-- body -->
+            <ul class='accordion__body'>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='benefit-discount' name='benefit-discount' />
+                  <label for='benefit-discount' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>할인상품</span>
+                      <span class='checkbox__content-count' id="count--discount">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='benefit-limited' name='benefit-limited' />
+                  <label for='benefit-limited' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>한정수량</span>
+                      <span class='checkbox__content-count' id="count--limited">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='benefit-free-shipping' name='benefit-free-shipping' />
+                  <label for='benefit-free-shipping' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>무료배송</span>
+                      <span class='checkbox__content-count' id="count--free-shipping">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- head -->
+          <li class='accordion__head' id="type">
+            <button type='button' class='accordion__head--item'>
+              <div class='accordion__head--content'>
+                <span class='accordion__head--content-title'>유형</span>
+                <span class='accordion__head--content-count'>0</span>
+              </div>
+              <span class='icon icon--arrow--bottom'></span>
+            </button>
+            <!-- body -->
+            <ul class='accordion__body'>
+              <li class='accordion__body--item'>
+                <div class='checkbox__wrap'>
+                  <input type='checkbox' class='checkbox' id='type-karly-only' name='type-only' />
+                  <label for='type-only' class='checkbox__label'>
+                    <span class='checkbox__label--icon'></span>
+                    <div class='checkbox__content'>
+                      <span class='checkbox__content-title'>Karly Only</span>
+                      <span class='checkbox__content-count' id="count--karly-only">0</span>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class='align'>
+        <!-- count -->
+        <div class='count'>총 <span id='count__card'>0</span>건</div>
+        <!-- sort -->
+        <ul class='list__button'>
+          <li>
+            <button type='button' class='list__button--recommend is--active'>추천순
+              <span class='icon icon--question--mark'>
+              </span>
+              <span class='button--popup'>소비자 인기도(판매량, 판매금액, 조회수 등), 상품 출시일, 수요 적합성, 상품 운영상 필요 등을 종합적으로 고려한
+                순서입니다.</span>
+            </button>
+          </li>
+          <li aria-hidden='true'>
+            <hr />
+          </li>
+          <li><button type='button' class='list__button--new'>신상품순</button></li>
+          <li aria-hidden='true'>
+            <hr />
+          </li>
+          <li><button type='button' class='list__button--sales'>판매량순</button></li>
+          <li aria-hidden='true'>
+            <hr />
+          </li>
+          <li><button type='button' class='list__button--benefit'>혜택순</button></li>
+          <li aria-hidden='true'>
+            <hr />
+          </li>
+          <li><button type='button' class='list__button--lowprice'>낮은 가격순</button></li>
+          <li aria-hidden='true'>
+            <hr />
+          </li>
+          <li><button type='button' class='list__button--highprice'>높은 가격순</button></li>
+        </ul>
+      </section>
+      <!-- card -->
+      <section id='card-list' class='card__list'>
+
+      </section>
+      <!-- 장바구니 담기 모달 -->
+      <section class="modal__addcart is--center">
+        <span class="modal__addcart--title">탱탱 쫄면</span>
+        <div class="modal__addcart--wrapper">
+          <div class="modal__addcart--price">
+            <span class="modal__addcart--price-original">원래 가격</span>
+            <span class="modal__addcart--price-final">4980원</span>
           </div>
-          <div class="modal__addcart--saving">
-            <span class='badge badge--sm badge--accent'>적립</span>
-            <p class="modal__addcart--saving-info">구매 시 5원 적립</p>
+          <div class="modal__addcart--count counter__container">
+            <button type="button" class="button--minus" disabled><span class='icon icon--minus'></span></button>
+            <span class='count'>1</span>
+            <button type="button" class="button--plus"><span class='icon icon--plus'></span></button>
           </div>
-          <div class="modal__addcart--button">
-            <button type='button' class='button--cancel button button--lg'>취소</button>
-            <button type='button' class='button--addcart button button--lg button--filled'>장바구니 담기</button>
-          </div>
-        </section>
-        <nav class='pagination__container'>
-          <ul class='pagination'>
-            <li><a href='#'><span class='icon icon--arrow--prev'></span></a></li>
-            <li><a href='#'><span class='icon icon--arrow--left'></span></a></li>
-            <li><a href='#'>1</a></li>
-            <li><a href='#'>2</a></li>
-            <li><a href='#'>3</a></li>
-            <li><a href='#'><span class='icon icon--arrow--right'></span></a></li>
-            <li><a href='#'><span class='icon icon--arrow--next'></span></a></li>
-          </ul>
-        </nav>
-      </div>
-    </main>
-    <c-footer></c-footer>
-    <div class="overlay" aria-hidden="true"></div>
-  </body>
+        </div>
+        <div class="modal__addcart--total">
+          <span class="modal__addcart--total-title">합계</span>
+          <span class="modal__addcart--total-price">4980원</span>
+        </div>
+        <div class="modal__addcart--saving">
+          <span class='badge badge--sm badge--accent'>적립</span>
+          <p class="modal__addcart--saving-info">구매 시 5원 적립</p>
+        </div>
+        <div class="modal__addcart--button">
+          <button type='button' class='button--cancel button button--lg'>취소</button>
+          <button type='button' class='button--addcart button button--lg button--filled'>장바구니 담기</button>
+        </div>
+      </section>
+      <nav class='pagination__container'>
+        <ul class='pagination'>
+          <li><a href='#'><span class='icon icon--arrow--prev'></span></a></li>
+          <li><a href='#'><span class='icon icon--arrow--left'></span></a></li>
+          <li><a href='#'>1</a></li>
+          <li><a href='#'>2</a></li>
+          <li><a href='#'>3</a></li>
+          <li><a href='#'><span class='icon icon--arrow--right'></span></a></li>
+          <li><a href='#'><span class='icon icon--arrow--next'></span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+  <c-footer></c-footer>
+  <div class="overlay" aria-hidden="true"></div>
+</body>
+
 </html>
