@@ -220,58 +220,55 @@
   }
 }
 
-.recent__item {
-  position: relative;
-  width: 74px;
-  height: 223px;
-  padding: 34px 1rem;
-
-  h2 {
-    @include label-sm;
-    color: $black;
-    margin-bottom: 0.5rem;
-    white-space: nowrap;
-  }
-
-  .recent-swiper {
-    width: 40px;
-    height: 129px;
-  }
-
-  .recent-swiper-wrapper {
-    height: 100%;
-  }
-
-  .swiper-slide {
-    cursor: pointer;
-    transition: transform 300ms ease-in-out;
-
+.sidebar {
+  // aside 태그
+  z-index: 11;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 4.625rem;
+  height: 100%;
+  padding: 8px 0;
+  border: 1px solid $gray-200;
+  background-color: white;
+  position: sticky;
+  top: 193px;
+  align-self: flex-start;
+  max-height: calc(100vh - 300px);
+  right: 1.875rem;
+  margin: 193px 0;
+  .product-list {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 8px;
+    .recent-swiper-prev1 {
+      order: -1;
+    }
+    ul {
+      // ul 태그
+      width: 2.5rem;
+      height: 7.375rem;
+      overflow: hidden;
+    }
+    &__item {
+      // li태그
+      width: 2.5rem;
+      height: 3.1875rem;
+      margin-bottom: 0.25rem;
+    }
+    .product-item {
+      // a태그
+      display: inline-block;
+    }
     img {
-      width: 40px;
-      height: 52px;
-      object-fit: cover;
+      width: 100%;
+      height: auto;
     }
-
-    &:focus,
-    &:hover,
-    &:active {
-      transform: scale(1.05);
+    h2 {
+      @include paragraph-sm;
+      font-weight: 600;
+      letter-spacing: -0.3px;
     }
-  }
-
-  .swiper-button-prev {
-    position: absolute;
-    bottom: 0.5rem;
-    width: 18px;
-    height: 18px;
-    background-color: hotpink;
-  }
-
-  .swiper-button-next {
-    position: absolute;
-    top: 0.5rem;
-    width: 18px;
-    height: 18px;
-    background-color: hotpink;
   }
 }
