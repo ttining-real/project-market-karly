@@ -28,9 +28,8 @@
 </table>
 
 ### 프로젝트 목표
-
-- 팀 목표
-  - 팀목표 촤르르르륵~
+### 팀 목표
+- 공통 목표 : 
 - 개인 목표
   - 안지인 :
   - 최수빈 :
@@ -43,11 +42,12 @@
 
 - 배포 페이지 : https://sibi11jo.netlify.app/
 - 노션 페이지 : https://www.notion.so/11-43f36a244ac5438c865d31fd3724a4d5
+- 발표 ppt : https://docs.google.com/presentation/d/1DGc0m9unEhLihkOAH0YDqLmyFaVi-SplFfUkbRf_Rpg/edit?usp=sharing
 
 ### 📅 개발 일정
 
 - 개발 기간 : 2024-07-12 ~ 2024-07-18
--
+  <img src="https://github.com/user-attachments/assets/15f8b1ef-5a66-4b19-a1f4-9c9e81aa05b5" width='600px;' alt='개발 기간'/>
 
 ### 컨벤션
 
@@ -85,12 +85,39 @@
 
 <img src="https://img.shields.io/badge/Html5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"><img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"><br />
 <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white"><img src="https://img.shields.io/badge/PocketBase-B8DBE4?style=for-the-badge&logo=PocketBase&logoColor=white"><br />
-<img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white"><img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white">
+<img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white"><img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white"><br />
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"><img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
 
 <a name='구현'></a>
 
 ## 구현 (데스크탑 기준)
 
+### 1. 메인페이지
+
+<img src="https://github.com/user-attachments/assets/11f23f37-6a26-4d57-a003-c60cdab939fc" width='600px;' alt='main page'/>
+
+### 2. 로그인
+
+<img src="https://github.com/user-attachments/assets/8e23c6b7-9424-4b05-b3f7-f2c630a90ebb" width='600px;' alt='login page'/>
+
+### 3. 회원가입
+
+<img src="https://github.com/user-attachments/assets/5b0acd0e-80d2-4edd-a1bc-7701891aa26b" width='600px;' alt='login page'/>
+
+### 4. 상품리스트
+
+<img src="https://github.com/user-attachments/assets/d7e970ed-9db7-4703-955a-ee4ef1e1bb10" width='600px;' alt='product list page'/>
+
+### 5. 상품상세정보
+
+<img src="https://github.com/user-attachments/assets/91de86a6-bc6c-44a8-a547-308fd759545c" width='600px;' alt='product list page'/>
+
+### 6. 장바구니
+
+<img src="https://github.com/user-attachments/assets/f6930f9f-483d-4335-871b-ffa1ae6209eb" width='600px;' alt='login page'/>
+
 <a name='후기'></a>
 
 ## 후기
+
+<img src="https://github.com/user-attachments/assets/6f15fa27-8646-4934-be14-136265d6f6b4" width='600px;' alt='개발 기간'/>
